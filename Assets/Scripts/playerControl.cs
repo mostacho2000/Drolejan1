@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class playerControl : MonoBehaviour
 {
+    int life = 3;
     Rigidbody2D cuerpoPlayer;
     public float velocidad;
     public float fuerzaBrinco;
