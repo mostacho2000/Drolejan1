@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     {
         mainMenu.SetActive(false);
         Time.timeScale = 1;//aqui vuelve a correr el tiempo
-        musica.Play();
+       // musica.Play();
     }
     public void cargarNivel()
     {

@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class playerControl : MonoBehaviour
 {
     Rigidbody2D cuerpoPlayer;
+    public GameObject bala;
+    public float velocidadBala;
+    public GameObject granada;
+    public float VelocidadDeGranada;
     public float velocidad;
     public float fuerzaBrinco;
     public TimeControler tiempo;
@@ -66,6 +70,11 @@ public class playerControl : MonoBehaviour
             //tambien se puede poner asi: saltos--
 
         }
+        if (Input.GetButtonDown("Fire1") &&Time.timeScale > 0)//esto es cuando el tiempo coore se activa sino no se activa
+        {
+            animationPlayer.SetTrigger("attack");
+
+        }
        
 
     }
@@ -88,6 +97,14 @@ public class playerControl : MonoBehaviour
         {
             SceneManager.LoadScene("Winner");
         }*/
+
+    }
+    public void shoot()
+    {
+
+    }
+    public void granadaLanzar()
+    {
 
     }
 
