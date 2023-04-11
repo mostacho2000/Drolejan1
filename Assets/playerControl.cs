@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class playerControl : MonoBehaviour
 {
-    int life = 3;
     Rigidbody2D cuerpoPlayer;
     public float velocidad;
     public float fuerzaBrinco;
-    //public TimeControler tiempo;
+    public TimeControler tiempo;
     int saltos;
     public int puntos; //esto tamien se puede y tambien es un variable global, es mejor declarar siempre hasta arriba, pero se puede por que esta acomodado correctamente em la jerarquia de las llaves 
     public TextMeshProUGUI textoScore;
@@ -28,19 +27,19 @@ public class playerControl : MonoBehaviour
     void Update()
 
     {   //esto es lo del movimiento
-        float posX = Input.GetAxis("Horizontal") * velocidad;
-
-        cuerpoPlayer.velocity = new Vector2(posX, cuerpoPlayer.velocity.y);
-        if (posX > 0)
+        float posX = Input.GetAxis("Horizontal")*velocidad;
+       
+        cuerpoPlayer.velocity=new Vector2(posX,cuerpoPlayer.velocity.y);
+        if(posX > 0)
         {
             animationPlayer.SetBool("RUN", true);
             //esto es si no escalaron a su peronsaje manualmente pero si lo hicieron en la imagen
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(1,1,1);
             //usarlo solo mi movi la escala del personaje en el scale (estiraron personaje)
             //transform.localScale = new Vector3(transform.localScale.x,transform.localScale.y,transform.localScale.z);
 
         }
-        else if (posX < 0)
+        else if(posX < 0)
         {
             animationPlayer.SetBool("RUN", true);
             //esto es si no escalaron a su peronsaje manualmente pero si lo hicieron en la imagen
@@ -57,7 +56,7 @@ public class playerControl : MonoBehaviour
 
 
         //esto es el salto
-        if (Input.GetButtonDown("Jump") && saltos > 0)
+        if (Input.GetButtonDown("Jump")&&saltos>0)
         {
             //animacion de brinco
             animationPlayer.SetTrigger("jump");
@@ -67,14 +66,14 @@ public class playerControl : MonoBehaviour
             //tambien se puede poner asi: saltos--
 
         }
-
+       
 
     }
 
     //este bloque se ejecuta cuando colisionamos con "algo"
-    void OnCollisionEnter2D(Collision2D collision)
+     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("suelo"))
+        if (collision.gameObject.CompareTag("suelo")) 
         {
             saltos = 2;//Recargo mis saltos al tocar el suelo
             animationPlayer.SetBool("ground", true);
@@ -85,25 +84,25 @@ public class playerControl : MonoBehaviour
         {
             transform.position = respawnPoint.position;
         }
-        if (collision.gameObject.CompareTag("VIctoria"))
+        /*if (collision.gameObject.CompareTag("VIctoria"))
         {
             SceneManager.LoadScene("Winner");
-        }
+        }*/
 
     }
 
-
+    
     /*void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("coin"))
         {
             tiempo.tiempoActual += 2;
-            puntos += 1;
+            puntos+=1;
             //al combinar dos textos se le llama concatenacion 
             textoScore.text = "Puntos: " + puntos.ToString();//convierte de numeros a texto
             Destroy(collision.gameObject);//destruimos el punto
         }
-
+      
 
     }*/
 }
