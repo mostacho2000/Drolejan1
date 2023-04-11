@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    public void comenzar()
+    public void Comenzar()
     {
         mainMenu.SetActive(false);
         Time.timeScale = 1;//aqui vuelve a correr el tiempo
