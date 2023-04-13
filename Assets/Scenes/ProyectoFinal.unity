@@ -5216,9 +5216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3dd5c88f6d7f924783851204432aa1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bala: {fileID: 1622558947622633891, guid: 223ff6d88c8019e4aadabc3d7662e313, type: 3}
+  bala: {fileID: 8407018710227642160, guid: c8efb4a2ce89852489db49d1750c595f, type: 3}
   velocidadBala: 0
-  granada: {fileID: 0}
+  granada: {fileID: 7863909725141350878, guid: 014428c543cb20648af3e5442c6b5626, type: 3}
   VelocidadDeGranada: 0
   velocidad: 8
   fuerzaBrinco: 315

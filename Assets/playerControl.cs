@@ -76,6 +76,7 @@ public class playerControl : MonoBehaviour
 
         }
         Shoot();
+        granadaLanzar();
     }
 
     //este bloque se ejecuta cuando colisionamos con "algo"
@@ -107,7 +108,10 @@ public class playerControl : MonoBehaviour
     }
     public void granadaLanzar()
     {
-
+        if (Input.GetButtonDown("Fire2") /*&& Time.timeScale > 0*/)
+        {
+            Instantiate(granada, transform.position, Quaternion.identity);
+        }
     }
 
     

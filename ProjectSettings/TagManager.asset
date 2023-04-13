@@ -6,6 +6,7 @@ TagManager:
   tags:
   - suelo
   - enemy
+  - granada
   layers:
   - Default
   - TransparentFX
