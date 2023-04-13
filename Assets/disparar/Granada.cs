@@ -5,22 +5,19 @@ using UnityEngine;
 public class Granada : MonoBehaviour
 {
     public float velocidadGranada = 10;
-    public Rigidbody2D rb;
+  
+    public GameObject animationExplosion;
 
 
 
-    void Update()
-    {
-        rb.MovePosition(transform.position + Vector3.right * velocidadGranada * Time.deltaTime);
-
-
-    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("suelo"))
         {
-            Destroy(gameObject,3f);//destruimos el punto
+            Instantiate(animationExplosion,transform.position,Quaternion.identity);
+            Destroy(gameObject);//destruimos el punto
         }
     }
-   
+    
+
 }
