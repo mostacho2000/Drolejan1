@@ -5216,7 +5216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3dd5c88f6d7f924783851204432aa1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bala: {fileID: 0}
+  bala: {fileID: 1622558947622633891, guid: 223ff6d88c8019e4aadabc3d7662e313, type: 3}
   velocidadBala: 0
   granada: {fileID: 0}
   VelocidadDeGranada: 0
@@ -5343,7 +5343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781258418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.56, y: -0.92, z: 0}
+  m_LocalPosition: {x: -2.34, y: 2.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

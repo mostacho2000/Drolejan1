@@ -8,7 +8,7 @@ public class playerControl : MonoBehaviour
 {
     Rigidbody2D cuerpoPlayer;
     public GameObject bala;
-    public float velocidadBala;
+    public float velocidadBala = 10;
     public GameObject granada;
     public float VelocidadDeGranada;
     public float velocidad;
@@ -29,8 +29,10 @@ public class playerControl : MonoBehaviour
     }
 
     void Update()
-
-    {   //esto es lo del movimiento
+    {
+        if ( Time.timeScale <= 0)
+            return;
+        //esto es lo del movimiento
         float posX = Input.GetAxis("Horizontal")*velocidad;
        
         cuerpoPlayer.velocity=new Vector2(posX,cuerpoPlayer.velocity.y);
@@ -57,8 +59,6 @@ public class playerControl : MonoBehaviour
             animationPlayer.SetBool("RUN", false);
             //aqui va la animacion de esperar
         }
-
-
         //esto es el salto
         if (Input.GetButtonDown("Jump")&&saltos>0)
         {
@@ -70,13 +70,12 @@ public class playerControl : MonoBehaviour
             //tambien se puede poner asi: saltos--
 
         }
-        if (Input.GetButtonDown("Fire1") &&Time.timeScale > 0)//esto es cuando el tiempo coore se activa sino no se activa
+        if (Input.GetButtonDown("Fire1"))//esto es cuando el tiempo coore se activa sino no se activa
         {
             animationPlayer.SetTrigger("attack");
 
         }
-       
-
+        Shoot();
     }
 
     //este bloque se ejecuta cuando colisionamos con "algo"
@@ -99,9 +98,12 @@ public class playerControl : MonoBehaviour
         }*/
 
     }
-    public void shoot()
+    public void Shoot()
     {
-
+        if (Input.GetButtonDown("Fire1") /*&& Time.timeScale > 0*/)
+        {
+            Instantiate(bala, transform.position, Quaternion.identity);
+        }
     }
     public void granadaLanzar()
     {
