@@ -103,7 +103,9 @@ public class playerControl : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") /*&& Time.timeScale > 0*/)
         {
-            Instantiate(bala, transform.position, Quaternion.identity);
+            GameObject tiro=Instantiate(bala, transform.position, Quaternion.identity);
+            Rigidbody2D rb = tiro.GetComponent<Rigidbody2D>();
+            rb.AddForce(Vector2.right*10*transform.localScale.x,ForceMode2D.Impulse);
         }
     }
     public void granadaLanzar()
