@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update   
     void Start()
     {
-        Time.timeScale = 0;//aqui esta congelado el tiempo
+        Time.timeScale = 1;//aqui esta congelado el tiempo
         //esto detiene las fisicas y el juego en general pero no detiene los inputs ni los cambios en el object
     }
 
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    public void Comenzar()
+   /* public void Comenzar()
     {
         mainMenu.SetActive(false);
         Time.timeScale = 1;//aqui vuelve a correr el tiempo
@@ -27,5 +27,5 @@ public class GameManager : MonoBehaviour
     public void cargarNivel()
     {
         SceneManager.LoadScene("parcial 3");
-    }
+    }*/
 }

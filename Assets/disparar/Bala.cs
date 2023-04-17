@@ -7,9 +7,10 @@ public class Bala : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("suelo"))
+        if (collision.gameObject.CompareTag("suelo" ))
         {
             Destroy(gameObject);//destruimos el punto
         }
+        
     }
 }
