@@ -17,7 +17,18 @@ public class Granada : MonoBehaviour
             Instantiate(animationExplosion,transform.position,Quaternion.identity);
             Destroy(gameObject);//destruimos el punto
         }
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            Instantiate(animationExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);//destruimos el punto
+        }
+        if (collision.gameObject.CompareTag("balaMuerte"))
+        {
+            Instantiate(animationExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);//destruimos el punto
+        }
     }
+
     
 
 }

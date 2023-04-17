@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 public class playerControl : MonoBehaviour
-{
+{   
     Rigidbody2D cuerpoPlayer;
     public GameObject bala;
     public float velocidadBala = 10;
