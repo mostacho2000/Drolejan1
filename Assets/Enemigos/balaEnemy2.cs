@@ -6,7 +6,8 @@ public class balaEnemy2 : MonoBehaviour
 {
     public Transform bala_pos;
     public float speed;
-  
+     public float velocidad =100;
+    public Vector2 Fuerza;
 
 
 
@@ -15,7 +16,14 @@ public class balaEnemy2 : MonoBehaviour
     {
         
         bala_pos = GameObject.Find("vikingo").transform;
+        float direccion = Vector2.Distance(transform.position,bala_pos.position);//, speed * Time.deltaTime);
+       Fuerza = new Vector2(-direccion, transform.position.y);
+
+        Fuerza.Normalize();
+        Fuerza *=velocidad;
+        GetComponent<Rigidbody2D>().AddForce(Fuerza);
         Invoke("Destruir_", 4);
+
     }
 
 
@@ -25,9 +33,10 @@ public class balaEnemy2 : MonoBehaviour
         #region
         
         
-            transform.position = Vector2.MoveTowards(transform.position, bala_pos.position, speed * Time.deltaTime);
-        
-       
+            Vector2 direccion  = Vector2.MoveTowards(transform.position, bala_pos.position, speed * Time.deltaTime);
+       // transform.position =new Vector2(direccion.x, transform.position.y);
+
+
         #endregion
         //flip
         #region

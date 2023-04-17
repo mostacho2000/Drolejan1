@@ -12,6 +12,7 @@ public class Enemi_shot : MonoBehaviour
     public Transform Insatncia;
     public GameObject bala;
     private float tiempo;
+    public float Fuerza;
     
     void Start()
     {
@@ -52,7 +53,10 @@ public class Enemi_shot : MonoBehaviour
         tiempo += Time.deltaTime;
         if (tiempo >= 2)
         {
-            Instantiate(bala, Insatncia.position, Quaternion.identity);
+
+            GameObject bullet = Instantiate(bala, Insatncia.position, Quaternion.identity);
+           // bullet.GetComponent<Rigidbody2D>().AddForce(Fuerza);
+                
             tiempo = 0;
         }
         #endregion
