@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+
    /* public void Comenzar()
     {
         mainMenu.SetActive(false);

@@ -13,7 +13,7 @@ public class Puntaje : MonoBehaviour
         textMesh = GetComponent<TextMeshProUGUI>();
     }
 
-    private void Update()
+     void Update()
     {
       
         textMesh.text = puntos.ToString("Puntos: "+ Mathf.RoundToInt(puntos).ToString());

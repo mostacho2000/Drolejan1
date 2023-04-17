@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProyectoFinal.unity
     guid: 937ad8d745d535e4db9b1e61265d99b5
+  - enabled: 1
+    path: Assets/Scenes/GameOver Ricardo.unity
+    guid: c0dbc855c19064b419b3c35593c85f14
   m_configObjects: {}

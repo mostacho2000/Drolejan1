@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class playerControl : MonoBehaviour
 {   
@@ -19,8 +20,11 @@ public class playerControl : MonoBehaviour
     public TextMeshProUGUI textoScore;
     public Transform respawnPoint;//coordenadas demi punto de respawn
     Animator animationPlayer;
+    private int vidas;
+    public GameObject[] Hearts;
     void Start()
     {
+        vidas=Hearts.Length;
         //Obtenemos el componente rigidbody de nuestro objeto
         cuerpoPlayer = GetComponent<Rigidbody2D>();
         saltos = 2;
@@ -77,6 +81,27 @@ public class playerControl : MonoBehaviour
         }
         Shoot();
         granadaLanzar();
+        if (vidas < 1)
+        {
+            Destroy(Hearts[0].gameObject);
+            
+            
+                SceneManager.LoadScene("GameOver Ricardo");
+            
+            
+        }
+        else if(vidas<2)
+        {
+            Destroy(Hearts[1].gameObject);
+        }
+        else if (vidas < 3)
+        {
+            Destroy(Hearts[2].gameObject);
+        }
+    }
+    public void PlayerDamge()
+    {
+        vidas--;
     }
 
     //este bloque se ejecuta cuando colisionamos con "algo"
@@ -89,9 +114,9 @@ public class playerControl : MonoBehaviour
         }
 
         // al chocar con el enemigo hago respawn al punto indicado
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.gameObject.CompareTag("balaMuerte"))
         {
-            transform.position = respawnPoint.position;
+             
         }
         /*if (collision.gameObject.CompareTag("VIctoria"))
         {
