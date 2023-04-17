@@ -6,18 +6,20 @@ public class balaEnemy2 : MonoBehaviour
 {
     public Transform bala_pos;
     public float speed;
-     public float velocidad =100;
-    public Vector2 Fuerza;
+     public float velocidad =200;
+    public Vector2 Fuerza;//esto es direccion
 
 
 
 
     void Start()
     {
-        
+        //bala_pos = GameObject vikingo;
         bala_pos = GameObject.Find("vikingo").transform;
-        float direccion = Vector2.Distance(transform.position,bala_pos.position);//, speed * Time.deltaTime);
-       Fuerza = new Vector2(-direccion, transform.position.y);
+
+
+       Vector2 direccion = transform.position - bala_pos.position;//, speed * Time.deltaTime);
+       Fuerza = new Vector2(-direccion.x, transform.position.y);
 
         Fuerza.Normalize();
         Fuerza *=velocidad;
