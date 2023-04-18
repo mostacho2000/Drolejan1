@@ -14,7 +14,7 @@ public class Granada : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("suelo"))
         {
-            Instantiate(animationExplosion,transform.position,Quaternion.identity);
+            Instantiate(animationExplosion, transform.position, Quaternion.identity);
             Destroy(gameObject);//destruimos el punto
         }
         if (collision.gameObject.CompareTag("enemy"))
@@ -23,6 +23,18 @@ public class Granada : MonoBehaviour
             Destroy(gameObject);//destruimos el punto
         }
         if (collision.gameObject.CompareTag("balaMuerte"))
+        {
+            Instantiate(animationExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);//destruimos el punto
+           
+
+        }
+        if (collision.gameObject.CompareTag("balaBuena"))
+        {
+            Instantiate(animationExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);//destruimos el punto
+        }
+        if (collision.gameObject.CompareTag("granada"))
         {
             Instantiate(animationExplosion, transform.position, Quaternion.identity);
             Destroy(gameObject);//destruimos el punto

@@ -5,11 +5,14 @@ using TMPro;
 
 public class Puntaje : MonoBehaviour
 {
+    GameManager controlador;
     private float puntos;
     private TextMeshProUGUI textMesh;
 
     private void Start()
     {
+        controlador = FindObjectOfType<GameManager>();
+        puntos =controlador.puntos;
         textMesh = GetComponent<TextMeshProUGUI>();
     }
 

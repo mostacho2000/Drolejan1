@@ -62,4 +62,19 @@ public class Enemi_shot : MonoBehaviour
         #endregion
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("balaBuena"))
+        {
+           
+            Destroy(gameObject);//destruimos el punto
+        }
+        if (collision.gameObject.CompareTag("granada"))
+        {
+
+            Destroy(gameObject);//destruimos el punto
+        }
+
+
+    }
 }

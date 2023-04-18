@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8236315283030137715}
   m_Layer: 0
   m_Name: PrefabBala2
-  m_TagString: suelo
+  m_TagString: balaBuena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

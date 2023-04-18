@@ -1049,6 +1049,7 @@ MonoBehaviour:
   puntos: 0
   textoScore: {fileID: 0}
   respawnPoint: {fileID: 0}
+  Hearts: []
 --- !u!70 &375094759
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1323,6 +1324,7 @@ MonoBehaviour:
   distancia_retraso: 6
   Insatncia: {fileID: 211129007}
   bala: {fileID: 7977757559366577888, guid: d04ab38ff690226478182921254d02ec, type: 3}
+  Fuerza: 0
 --- !u!61 &411043189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2227,7 +2229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db929bd7f6d084745b59d1468e8d4cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadPuntos: 5
+  cantidadPuntos: 1
   puntaje: {fileID: 1212129277}
 --- !u!61 &713305426
 BoxCollider2D:
@@ -4596,8 +4598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60bf934e2319b344a12c2c376d17268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
-  musica: {fileID: 0}
+  vidas: 3
+  puntos: 0
+  numGranadas: 3
 --- !u!1 &1633228613
 GameObject:
   m_ObjectHideFlags: 0
@@ -5280,6 +5283,10 @@ MonoBehaviour:
   puntos: 0
   textoScore: {fileID: 0}
   respawnPoint: {fileID: 0}
+  Hearts:
+  - {fileID: 1568998421}
+  - {fileID: 211741465}
+  - {fileID: 1212121417}
 --- !u!70 &1781258420
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -24,7 +24,16 @@ public class Bala : MonoBehaviour
 
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("balaBuena"))
+        {
 
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("granada"))
+        {
+
+            Destroy(gameObject);
+        }
     }
 
    

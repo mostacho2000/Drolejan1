@@ -4,9 +4,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using Unity.VisualScripting;
 
 public class playerControl : MonoBehaviour
-{   
+{
+    GameManager controlador;
     Rigidbody2D cuerpoPlayer;
     public GameObject bala;
     public float velocidadBala = 10;
@@ -16,15 +18,20 @@ public class playerControl : MonoBehaviour
     public float fuerzaBrinco;
     public TimeControler tiempo;
     int saltos;
+   
     public int puntos; //esto tamien se puede y tambien es un variable global, es mejor declarar siempre hasta arriba, pero se puede por que esta acomodado correctamente em la jerarquia de las llaves 
     public TextMeshProUGUI textoScore;
     public Transform respawnPoint;//coordenadas demi punto de respawn
     Animator animationPlayer;
-    private int vidas;
-    public GameObject[] Hearts;
+   
+    public GameObject[] hearts;
+    public GameObject[] granadas;
+
     void Start()
     {
-        vidas=Hearts.Length;
+        controlador=FindObjectOfType<GameManager>();
+        UpdateGranadas();
+        UpdateHearts();
         //Obtenemos el componente rigidbody de nuestro objeto
         cuerpoPlayer = GetComponent<Rigidbody2D>();
         saltos = 2;
@@ -81,31 +88,73 @@ public class playerControl : MonoBehaviour
         }
         Shoot();
         granadaLanzar();
-        if (vidas < 1)
+     
+    }
+     private void UpdateHearts()
+    {
+        if (controlador.vidas==3)
         {
-            Destroy(Hearts[0].gameObject);
-            
-            
-                SceneManager.LoadScene("GameOver Ricardo");
-            
-            
+            hearts[0].gameObject.SetActive(true);
+            hearts[1].gameObject.SetActive(true);
+            hearts[2].gameObject.SetActive(true);
         }
-        else if(vidas<2)
+        else if (controlador.vidas == 2)
         {
-            Destroy(Hearts[1].gameObject);
+            hearts[0].gameObject.SetActive(true);
+            hearts[1].gameObject.SetActive(true);
+            hearts[2].gameObject.SetActive(false);
         }
-        else if (vidas < 3)
+        else if (controlador.vidas == 1)
         {
-            Destroy(Hearts[2].gameObject);
+
+            hearts[0].gameObject.SetActive(true);
+            hearts[1].gameObject.SetActive(false);
+            hearts[2].gameObject.SetActive(false);
+        }
+        else if (controlador.vidas == 0)
+        {
+            
+            SceneManager.LoadScene("GameOver Ricardo");
         }
     }
     public void PlayerDamge()
     {
-        vidas--;
+        controlador.vidas--;
+        UpdateHearts();
+    }
+
+    private void UpdateGranadas()
+    {
+        if (controlador.numGranadas == 3)
+        {
+            granadas[0].gameObject.SetActive(true);
+            granadas[1].gameObject.SetActive(true);
+            granadas[2].gameObject.SetActive(true);
+        }
+        else if (controlador.numGranadas == 2)
+        {
+            granadas[0].gameObject.SetActive(true);
+            granadas[1].gameObject.SetActive(true);
+            granadas[2].gameObject.SetActive(false);
+        }
+        else if (controlador.numGranadas == 1)
+        {
+
+            granadas[0].gameObject.SetActive(true);
+            granadas[1].gameObject.SetActive(false);
+            granadas[2].gameObject.SetActive(false);
+        }
+        else if (controlador.numGranadas <= 0)
+        {
+
+            granadas[0].gameObject.SetActive(false);
+            granadas[1].gameObject.SetActive(false);
+            granadas[2].gameObject.SetActive(false);
+        }
     }
 
     //este bloque se ejecuta cuando colisionamos con "algo"
-     void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("suelo")) 
         {
@@ -116,7 +165,7 @@ public class playerControl : MonoBehaviour
         // al chocar con el enemigo hago respawn al punto indicado
         if (collision.gameObject.CompareTag("balaMuerte"))
         {
-             
+           PlayerDamge();
         }
         /*if (collision.gameObject.CompareTag("VIctoria"))
         {
@@ -135,12 +184,19 @@ public class playerControl : MonoBehaviour
     }
     public void granadaLanzar()
     {
+        if (controlador.numGranadas <=  0)
+        {
+            return;
+        }
         if (Input.GetButtonDown("Fire2") /*&& Time.timeScale > 0*/)
         {
             GameObject tiro = Instantiate(granada, transform.position, Quaternion.identity);
             Rigidbody2D rb = tiro.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector2.right * 10 * transform.localScale.x, ForceMode2D.Impulse);
+            controlador.numGranadas--;
+            UpdateGranadas();
         }
+        
     }
 
     
