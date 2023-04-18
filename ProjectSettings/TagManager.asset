@@ -9,6 +9,7 @@ TagManager:
   - granada
   - balaMuerte
   - balaBuena
+  - Tienda
   layers:
   - Default
   - TransparentFX

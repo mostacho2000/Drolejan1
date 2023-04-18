@@ -18,30 +18,31 @@ public class playerControl : MonoBehaviour
     public float fuerzaBrinco;
     public TimeControler tiempo;
     int saltos;
+    bool Ready;
    
     public int puntos; //esto tamien se puede y tambien es un variable global, es mejor declarar siempre hasta arriba, pero se puede por que esta acomodado correctamente em la jerarquia de las llaves 
     public TextMeshProUGUI textoScore;
     public Transform respawnPoint;//coordenadas demi punto de respawn
     Animator animationPlayer;
-   
-    public GameObject[] hearts;
-    public GameObject[] granadas;
 
-    void Start()
+
+
+    private IEnumerator Start()
     {
-        controlador=FindObjectOfType<GameManager>();
-        UpdateGranadas();
-        UpdateHearts();
+        yield return new WaitForSeconds(0.1f);
+        controlador =FindObjectOfType<GameManager>();
+        
         //Obtenemos el componente rigidbody de nuestro objeto
         cuerpoPlayer = GetComponent<Rigidbody2D>();
         saltos = 2;
         //Obtenemos en componente animator de nuestro pl
         animationPlayer = GetComponent<Animator>();
+        Ready = true;
     }
 
     void Update()
     {
-        if ( Time.timeScale <= 0)
+        if (Time.timeScale <= 0  || Ready == false) 
             return;
         //esto es lo del movimiento
         float posX = Input.GetAxis("Horizontal")*velocidad;
@@ -90,68 +91,7 @@ public class playerControl : MonoBehaviour
         granadaLanzar();
      
     }
-     private void UpdateHearts()
-    {
-        if (controlador.vidas==3)
-        {
-            hearts[0].gameObject.SetActive(true);
-            hearts[1].gameObject.SetActive(true);
-            hearts[2].gameObject.SetActive(true);
-        }
-        else if (controlador.vidas == 2)
-        {
-            hearts[0].gameObject.SetActive(true);
-            hearts[1].gameObject.SetActive(true);
-            hearts[2].gameObject.SetActive(false);
-        }
-        else if (controlador.vidas == 1)
-        {
-
-            hearts[0].gameObject.SetActive(true);
-            hearts[1].gameObject.SetActive(false);
-            hearts[2].gameObject.SetActive(false);
-        }
-        else if (controlador.vidas == 0)
-        {
-            
-            SceneManager.LoadScene("GameOver Ricardo");
-        }
-    }
-    public void PlayerDamge()
-    {
-        controlador.vidas--;
-        UpdateHearts();
-    }
-
-    private void UpdateGranadas()
-    {
-        if (controlador.numGranadas == 3)
-        {
-            granadas[0].gameObject.SetActive(true);
-            granadas[1].gameObject.SetActive(true);
-            granadas[2].gameObject.SetActive(true);
-        }
-        else if (controlador.numGranadas == 2)
-        {
-            granadas[0].gameObject.SetActive(true);
-            granadas[1].gameObject.SetActive(true);
-            granadas[2].gameObject.SetActive(false);
-        }
-        else if (controlador.numGranadas == 1)
-        {
-
-            granadas[0].gameObject.SetActive(true);
-            granadas[1].gameObject.SetActive(false);
-            granadas[2].gameObject.SetActive(false);
-        }
-        else if (controlador.numGranadas <= 0)
-        {
-
-            granadas[0].gameObject.SetActive(false);
-            granadas[1].gameObject.SetActive(false);
-            granadas[2].gameObject.SetActive(false);
-        }
-    }
+    
 
     //este bloque se ejecuta cuando colisionamos con "algo"
     void OnCollisionEnter2D(Collision2D collision)
@@ -165,7 +105,7 @@ public class playerControl : MonoBehaviour
         // al chocar con el enemigo hago respawn al punto indicado
         if (collision.gameObject.CompareTag("balaMuerte"))
         {
-           PlayerDamge();
+            controlador.CambiarVidas();
         }
         /*if (collision.gameObject.CompareTag("VIctoria"))
         {
@@ -193,8 +133,8 @@ public class playerControl : MonoBehaviour
             GameObject tiro = Instantiate(granada, transform.position, Quaternion.identity);
             Rigidbody2D rb = tiro.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector2.right * 10 * transform.localScale.x, ForceMode2D.Impulse);
-            controlador.numGranadas--;
-            UpdateGranadas();
+            //controlador.numGranadas--;
+            controlador.CambiarGranadas();
         }
         
     }

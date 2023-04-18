@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class FajoBillete : MonoBehaviour
 {
+    GameManager controlador;
+    int cantidadPuntos = 1;
 
-    [SerializeField] private float cantidadPuntos;
-    [SerializeField] private Puntaje puntaje;
+    private void Start()
+    {
+        controlador = FindObjectOfType<GameManager>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            puntaje.sunarPuntos(cantidadPuntos);
+            controlador.CambiarPuntos(cantidadPuntos);
             Destroy(gameObject);
         }
     }
