@@ -59,11 +59,11 @@ public class Bala : MonoBehaviour
     {
         if (bala_pos.position.x > this.transform.position.x)
         {
-            this.transform.localScale = new Vector2(1, 1);
+            this.transform.localScale = new Vector2(-1, 1);
         }
         else
         {
-            this.transform.localScale = new Vector2(-1, 1);
+            this.transform.localScale = new Vector2(1, 1);
         }
     }
 

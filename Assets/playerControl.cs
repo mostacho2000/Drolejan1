@@ -24,8 +24,8 @@ public class playerControl : MonoBehaviour
     public TextMeshProUGUI textoScore;
     public Transform respawnPoint;//coordenadas demi punto de respawn
     Animator animationPlayer;
-
-
+    public Transform spawnBalas;
+    public bool bulletCD;
 
     private IEnumerator Start()
     {
@@ -82,7 +82,7 @@ public class playerControl : MonoBehaviour
             //tambien se puede poner asi: saltos--
 
         }
-        if (Input.GetButtonDown("Fire1"))//esto es cuando el tiempo coore se activa sino no se activa
+        if (Input.GetButtonDown("Fire1")&& bulletCD==false)//esto es cuando el tiempo coore se activa sino no se activa
         {
             animationPlayer.SetTrigger("attack");
 
@@ -115,13 +115,22 @@ public class playerControl : MonoBehaviour
     }
     public void Shoot()
     {
-        if (Input.GetButtonDown("Fire1") /*&& Time.timeScale > 0*/)
+        if (Input.GetButtonDown("Fire1") && bulletCD==false)
         {
-            GameObject tiro=Instantiate(bala, transform.position, Quaternion.identity);
+            GameObject tiro=Instantiate(bala, spawnBalas.position, Quaternion.identity);
             Rigidbody2D rb = tiro.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector2.right*10*transform.localScale.x,ForceMode2D.Impulse);
+            StartCoroutine(cooldownBala());
         }
     }
+
+    IEnumerator cooldownBala()
+    {
+        bulletCD = true;
+        yield return new WaitForSeconds(2f);
+        bulletCD = false;
+    }
+
     public void granadaLanzar()
     {
         if (controlador.numGranadas <=  0)
