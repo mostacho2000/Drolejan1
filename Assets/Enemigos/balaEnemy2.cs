@@ -26,6 +26,17 @@ public class balaEnemy2 : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(Fuerza);
         Invoke("Destruir_", 4);
 
+        //flip
+        #region
+        if (bala_pos.position.x > this.transform.position.x)
+        {
+            this.transform.localScale = new Vector2(1, 1);
+        }
+        else
+        {
+            this.transform.localScale = new Vector2(-1, 1);
+        }
+        #endregion
     }
 
 
@@ -40,17 +51,7 @@ public class balaEnemy2 : MonoBehaviour
 
 
         #endregion
-        //flip
-        #region
-        if (bala_pos.position.x > this.transform.position.x)
-        {
-            this.transform.localScale = new Vector2(1, 1);
-        }
-        else
-        {
-            this.transform.localScale = new Vector2(-1, 1);
-        }
-        #endregion
+       
         //disparar
        /* #region
         tiempo += Time.deltaTime;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3531053981363549204}
   - component: {fileID: 2585466709351143687}
   - component: {fileID: 2475086993745674570}
-  - component: {fileID: 8236315283030137715}
+  - component: {fileID: 2718423586560550226}
   m_Layer: 0
   m_Name: PrefabBala2
   m_TagString: balaBuena
@@ -94,11 +94,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8407018710227642160}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2df40c92a94c4140a9fafc0b7336ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bala_pos: {fileID: 0}
+  velocidad: 200
+  Fuerza: {x: 0, y: 0}
 --- !u!50 &2475086993745674570
 Rigidbody2D:
   serializedVersion: 4
@@ -120,8 +123,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!70 &8236315283030137715
-CapsuleCollider2D:
+--- !u!61 &2718423586560550226
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,6 +136,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.275, y: 0.65}
-  m_Direction: 0
+  m_Offset: {x: -0.008599371, y: 0.0042995214}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.65, y: 0.275}
+    newSize: {x: 0.275, y: 0.65}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.63280123, y: 0.18040967}
+  m_EdgeRadius: 0
