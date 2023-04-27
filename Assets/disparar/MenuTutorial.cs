@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class Menuprincipal : MonoBehaviour
+public class MenuTutorial : MonoBehaviour
 {
     public TextMeshProUGUI textoReinciar;
     void Start()
@@ -26,7 +26,7 @@ public class Menuprincipal : MonoBehaviour
 
 
 
-        SceneManager.LoadScene("Menu RICARDO");
+        SceneManager.LoadScene("Tutorial Ricardo");
 
     }
 }

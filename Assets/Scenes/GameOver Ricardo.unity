@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 152279427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 409502959}
+        m_TargetAssemblyTypeName: Menuprincipal, Assembly-CSharp
+        m_MethodName: reiniciarr
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &152279427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +534,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 409502956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32f75f43e6313994cb5cbd6a30109807, type: 3}
+  m_Script: {fileID: 11500000, guid: 0afceaf057befe143856797b1d57f974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textoReinciar: {fileID: 0}
@@ -1061,7 +1073,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 409502959}
-        m_TargetAssemblyTypeName: MandarMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: Menuprincipal, Assembly-CSharp
         m_MethodName: reiniciarr
         m_Mode: 1
         m_Arguments:
