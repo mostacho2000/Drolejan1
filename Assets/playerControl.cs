@@ -111,7 +111,10 @@ public class playerControl : MonoBehaviour
         {
             SceneManager.LoadScene("Winner");
         }*/
-
+        if (collision.gameObject.CompareTag("aguita"))
+        {
+            SceneManager.LoadScene("GameOver Ricardo");
+        }
     }
     public void Shoot()
     {

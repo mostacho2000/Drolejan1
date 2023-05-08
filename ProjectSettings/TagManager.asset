@@ -10,6 +10,8 @@ TagManager:
   - balaMuerte
   - balaBuena
   - Tienda
+  - techo
+  - aguita
   layers:
   - Default
   - TransparentFX
