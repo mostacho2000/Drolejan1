@@ -1490,9 +1490,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1988779707}
-        m_TargetAssemblyTypeName: TPlevel2, Assembly-CSharp
-        m_MethodName: muelle
+      - m_Target: {fileID: 1988779709}
+        m_TargetAssemblyTypeName: TPlevel3, Assembly-CSharp
+        m_MethodName: LVL3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2189,27 +2189,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1988779708}
-  - component: {fileID: 1988779707}
+  - component: {fileID: 1988779709}
   m_Layer: 0
-  m_Name: LVL2
+  m_Name: LVL3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1988779707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1988779706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a90d42ed2c50bd4e923f5d2988a73a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textoReinciar: {fileID: 0}
 --- !u!4 &1988779708
 Transform:
   m_ObjectHideFlags: 0
@@ -2225,6 +2212,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1988779709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988779706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e86387e599595439e5c14ca76b15b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoReinciar: {fileID: 0}
 --- !u!1 &2025487073
 GameObject:
   m_ObjectHideFlags: 0

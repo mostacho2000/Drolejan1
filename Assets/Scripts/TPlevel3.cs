@@ -4,8 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TPlevel2 : MonoBehaviour
+public class TPlevel3 : MonoBehaviour
 {
+    // Start is called before the first frame update
     public TextMeshProUGUI textoReinciar;
     void Start()
     {
@@ -17,7 +18,7 @@ public class TPlevel2 : MonoBehaviour
     {
 
     }
-    public void muelle()//esto se le ayade al boton de restart
+    public void LVL3()//esto se le ayade al boton de restart
     {
 
 
@@ -25,7 +26,7 @@ public class TPlevel2 : MonoBehaviour
 
 
 
-        SceneManager.LoadScene("NivelMuelle");
+        SceneManager.LoadScene("NivelFinal");
 
     }
 }
