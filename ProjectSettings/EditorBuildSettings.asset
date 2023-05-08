@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial Ricardo.unity
     guid: 5e97275d4c90b28498af81de89749f71
+  - enabled: 1
+    path: Assets/Scenes/NivelMuelle.unity
+    guid: a6a5124bcc6907c4890a16cabe96c3e3
   m_configObjects: {}

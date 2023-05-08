@@ -15,13 +15,21 @@ public class GameManager : MonoBehaviour
     public GameObject[] hearts;
     public GameObject[] granadas;
 
+    public static GameManager instancia;
+
     private void Awake()
     {
         GameManager[] curObjectScripts = FindObjectsOfType<GameManager>(true);
         if (curObjectScripts.Length > 1)
             Destroy(gameObject);
         else
+        {
+            instancia = this;
             DontDestroyOnLoad(gameObject);
+        }
+
+
+
     }
 
     private void Start()
@@ -48,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
        puntos+=intercambiarPuntos;
         ActualizarPuntos();
+        Debug.Log("Billetote");
     }
 
     public void UpdateHearts()

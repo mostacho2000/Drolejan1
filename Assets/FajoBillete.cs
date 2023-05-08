@@ -9,14 +9,15 @@ public class FajoBillete : MonoBehaviour
 
     private void Start()
     {
-        controlador = FindObjectOfType<GameManager>();
+        //controlador = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            controlador.CambiarPuntos(cantidadPuntos);
+            GameManager.instancia.CambiarPuntos(1);
+           // controlador.CambiarPuntos(cantidadPuntos);
             Destroy(gameObject);
         }
     }
