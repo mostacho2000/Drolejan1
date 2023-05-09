@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
         }
 
 
-
     }
 
     private void Start()
@@ -82,8 +81,8 @@ public class GameManager : MonoBehaviour
         }
         else if (vidas == 0)
         {
-
-            SceneManager.LoadScene("GameOver Ricardo");
+            GameOverr();
+           
         }
     }
     
@@ -126,6 +125,16 @@ public class GameManager : MonoBehaviour
     {
         
         textMesh.text = puntos.ToString("Puntos: " + Mathf.RoundToInt(puntos).ToString());
+    }
+    public void GameOverr()
+    {
+        vidas = 3;
+        numGranadas = 3;
+        puntos = 0;
+        UpdateGranadas();
+        ActualizarPuntos();
+        UpdateHearts();
+        SceneManager.LoadScene("GameOver Ricardo");
     }
     
 }
