@@ -12,6 +12,7 @@ TagManager:
   - Tienda
   - techo
   - aguita
+  - coin
   layers:
   - Default
   - TransparentFX
