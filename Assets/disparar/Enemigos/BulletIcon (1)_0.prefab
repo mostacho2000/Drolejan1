@@ -138,3 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala_pos: {fileID: 0}
   speed: 10
+  velocidad: 600
+  Fuerza: {x: 0, y: 0}
