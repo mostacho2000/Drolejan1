@@ -26,6 +26,7 @@ public class PlayerPDO : MonoBehaviour
 
     private IEnumerator Start()
     {
+        
         yield return new WaitForSeconds(0.1f);
         controlador = FindObjectOfType<GameManager>();
 
@@ -35,6 +36,11 @@ public class PlayerPDO : MonoBehaviour
         //Obtenemos en componente animator de nuestro pl
         animationPlayer = GetComponent<Animator>();
         Ready = true;
+        
+    }
+    void CongelarJugador()
+    {
+        Debug.Log("jugadorcongelado");
     }
 
     void Update()
@@ -79,6 +85,16 @@ public class PlayerPDO : MonoBehaviour
             //tambien se puede poner asi: saltos--
 
         }
+        if (Input.GetKey(KeyCode.R))
+        {
+            //timerScript.Settimer(10, CongelarJugador);
+
+            //anonimo
+           // timerScript.Settimer(10, delegate () { Debug.Log("anonimo");  });
+
+            //lambda expresion
+            timerScript.Settimer(10, () => { Debug.Log("lambda"); });
+        }
         if (Input.GetButtonDown("Fire1") && bulletCD == false)//esto es cuando el tiempo coore se activa sino no se activa
         {
             animationPlayer.SetTrigger("attack");
@@ -91,28 +107,11 @@ public class PlayerPDO : MonoBehaviour
 
 
     //este bloque se ejecuta cuando colisionamos con "algo"
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.CompareTag("suelo"))
+        if (other.gameObject.tag == "balaMuerte")
         {
-            saltos = 2;//Recargo mis saltos al tocar el suelo
-            animationPlayer.SetBool("ground", true);
-        }
-
-        // al chocar con el enemigo hago respawn al punto indicado
-        if (collision.gameObject.CompareTag("balaMuerte"))
-        {
-            controlador.CambiarVidas();
-        }
-        /*if (collision.gameObject.CompareTag("VIctoria"))
-        {
-            SceneManager.LoadScene("Winner");
-        }*/
-
-        if (collision.gameObject.CompareTag("aguita"))
-        {
-
-            GameManager.instancia.GameOverr();
+            timerScript.addtimer(-2);
         }
     }
     public void Shoot()
@@ -149,8 +148,12 @@ public class PlayerPDO : MonoBehaviour
         }
 
     }
+    [SerializeField] TimerScript timerScript;
 
+    /*void Start()
+    {
 
+    }*/
     /*void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("coin"))
@@ -164,4 +167,11 @@ public class PlayerPDO : MonoBehaviour
       
 
     }*/
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag ==("coin"))
+        {
+            timerScript.addtimer(2);
+        }
+    }
 }

@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
     public float timer = 0;
-    public TMP_Text timertext;
+    public Text timertext;
     public Action timercallback;
     void Start()
     {
