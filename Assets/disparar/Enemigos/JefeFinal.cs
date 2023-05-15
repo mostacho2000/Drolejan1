@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JefeFinal : MonoBehaviour
 {
@@ -17,6 +18,16 @@ public class JefeFinal : MonoBehaviour
     void Update()
     {
         #region
+
+
+
+
+
+
+
+
+
+
         tiempo += Time.deltaTime;
         if (tiempo >= 2)
         {
@@ -45,7 +56,11 @@ public class JefeFinal : MonoBehaviour
         {
 
             Destroy(gameObject);//destruimos el punto
+            SceneManager.LoadScene("Escena Win Ricardo");
         }
+        
+            
+        
 
     }
 }

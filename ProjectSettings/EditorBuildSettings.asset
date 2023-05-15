@@ -26,10 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NivelMuelle.unity
     guid: a6a5124bcc6907c4890a16cabe96c3e3
-  - enabled: 1
-    path: Assets/Scenes/NivelFinal.unity
-    guid: f40696b3b0ba3d8419add63ae19fb4e9
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Tienda2.unity
     guid: 7c13cec24952b784db9c5511e86cc724
+  - enabled: 1
+    path: Assets/Scenes/Escena Win Ricardo.unity
+    guid: 0523ed8bf9fcfa14aad18f885b29502d
   m_configObjects: {}
