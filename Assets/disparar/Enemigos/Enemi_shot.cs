@@ -16,7 +16,7 @@ public class Enemi_shot : MonoBehaviour
     
     void Start()
     {
-        player_pos = GameObject.Find("vikingo").transform;
+        player_pos = GameObject.Find("FinalPlayer").transform;
     }
 
 

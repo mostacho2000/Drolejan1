@@ -7,15 +7,15 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Bala : MonoBehaviour
 {
     public Transform bala_pos;
-    public float velocidad = 200;
+    public float velocidad = 1000;
     public Vector2 Fuerza;
 
 
 
     void Start()
     {
-        //bala_pos = GameObject vikingo;
-        bala_pos = GameObject.Find("vikingo").transform;
+        //bala_pos = GameObject FinalPlayer;
+        bala_pos = GameObject.Find("FinalPlayer").transform;
 
 
         Vector2 direccion = transform.position - bala_pos.position;//, speed * Time.deltaTime);
@@ -50,6 +50,11 @@ public class Bala : MonoBehaviour
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("granada"))
+        {
+
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("techo"))
         {
 
             Destroy(gameObject);

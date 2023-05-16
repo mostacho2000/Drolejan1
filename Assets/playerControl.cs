@@ -82,7 +82,7 @@ public class playerControl : MonoBehaviour
             //tambien se puede poner asi: saltos--
 
         }
-        if (Input.GetButtonDown("Fire1")&& bulletCD==false)//esto es cuando el tiempo coore se activa sino no se activa
+        if (Input.GetButtonDown("Fire1")&& bulletCD==false)//esto es cuando el tiempo corre se activa sino no se activa
         {
             animationPlayer.SetTrigger("attack");
 
@@ -132,7 +132,7 @@ public class playerControl : MonoBehaviour
     IEnumerator cooldownBala()
     {
         bulletCD = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         bulletCD = false;
     }
 

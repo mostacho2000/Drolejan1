@@ -6,7 +6,7 @@ public class balaEnemy2 : MonoBehaviour
 {
     public Transform bala_pos;
     public float speed;
-     public float velocidad =200;
+     public float velocidad =166;
     public Vector2 Fuerza;//esto es direccion
 
 
@@ -15,7 +15,7 @@ public class balaEnemy2 : MonoBehaviour
     void Start()
     {
         //bala_pos = GameObject vikingo;
-        bala_pos = GameObject.Find("vikingo").transform;
+        bala_pos = GameObject.Find("FinalPlayer").transform;
 
 
        Vector2 direccion = transform.position - bala_pos.position;//, speed * Time.deltaTime);
@@ -63,6 +63,7 @@ public class balaEnemy2 : MonoBehaviour
         #endregion*/
 
     }
+
     void Destruir_()
     {
         Destroy(this.gameObject);
@@ -71,4 +72,6 @@ public class balaEnemy2 : MonoBehaviour
     {
         Destruir_();
     }
+    
+    
 }
