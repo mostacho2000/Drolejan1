@@ -22,12 +22,15 @@ public class ControladorTienda : MonoBehaviour
         { 
             return;
         }
-        
-       // controlador.puntos = controlador.puntos - precioGranada; //es lo mismo que abajo
-        controlador.puntos-=precioGranada;
-        controlador.numGranadas++;
-        controlador.UpdateGranadas();//suma granadas
-        controlador.ActualizarPuntos();//actualiza en el UI
+
+        // controlador.puntos = controlador.puntos - precioGranada; //es lo mismo que abajo
+        if (controlador.numGranadas < 3)
+        {
+            controlador.puntos -= precioGranada;
+            controlador.numGranadas++;
+            controlador.UpdateGranadas();//suma granadas
+            controlador.ActualizarPuntos();//actualiza en el UI
+        }
     }
 
     public void ComprarWhyski()
@@ -37,9 +40,12 @@ public class ControladorTienda : MonoBehaviour
             return ; 
         }
 
-        controlador.puntos -= precioWhyski;
-        controlador.vidas++;
-        controlador.UpdateHearts();//suma vidas
-        controlador.ActualizarPuntos();//actualiza en el UI
+        if (controlador.vidas < 3)
+        {
+            controlador.puntos -= precioWhyski;
+            controlador.vidas++;
+            controlador.UpdateHearts();//suma vidas
+            controlador.ActualizarPuntos();//actualiza en el UI
+        }
     }
 }
