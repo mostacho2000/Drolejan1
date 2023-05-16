@@ -87,7 +87,7 @@ public class playerControl : MonoBehaviour
             animationPlayer.SetTrigger("attack");
 
         }
-        Shoot();
+        //Shoot();
         granadaLanzar();
      
     }
@@ -120,8 +120,8 @@ public class playerControl : MonoBehaviour
     }
     public void Shoot()
     {
-        if (Input.GetButtonDown("Fire1") && bulletCD==false)
-        {
+        if (bulletCD==false)
+       {
             GameObject tiro=Instantiate(bala, spawnBalas.position, Quaternion.identity);
             Rigidbody2D rb = tiro.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector2.right*10*transform.localScale.x,ForceMode2D.Impulse);
