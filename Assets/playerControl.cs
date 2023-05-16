@@ -124,7 +124,7 @@ public class playerControl : MonoBehaviour
        {
             GameObject tiro=Instantiate(bala, spawnBalas.position, Quaternion.identity);
             Rigidbody2D rb = tiro.GetComponent<Rigidbody2D>();
-            rb.AddForce(Vector2.right*10*transform.localScale.x,ForceMode2D.Impulse);
+            rb.AddForce(Vector2.right*20*transform.localScale.x,ForceMode2D.Impulse);
             StartCoroutine(cooldownBala());
         }
     }

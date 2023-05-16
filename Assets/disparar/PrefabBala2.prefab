@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bala_pos: {fileID: 0}
-  velocidad: 200
+  velocidad: 300
   Fuerza: {x: 0, y: 0}
 --- !u!50 &2475086993745674570
 Rigidbody2D:
