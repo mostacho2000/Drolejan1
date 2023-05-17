@@ -117,6 +117,11 @@ public class playerControl : MonoBehaviour
 
             GameManager.instancia.GameOverr();
         }
+        if (collision.gameObject.CompareTag("BALAFINAL"))
+        {
+
+            GameManager.instancia.GameOverr();
+        }
     }
     public void Shoot()
     {

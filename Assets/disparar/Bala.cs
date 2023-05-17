@@ -59,8 +59,18 @@ public class Bala : MonoBehaviour
 
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("BALAFINAL"))
+        {
+
+            Destroy(gameObject);
+        }
+
     }
-     void Update()
+    /*private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+    }*/
+    void Update()
     {
         if (bala_pos.position.x > this.transform.position.x)
         {

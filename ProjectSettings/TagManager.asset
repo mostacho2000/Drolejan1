@@ -13,6 +13,7 @@ TagManager:
   - techo
   - aguita
   - coin
+  - BALAFINAL
   layers:
   - Default
   - TransparentFX

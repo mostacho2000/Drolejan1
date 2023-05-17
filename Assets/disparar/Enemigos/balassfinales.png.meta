@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18274f800bcbff54a945607f92d8c437
+guid: ba7104ccd280edc4695e4d1ad3854873
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 11.5
+  spritePixelsToUnits: 6
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss sprite_0
+      name: BulletIcon (1)_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 0
-        width: 107
-        height: 78
+        x: 0
+        y: 48
+        width: 27
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e2124d4013b20045ab0988e6581d346
-      internalID: 526571719
+      spriteID: da0a9c5b488f70a4bab7c198cb72d895
+      internalID: -634798106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss sprite_1
+      name: BulletIcon (1)_1
       rect:
         serializedVersion: 2
-        x: 178
-        y: 0
-        width: 105
-        height: 77
+        x: 0
+        y: 36
+        width: 26
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c075cc7da041d34099ef82a0f299e60
-      internalID: -1957897759
+      spriteID: 93458277e69c7c242b3ec30501adcb91
+      internalID: -1188141047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss sprite_2
+      name: BulletIcon (1)_2
       rect:
         serializedVersion: 2
-        x: 328
-        y: 0
-        width: 105
-        height: 78
+        x: 0
+        y: 12
+        width: 31
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b33e911738f26444ae96841c8fcb976
-      internalID: 237712546
+      spriteID: 8ab7254b521b9274cb94d53ee63a6e10
+      internalID: 2144513439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss sprite_3
+      name: BulletIcon (1)_3
       rect:
         serializedVersion: 2
-        x: 478
+        x: 0
         y: 0
-        width: 105
-        height: 77
+        width: 52
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22d724632fc3f494bbb2ccaf35cd769f
-      internalID: -451484636
+      spriteID: 4bcda3a3f33ab1c458a94ca74604634e
+      internalID: 1489650422
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boss sprite_2: 237712546
-      boss sprite_0: 526571719
-      boss sprite_3: -451484636
-      boss sprite_1: -1957897759
+      BulletIcon (1)_1: -1188141047
+      BulletIcon (1)_3: 1489650422
+      BulletIcon (1)_2: 2144513439
+      BulletIcon (1)_0: -634798106
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
