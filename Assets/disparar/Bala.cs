@@ -64,6 +64,11 @@ public class Bala : MonoBehaviour
 
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("JEFEASESINO"))
+        {
+
+            Destroy(gameObject);
+        }
 
     }
     /*private void OnTriggerEnter2D(Collider2D collision)
