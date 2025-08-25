@@ -26,7 +26,7 @@ public class pelotaBreakout : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             //Inicamos el juego
-            rbBall.velocity = new Vector2(1, 1) * speed;
+            rbBall.linearVelocity = new Vector2(1, 1) * speed;
 
         }
         if (scoreP1 >= 5)

@@ -21,7 +21,7 @@ public class multiShoot : MonoBehaviour
         //Para el movimiento
         movX = Input.GetAxis("Horizontal");
         movY = Input.GetAxis("Vertical");
-        rb.velocity = new Vector2(movX, movY);
+        rb.linearVelocity = new Vector2(movX, movY);
 
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

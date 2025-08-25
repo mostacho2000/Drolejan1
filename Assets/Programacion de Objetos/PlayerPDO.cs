@@ -50,7 +50,7 @@ public class PlayerPDO : MonoBehaviour
         //esto es lo del movimiento
         float posX = Input.GetAxis("Horizontal") * velocidad;
 
-        cuerpoPlayer.velocity = new Vector2(posX, cuerpoPlayer.velocity.y);
+        cuerpoPlayer.linearVelocity = new Vector2(posX, cuerpoPlayer.linearVelocity.y);
         if (posX > 0)
         {
             animationPlayer.SetBool("RUN", true);

@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: f5e9f0b8e1f5b724a8d4d879dab521e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -883600660063578133
+    second: Prota Disparo (1) (1)_0
+  - first:
+      213: -8055002029235179313
+    second: Prota Disparo (1) (1)_1
+  - first:
+      213: 5423260794020498469
+    second: Prota Disparo (1) (1)_2
+  - first:
+      213: -8194098382807414234
+    second: Prota Disparo (1) (1)_3
+  - first:
+      213: 5216854720082546763
+    second: Prota Disparo (1) (1)_4
+  - first:
+      213: 5179007685261850504
+    second: Prota Disparo (1) (1)_5
+  - first:
+      213: 8828574883190091910
+    second: Prota Disparo (1) (1)_6
+  - first:
+      213: 2447722714822205406
+    second: Prota Disparo (1) (1)_7
+  - first:
+      213: 8319519049406611415
+    second: Prota Disparo (1) (1)_8
+  - first:
+      213: -8371449786553653254
+    second: Prota Disparo (1) (1)_9
+  - first:
+      213: -2722714279630085571
+    second: Prota Disparo (1) (1)_10
+  - first:
+      213: -9174103841052776047
+    second: Prota Disparo (1) (1)_11
+  - first:
+      213: 9165648655353604564
+    second: Prota Disparo (1) (1)_12
+  - first:
+      213: -4055831126956340729
+    second: Prota Disparo (1) (1)_13
+  - first:
+      213: 7792826569707369937
+    second: Prota Disparo (1) (1)_14
+  - first:
+      213: -5300762900281398819
+    second: Prota Disparo (1) (1)_15
+  - first:
+      213: -4840379843660533828
+    second: Prota Disparo (1) (1)_16
+  - first:
+      213: -8483435899693491079
+    second: Prota Disparo (1) (1)_17
+  - first:
+      213: -7737919955428852049
+    second: Prota Disparo (1) (1)_18
+  - first:
+      213: 8640719292033066767
+    second: Prota Disparo (1) (1)_19
+  - first:
+      213: -3587545310616530228
+    second: Prota Disparo (1) (1)_20
+  - first:
+      213: 7468754858202875518
+    second: Prota Disparo (1) (1)_21
+  - first:
+      213: -5335784010908073243
+    second: Prota Disparo (1) (1)_22
+  - first:
+      213: 8652429932431214736
+    second: Prota Disparo (1) (1)_23
+  - first:
+      213: 2527165912696467918
+    second: Prota Disparo (1) (1)_24
+  - first:
+      213: 8717366256965761839
+    second: Prota Disparo (1) (1)_25
+  - first:
+      213: 9106599781095525036
+    second: Prota Disparo (1) (1)_26
+  - first:
+      213: 6418725849189697528
+    second: Prota Disparo (1) (1)_27
+  - first:
+      213: -94136335910915909
+    second: Prota Disparo (1) (1)_28
+  - first:
+      213: 2989190083125125105
+    second: Prota Disparo (1) (1)_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_0
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 3382
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be71c9591e1dcb3f0800000000000000
+      internalID: -883600660063578133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2635
+        width: 387
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc0f266e452e63090800000000000000
+      internalID: -8055002029235179313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_2
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 2635
+        width: 427
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c05ef55fa434b40800000000000000
+      internalID: 5423260794020498469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_3
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 2635
+        width: 467
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a492e5fe6b84e80800000000000000
+      internalID: -8194098382807414234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_4
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1785
+        width: 566
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4017535abdf56840800000000000000
+      internalID: 5216854720082546763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_5
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 1785
+        width: 467
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887fc09dc088fd740800000000000000
+      internalID: 5179007685261850504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_6
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1779
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6803b799416658a70800000000000000
+      internalID: 8828574883190091910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_7
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 1785
+        width: 467
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edfd1ad27de08f120800000000000000
+      internalID: 2447722714822205406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_8
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 1779
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dff9f92f7ed47370800000000000000
+      internalID: 8319519049406611415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_9
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1772
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af72371e5c2a2db80800000000000000
+      internalID: -8371449786553653254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_10
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1772
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32e3c9c9c9f63ad0800000000000000
+      internalID: -2722714279630085571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_11
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 1772
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 199a08db9290fa080800000000000000
+      internalID: -9174103841052776047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_12
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 1772
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9636ee3ece23f70800000000000000
+      internalID: 9165648655353604564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_13
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 1772
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a8bc8241bc6b7c0800000000000000
+      internalID: -4055831126956340729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_14
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 1772
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d532ab1a7ea52c60800000000000000
+      internalID: 7792826569707369937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_15
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1752
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd968221a38ef66b0800000000000000
+      internalID: -5300762900281398819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_16
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 1752
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf27a87d2483dcb0800000000000000
+      internalID: -4840379843660533828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_17
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 935
+        width: 440
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97c19f31ff7c44a80800000000000000
+      internalID: -8483435899693491079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_18
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 935
+        width: 467
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faeb14c3cc26d9490800000000000000
+      internalID: -7737919955428852049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_19
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 935
+        width: 500
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f07ee756a600ae770800000000000000
+      internalID: 8640719292033066767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_20
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 85
+        width: 467
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc255113c8a763ec0800000000000000
+      internalID: -3587545310616530228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_21
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 79
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e76c7ade8f856a760800000000000000
+      internalID: 7468754858202875518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_22
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 85
+        width: 467
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e28d9756bc73f5b0800000000000000
+      internalID: -5335784010908073243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_23
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 79
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09805865e2b931870800000000000000
+      internalID: 8652429932431214736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_24
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 65
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec1bfb2120c421320800000000000000
+      internalID: 2527165912696467918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_25
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 59
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2bbb639c6e4af870800000000000000
+      internalID: 8717366256965761839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_26
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 65
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa49d78044216e70800000000000000
+      internalID: 9106599781095525036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_27
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 65
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f7c197e625e31950800000000000000
+      internalID: 6418725849189697528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_28
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 59
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0b291508f81bef0800000000000000
+      internalID: -94136335910915909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prota Disparo (1) (1)_29
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 65
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff1bce0b8cbb7920800000000000000
+      internalID: 2989190083125125105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Prota Disparo (1) (1)_0: -883600660063578133
+      Prota Disparo (1) (1)_1: -8055002029235179313
+      Prota Disparo (1) (1)_10: -2722714279630085571
+      Prota Disparo (1) (1)_11: -9174103841052776047
+      Prota Disparo (1) (1)_12: 9165648655353604564
+      Prota Disparo (1) (1)_13: -4055831126956340729
+      Prota Disparo (1) (1)_14: 7792826569707369937
+      Prota Disparo (1) (1)_15: -5300762900281398819
+      Prota Disparo (1) (1)_16: -4840379843660533828
+      Prota Disparo (1) (1)_17: -8483435899693491079
+      Prota Disparo (1) (1)_18: -7737919955428852049
+      Prota Disparo (1) (1)_19: 8640719292033066767
+      Prota Disparo (1) (1)_2: 5423260794020498469
+      Prota Disparo (1) (1)_20: -3587545310616530228
+      Prota Disparo (1) (1)_21: 7468754858202875518
+      Prota Disparo (1) (1)_22: -5335784010908073243
+      Prota Disparo (1) (1)_23: 8652429932431214736
+      Prota Disparo (1) (1)_24: 2527165912696467918
+      Prota Disparo (1) (1)_25: 8717366256965761839
+      Prota Disparo (1) (1)_26: 9106599781095525036
+      Prota Disparo (1) (1)_27: 6418725849189697528
+      Prota Disparo (1) (1)_28: -94136335910915909
+      Prota Disparo (1) (1)_29: 2989190083125125105
+      Prota Disparo (1) (1)_3: -8194098382807414234
+      Prota Disparo (1) (1)_4: 5216854720082546763
+      Prota Disparo (1) (1)_5: 5179007685261850504
+      Prota Disparo (1) (1)_6: 8828574883190091910
+      Prota Disparo (1) (1)_7: 2447722714822205406
+      Prota Disparo (1) (1)_8: 8319519049406611415
+      Prota Disparo (1) (1)_9: -8371449786553653254
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
