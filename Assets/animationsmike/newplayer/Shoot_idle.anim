@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fire
+  m_Name: Shoot_idle
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -22,11 +22,11 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 4972959121360458042, guid: 582a98c94f5914a4299f42ec680d130d, type: 3}
-    - time: 0.13333334
+    - time: 0.16666667
       value: {fileID: -4781091000412157592, guid: 582a98c94f5914a4299f42ec680d130d, type: 3}
-    - time: 0.23333333
+    - time: 0.31666666
       value: {fileID: 1067825149565148103, guid: 582a98c94f5914a4299f42ec680d130d, type: 3}
-    - time: 0.36666667
+    - time: 0.48333332
       value: {fileID: -7746088312553177052, guid: 582a98c94f5914a4299f42ec680d130d, type: 3}
     attribute: m_Sprite
     path: 
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.38333336
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
