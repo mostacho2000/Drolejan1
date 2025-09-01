@@ -15,7 +15,7 @@ public class balaEnemy2 : MonoBehaviour
     void Start()
     {
         //bala_pos = GameObject vikingo;
-        bala_pos = GameObject.Find("FinalPlayer").transform;
+        bala_pos = GameObject.Find("Player3").transform;
 
 
        Vector2 direccion = transform.position - bala_pos.position;//, speed * Time.deltaTime);
