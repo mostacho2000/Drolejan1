@@ -15,6 +15,7 @@ TagManager:
   - coin
   - BALAFINAL
   - JEFEASESINO
+  - Player1
   layers:
   - Default
   - TransparentFX
