@@ -1,0 +1,1326 @@
+fileFormatVersion: 2
+guid: ed30aa7aca657004fb6438a73f3c16a9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3366895443145949333
+    second: Muerte_Arma1_0
+  - first:
+      213: 5956177363810822527
+    second: Muerte_Arma1_1
+  - first:
+      213: -5052063328694130674
+    second: Muerte_Arma1_2
+  - first:
+      213: 1660084732292159083
+    second: Muerte_Arma1_3
+  - first:
+      213: -3359008537985049052
+    second: Muerte_Arma1_4
+  - first:
+      213: 1207193053712806487
+    second: Muerte_Arma1_5
+  - first:
+      213: -140499626408157089
+    second: Muerte_Arma1_6
+  - first:
+      213: 2954885610198464982
+    second: Muerte_Arma1_7
+  - first:
+      213: -5415877138611467116
+    second: Muerte_Arma1_8
+  - first:
+      213: -5588744737229010107
+    second: Muerte_Arma1_9
+  - first:
+      213: 5839329677359617228
+    second: Muerte_Arma1_10
+  - first:
+      213: 8256152483134505778
+    second: Muerte_Arma1_11
+  - first:
+      213: 7652241721735043291
+    second: Muerte_Arma1_12
+  - first:
+      213: -5210105759143631656
+    second: Muerte_Arma1_13
+  - first:
+      213: 308526436637648624
+    second: Muerte_Arma1_14
+  - first:
+      213: 4341627631390808145
+    second: Muerte_Arma1_15
+  - first:
+      213: 8065278579526732500
+    second: Muerte_Arma1_16
+  - first:
+      213: 8874898017275790829
+    second: Muerte_Arma1_17
+  - first:
+      213: -4526373401931648283
+    second: Muerte_Arma1_18
+  - first:
+      213: -8209421843551261020
+    second: Muerte_Arma1_19
+  - first:
+      213: -5421910137091122228
+    second: Muerte_Arma1_20
+  - first:
+      213: 4192101749262941966
+    second: Muerte_Arma1_21
+  - first:
+      213: 6368782973904359406
+    second: Muerte_Arma1_22
+  - first:
+      213: -5216967310801103060
+    second: Muerte_Arma1_23
+  - first:
+      213: 4450157240080710227
+    second: Muerte_Arma1_24
+  - first:
+      213: -6478233579116895713
+    second: Muerte_Arma1_25
+  - first:
+      213: -7397758196139816215
+    second: Muerte_Arma1_26
+  - first:
+      213: -3588648296650621542
+    second: Muerte_Arma1_27
+  - first:
+      213: 1038757974898849237
+    second: Muerte_Arma1_28
+  - first:
+      213: -5127941846690269243
+    second: Muerte_Arma1_29
+  - first:
+      213: -8644122576392729916
+    second: Muerte_Arma1_30
+  - first:
+      213: -2577521087723372300
+    second: Muerte_Arma1_31
+  - first:
+      213: 1454687422932538804
+    second: Muerte_Arma1_32
+  - first:
+      213: -3788766847863807326
+    second: Muerte_Arma1_33
+  - first:
+      213: -360675409820402696
+    second: Muerte_Arma1_34
+  - first:
+      213: -1246570406220888707
+    second: Muerte_Arma1_35
+  - first:
+      213: 7331995037210331290
+    second: Muerte_Arma1_36
+  - first:
+      213: -8849300992876728695
+    second: Muerte_Arma1_37
+  - first:
+      213: -3354903118058051492
+    second: Muerte_Arma1_38
+  - first:
+      213: -316039804030429894
+    second: Muerte_Arma1_39
+  - first:
+      213: -3949710192065154005
+    second: Muerte_Arma1_40
+  - first:
+      213: -1372565920239278662
+    second: Muerte_Arma1_41
+  - first:
+      213: -4931490843865056046
+    second: Muerte_Arma1_42
+  - first:
+      213: -825339436204970272
+    second: Muerte_Arma1_43
+  - first:
+      213: -780477543933960369
+    second: Muerte_Arma1_44
+  - first:
+      213: 4788008305354284638
+    second: Muerte_Arma1_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 9
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Muerte_Arma1_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5908894219d99be20800000000000000
+      internalID: 3366895443145949333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f79aa2551c798a250800000000000000
+      internalID: 5956177363810822527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08a8666b2773e9b0800000000000000
+      internalID: -5052063328694130674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b66d25db44ec90710800000000000000
+      internalID: 1660084732292159083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e95ef08876261d0800000000000000
+      internalID: -3359008537985049052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752fed5bfafc0c010800000000000000
+      internalID: 1207193053712806487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50eddc8558dc0ef0800000000000000
+      internalID: -140499626408157089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_7
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9facb8eccd10920800000000000000
+      internalID: 2954885610198464982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c87eddf60f6d4b0800000000000000
+      internalID: -5415877138611467116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_9
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b812d954ac072b0800000000000000
+      internalID: -5588744737229010107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_10
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc49a694767790150800000000000000
+      internalID: 5839329677359617228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_11
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23301b0c0feb39270800000000000000
+      internalID: 8256152483134505778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_12
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8d0777d49323a60800000000000000
+      internalID: 7652241721735043291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_13
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4e6089a6cf1b7b0800000000000000
+      internalID: -5210105759143631656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_14
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f6aa93d82b184400800000000000000
+      internalID: 308526436637648624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_15
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 1
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 158d11ce35f804c30800000000000000
+      internalID: 4341627631390808145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_16
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 40
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da024be220adef60800000000000000
+      internalID: 8065278579526732500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_17
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 41
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de5ca89b9b8f92b70800000000000000
+      internalID: 8874898017275790829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_18
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 47
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e276196f571f21c0800000000000000
+      internalID: -4526373401931648283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_19
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 43
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae6bc32456421e80800000000000000
+      internalID: -8209421843551261020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_20
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 34
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb1892f47181c4b0800000000000000
+      internalID: -5421910137091122228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_21
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 40
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f7c1b84565d2a30800000000000000
+      internalID: 4192101749262941966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_22
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 41
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef002b1f56726850800000000000000
+      internalID: 6368782973904359406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_23
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 47
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2710ea1fdb9997b0800000000000000
+      internalID: -5216967310801103060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_24
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 43
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35ab4a19e6222cd30800000000000000
+      internalID: 4450157240080710227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_25
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 34
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f12eab802e0b816a0800000000000000
+      internalID: -6478233579116895713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_26
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea0ad89d12e55990800000000000000
+      internalID: -7397758196139816215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_27
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 1
+        width: 218
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d345e336f823ec0800000000000000
+      internalID: -3588648296650621542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_28
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 16
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d53375efd86a6e00800000000000000
+      internalID: 1038757974898849237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_29
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 22
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c77a273f04e5d8b0800000000000000
+      internalID: -5127941846690269243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_30
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 20
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca4d27b058e90880800000000000000
+      internalID: -8644122576392729916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_31
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 29
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f08b2d1a3eca3cd0800000000000000
+      internalID: -2577521087723372300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_32
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 25
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b55f1ff086103410800000000000000
+      internalID: 1454687422932538804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_33
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 10
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a22d4820a89b6bc0800000000000000
+      internalID: -3788766847863807326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_34
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 1
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fbbf6e20af9efaf0800000000000000
+      internalID: -360675409820402696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_35
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 4
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7580b5f1da43bee0800000000000000
+      internalID: -1246570406220888707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_36
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 15
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9849d7c3aa70c560800000000000000
+      internalID: 7331995037210331290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_37
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 10
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e2211f1a7f03580800000000000000
+      internalID: -8849300992876728695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_38
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 5
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58ac40a36df071d0800000000000000
+      internalID: -3354903118058051492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_39
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35d1e109733d9bf0800000000000000
+      internalID: -316039804030429894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_40
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 16
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24773cb18fcf29c0800000000000000
+      internalID: -3949710192065154005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_41
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 11
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5a455519aa3fce0800000000000000
+      internalID: -1372565920239278662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_42
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 16
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dcf456a433df8bb0800000000000000
+      internalID: -4931490843865056046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_43
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 10
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eea1e5d72ecb84f0800000000000000
+      internalID: -825339436204970272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_44
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 1
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4f95a61fcf2b25f0800000000000000
+      internalID: -780477543933960369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Arma1_45
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 1
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e134e8f2c627240800000000000000
+      internalID: 4788008305354284638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Muerte_Arma1_0: 3366895443145949333
+      Muerte_Arma1_1: 5956177363810822527
+      Muerte_Arma1_10: 5839329677359617228
+      Muerte_Arma1_11: 8256152483134505778
+      Muerte_Arma1_12: 7652241721735043291
+      Muerte_Arma1_13: -5210105759143631656
+      Muerte_Arma1_14: 308526436637648624
+      Muerte_Arma1_15: 4341627631390808145
+      Muerte_Arma1_16: 8065278579526732500
+      Muerte_Arma1_17: 8874898017275790829
+      Muerte_Arma1_18: -4526373401931648283
+      Muerte_Arma1_19: -8209421843551261020
+      Muerte_Arma1_2: -5052063328694130674
+      Muerte_Arma1_20: -5421910137091122228
+      Muerte_Arma1_21: 4192101749262941966
+      Muerte_Arma1_22: 6368782973904359406
+      Muerte_Arma1_23: -5216967310801103060
+      Muerte_Arma1_24: 4450157240080710227
+      Muerte_Arma1_25: -6478233579116895713
+      Muerte_Arma1_26: -7397758196139816215
+      Muerte_Arma1_27: -3588648296650621542
+      Muerte_Arma1_28: 1038757974898849237
+      Muerte_Arma1_29: -5127941846690269243
+      Muerte_Arma1_3: 1660084732292159083
+      Muerte_Arma1_30: -8644122576392729916
+      Muerte_Arma1_31: -2577521087723372300
+      Muerte_Arma1_32: 1454687422932538804
+      Muerte_Arma1_33: -3788766847863807326
+      Muerte_Arma1_34: -360675409820402696
+      Muerte_Arma1_35: -1246570406220888707
+      Muerte_Arma1_36: 7331995037210331290
+      Muerte_Arma1_37: -8849300992876728695
+      Muerte_Arma1_38: -3354903118058051492
+      Muerte_Arma1_39: -316039804030429894
+      Muerte_Arma1_4: -3359008537985049052
+      Muerte_Arma1_40: -3949710192065154005
+      Muerte_Arma1_41: -1372565920239278662
+      Muerte_Arma1_42: -4931490843865056046
+      Muerte_Arma1_43: -825339436204970272
+      Muerte_Arma1_44: -780477543933960369
+      Muerte_Arma1_45: 4788008305354284638
+      Muerte_Arma1_5: 1207193053712806487
+      Muerte_Arma1_6: -140499626408157089
+      Muerte_Arma1_7: 2954885610198464982
+      Muerte_Arma1_8: -5415877138611467116
+      Muerte_Arma1_9: -5588744737229010107
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

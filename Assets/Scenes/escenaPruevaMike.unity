@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 52955706}
   - component: {fileID: 52955705}
   - component: {fileID: 52955707}
+  - component: {fileID: 52955708}
   m_Layer: 0
   m_Name: Player3
   m_TagString: Player1
@@ -150,12 +151,13 @@ Transform:
   m_GameObject: {fileID: 52955700}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -58.29, y: 2.86, z: 0}
+  m_LocalPosition: {x: -58.29, y: 2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1729458217}
   - {fileID: 539493018}
+  - {fileID: 1410732559}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &52955702
@@ -192,8 +194,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3.6, y: 6.4}
+  m_Offset: {x: -0.5484661, y: 0}
+  m_Size: {x: 2.5030677, y: 5.0691996}
   m_Direction: 0
 --- !u!50 &52955703
 Rigidbody2D:
@@ -269,7 +271,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1934504547545714475, guid: 2012dac22e045a549a3f2cce273d2588, type: 3}
+  m_Sprite: {fileID: 1011980208300379386, guid: 6e7304466b5bdd740871095508104cb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -363,6 +365,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 12d24f10-ec86-4174-9a18-e7afc9d374d0
     m_ActionName: 'Gameplay/Fire[/Mouse/leftButton,/XInputControllerWindows/rightTrigger]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c772fb15-0480-43e1-9b2b-6b1d2ed3aea2
+    m_ActionName: 'Gameplay/Grenade[/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -390,6 +396,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &52955708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52955700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d35156549117594bacf8d4d328de006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerGrenade2D
+  grenadeRef: {fileID: -1141641612530345312, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
+  throwPoint: {fileID: 1410732559}
+  grenadePrefab: {fileID: 2605400469797978269, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+  throwForce: 10
+  upwardForce: 6
+  cooldown: 0.6
+  grenades: 3
+  sr: {fileID: 0}
 --- !u!1 &539493017
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +441,7 @@ Transform:
   m_GameObject: {fileID: 539493017}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.01, y: 0.79, z: 0}
+  m_LocalPosition: {x: 1.58, y: -0.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -557,6 +583,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1410732558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410732559}
+  m_Layer: 0
+  m_Name: pointgranade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1410732559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410732558}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 52955701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1454830055
 PrefabInstance:
@@ -752,12 +809,100 @@ Transform:
   m_GameObject: {fileID: 1729458216}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.91, z: 0}
+  m_LocalPosition: {x: -0.57, y: -2.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 52955701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5526951747014977519
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4535329510098820136, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_Name
+      value: Grenade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -53.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4535329510098820136, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5526951747014977521}
+  m_SourcePrefab: {fileID: 100100000, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+--- !u!1 &5526951747014977520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4535329510098820136, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+  m_PrefabInstance: {fileID: 5526951747014977519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5526951747014977521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526951747014977520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df8282c0cf907f41892070c4e27a8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Grenade2D
+  fuseTime: 2
+  maxBounces: 3
+  explodeOnEnemyHit: 0
+  explosionRadius: 2.5
+  explosionForce: 14.4
+  damage: 2
+  damageMask:
+    serializedVersion: 2
+    m_Bits: 0
+  explosionFX: {fileID: 0}
+  drawRadius: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -766,3 +911,4 @@ SceneRoots:
   - {fileID: 847058260}
   - {fileID: 52955701}
   - {fileID: 1454830055}
+  - {fileID: 5526951747014977519}
