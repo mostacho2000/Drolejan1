@@ -297,33 +297,31 @@ MonoBehaviour:
   moveRef: {fileID: 1549109245299231487, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
   jumpRef: {fileID: -437757540520741222, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
   fireRef: {fileID: 5565242490628257078, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
-  moveSpeed: 8
-  acceleration: 60
-  deceleration: 70
-  inputDeadzone: 0.2
-  jumpForce: 9
+  moveSpeed: 10
+  acceleration: 80
+  deceleration: 60
+  inputDeadzone: 0.25
+  jumpForce: 10
   jumpCutMultiplier: 1
   groundCheck: {fileID: 1729458217}
   groundCheckRadius: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  coyoteTime: 0.1
-  jumpBuffer: 0.1
+  coyoteTime: 0.15
+  jumpBuffer: 0.15
   maxJumps: 2
   secondJumpMultiplier: 0.85
   firePoint: {fileID: 539493018}
   bulletPrefab: {fileID: 8265689518021450880, guid: 414b868d93d8b614097895a2c4d2742c, type: 3}
   fireRate: 10
   autoFire: 0
+  anim: {fileID: 52955707}
   animSpeedThreshold: 0.2
   dbgMoveInput: 0
   dbgLinearVel: {x: 0, y: 0}
   dbgIsGrounded: 0
   dbgJumpCount: 0
-  dbgHasMoveAction: 0
-  dbgHasJumpAction: 0
-  dbgHasFireAction: 0
 --- !u!114 &52955706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +439,7 @@ Transform:
   m_GameObject: {fileID: 539493017}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.58, y: -0.84, z: 0}
+  m_LocalPosition: {x: -0.58, y: -0.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -815,94 +813,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 52955701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5526951747014977519
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4535329510098820136, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_Name
-      value: Grenade
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -53.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179370693972148128, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4535329510098820136, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5526951747014977521}
-  m_SourcePrefab: {fileID: 100100000, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
---- !u!1 &5526951747014977520 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4535329510098820136, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
-  m_PrefabInstance: {fileID: 5526951747014977519}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5526951747014977521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526951747014977520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7df8282c0cf907f41892070c4e27a8e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Grenade2D
-  fuseTime: 2
-  maxBounces: 3
-  explodeOnEnemyHit: 0
-  explosionRadius: 2.5
-  explosionForce: 14.4
-  damage: 2
-  damageMask:
-    serializedVersion: 2
-    m_Bits: 0
-  explosionFX: {fileID: 0}
-  drawRadius: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -911,4 +821,3 @@ SceneRoots:
   - {fileID: 847058260}
   - {fileID: 52955701}
   - {fileID: 1454830055}
-  - {fileID: 5526951747014977519}
