@@ -166,8 +166,9 @@ public class PlayerController2D : MonoBehaviour
                 Fire();
 
                 // Si estás en suelo, dispara el Trigger "Shoot" para mostrar el fogonazo
-                if (isGrounded && anim && hasShootParam)
-                    anim.SetTrigger(HASH_SHOOT);
+               if (anim && hasShootParam)
+                     anim.SetTrigger(HASH_SHOOT);
+
             }
         }
 
