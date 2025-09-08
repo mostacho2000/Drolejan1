@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "Pausa",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "82542c1e-7905-4185-aca5-c5123346c24d",
+            "actions": [
+                {
+                    "name": "Pausar",
+                    "type": "Button",
+                    "id": "1c644ba2-a323-46fb-ab4f-1df741996efe",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bad18d31-1a61-469e-b792-b62285ba08da",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pausar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
