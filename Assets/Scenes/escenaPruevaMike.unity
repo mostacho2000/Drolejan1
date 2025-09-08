@@ -270,7 +270,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1011980208300379386, guid: 6e7304466b5bdd740871095508104cb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -314,7 +314,7 @@ MonoBehaviour:
   secondJumpMultiplier: 0.85
   firePoint: {fileID: 539493018}
   bulletPrefab: {fileID: 8265689518021450880, guid: 414b868d93d8b614097895a2c4d2742c, type: 3}
-  fireRate: 10
+  fireRate: 0.3333333
   autoFire: 0
   anim: {fileID: 52955707}
   animSpeedThreshold: 0.2
