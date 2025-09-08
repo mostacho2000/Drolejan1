@@ -23,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NivelMuelle.unity
     guid: a6a5124bcc6907c4890a16cabe96c3e3
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Tienda2.unity
     guid: 7c13cec24952b784db9c5511e86cc724
@@ -35,4 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NivelFinal.unity
     guid: 9f6b41fe37c560049b5278ed8ce2de26
+  - enabled: 1
+    path: Assets/Scenes/escenaPruevaMike.unity
+    guid: ed36d19903ec7b1488bec9d989070336
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
