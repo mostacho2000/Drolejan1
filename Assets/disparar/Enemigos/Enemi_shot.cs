@@ -109,7 +109,7 @@ public class Enemi_shot : MonoBehaviour
     void Disparar()
     {
         tiempoDisparo += Time.deltaTime;
-        if (tiempoDisparo >= 2f)
+        if (tiempoDisparo >= 1f)
         {
             GameObject bullet = Instantiate(bala, Insatncia.position, Quaternion.identity);
             // Puedes agregar fuerza a la bala aquí si lo necesitas
