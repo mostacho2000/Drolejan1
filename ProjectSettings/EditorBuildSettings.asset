@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PruebaCharly.unity
     guid: 375f883fb73b21846bdc8539e6cd419c
   - enabled: 1
+    path: Assets/Scenes/Vendedor Ricardo 1.unity
+    guid: 241c278c3864cd942bc8790c373a1b6b
+  - enabled: 1
     path: Assets/Scenes/SelectorDeNiveles.unity
     guid: ca21dbcd102e1c44eaa7341b00e02ddf
   m_configObjects: {}

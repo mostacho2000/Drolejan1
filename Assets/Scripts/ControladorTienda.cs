@@ -1,51 +1,81 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ControladorTienda : MonoBehaviour
 {
-    int precioWhyski = 1;
-    int precioGranada = 1;
-    GameManager controlador;
-    private IEnumerator Start()
-    {
-        yield return new WaitForSeconds(0.1f);
-        controlador = FindObjectOfType<GameManager>();
+    [Header("Precios")]
+    [SerializeField] private int precioWhisky = 1;
+    [SerializeField] private int precioGranada = 1;
 
+    [Header("Refs")]
+    [SerializeField] private GameManager controlador;   // lo resolvemos en EnsureGM()
+
+    [Header("UI opcional")]
+    [SerializeField] private Button btnWhisky;
+    [SerializeField] private Button btnGranada;
+    [SerializeField] private TMP_Text txtPrecioWhisky;
+    [SerializeField] private TMP_Text txtPrecioGranada;
+
+    private void Awake()
+    {
+        EnsureGM();
     }
 
-    // private void Start() => controlador = FindObjectOfType<GameManager>();//wato wa lo mismo que arriba 
+    private void OnEnable()
+    {
+        EnsureGM();
+        // Si el GM re-enlazó el HUD de esta escena, refrescamos para que los botones queden bien
+        RefreshButtons();
+        // Precios visibles opcionalmente
+        if (txtPrecioWhisky)  txtPrecioWhisky.text  = $"${precioWhisky}";
+        if (txtPrecioGranada) txtPrecioGranada.text = $"${precioGranada}";
+    }
+
+    private void EnsureGM()
+    {
+        if (!controlador) controlador = GameManager.instancia;
+#if UNITY_2023_1_OR_NEWER
+        if (!controlador) controlador = Object.FindFirstObjectByType<GameManager>();
+#else
+        if (!controlador) controlador = FindObjectOfType<GameManager>();
+#endif
+        if (!controlador)
+            Debug.LogError("[TIENDA] No encontré GameManager. ¿Seguro que existe uno persistente?");
+        else
+            Debug.Log($"[TIENDA] GM ok. Pts={controlador.puntos}  Vida={controlador.vidas}/{controlador.vidasMax}  Gren={controlador.numGranadas}/{controlador.numGranadasMax}");
+    }
+
+    private void RefreshButtons()
+    {
+        if (!controlador) return;
+        if (btnWhisky)  btnWhisky.interactable  = controlador.puntos >= precioWhisky  && controlador.vidas       < controlador.vidasMax;
+        if (btnGranada) btnGranada.interactable = controlador.puntos >= precioGranada && controlador.numGranadas < controlador.numGranadasMax;
+    }
+
+    public void ComprarWhisky()
+    {
+        EnsureGM();
+        Debug.Log($"[TIENDA] Click ComprarWhisky  Pts={controlador?.puntos} Vida={controlador?.vidas}/{controlador?.vidasMax}");
+        if (!controlador) return;
+        if (controlador.puntos < precioWhisky) { Debug.Log("[TIENDA] No alcanza dinero"); return; }
+        if (controlador.vidas >= controlador.vidasMax) { Debug.Log("[TIENDA] Ya en máximo de vidas"); return; }
+
+        controlador.CambiarPuntos(-precioWhisky);
+        controlador.CambiarVidas(+1);
+        RefreshButtons();
+    }
 
     public void ComprarGranada()
     {
-        if (controlador.puntos<=0)
-        { 
-            return;
-        }
+        EnsureGM();
+        Debug.Log($"[TIENDA] Click ComprarGranada  Pts={controlador?.puntos} Gren={controlador?.numGranadas}/{controlador?.numGranadasMax}");
+        if (!controlador) return;
+        if (controlador.puntos < precioGranada) { Debug.Log("[TIENDA] No alcanza dinero"); return; }
+        if (controlador.numGranadas >= controlador.numGranadasMax) { Debug.Log("[TIENDA] Ya en máximo de granadas"); return; }
 
-        // controlador.puntos = controlador.puntos - precioGranada; //es lo mismo que abajo
-        if (controlador.numGranadas < 3)
-        {
-            controlador.puntos -= precioGranada;
-            controlador.numGranadas++;
-            controlador.UpdateGranadas();//suma granadas
-            controlador.ActualizarPuntos();//actualiza en el UI
-        }
-    }
-
-    public void ComprarWhyski()
-    {
-        if (controlador.puntos <= 0)
-        { 
-            return ; 
-        }
-
-        if (controlador.vidas < 3)
-        {
-            controlador.puntos -= precioWhyski;
-            controlador.vidas++;
-            controlador.UpdateHearts();//suma vidas
-            controlador.ActualizarPuntos();//actualiza en el UI
-        }
+        controlador.CambiarPuntos(-precioGranada);
+        controlador.CambiarGranadas(+1);
+        RefreshButtons();
     }
 }

@@ -4,27 +4,24 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Collider2D))]
 public class PlayerGrenade2D : MonoBehaviour
 {
-    [Header("Input (arrástrame la acción Grenade)")]
-    [SerializeField] InputActionReference grenadeRef;   // Button
+    [Header("Input (arrastra la acción Grenade)")]
+    [SerializeField] private InputActionReference grenadeRef;   // Gameplay/Grenade
 
     [Header("Arrojar")]
-    [SerializeField] Transform throwPoint;              // mano/altura del brazo
-    [SerializeField] Grenade2D grenadePrefab;
-    [SerializeField] float throwForce = 10f;            // fuerza horizontal
-    [SerializeField] float upwardForce = 6f;            // arco hacia arriba
-    [SerializeField] float cooldown = 0.6f;
-    [SerializeField] int grenades = 3;                  // munición (opcional)
+    [SerializeField] private Transform throwPoint;              // pointgranade
+    [SerializeField] private Grenade2D grenadePrefab;           // tu prefab "Grenade (Grenade 2D)"
+    [SerializeField] private float throwForce = 10f;
+    [SerializeField] private float upwardForce = 6f;
+    [SerializeField] private float cooldown = 0.6f;
 
-    [Header("Visual")]
-    [SerializeField] SpriteRenderer sr;                 // para saber si mira a izq/der
-
-    InputAction grenadeAction;
-    float cd;
-    Collider2D myCol;
+    private InputAction grenadeAction;
+    private float nextTime;                                     // control de cooldown
+    private SpriteRenderer sr;
+    private Collider2D myCol;
 
     void Awake()
     {
-        if (!sr) sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();
         myCol = GetComponent<Collider2D>();
     }
 
@@ -33,32 +30,48 @@ public class PlayerGrenade2D : MonoBehaviour
         grenadeAction = grenadeRef ? grenadeRef.action : null;
         grenadeAction?.Enable();
     }
-    void OnDisable() => grenadeAction?.Disable();
+
+    void OnDisable()
+    {
+        grenadeAction?.Disable();
+    }
 
     void Update()
     {
-        if (grenadeAction == null || grenadePrefab == null || throwPoint == null) return;
+        if (grenadeAction == null) return;
 
-        if (cd > 0f) cd -= Time.deltaTime;
-
-        bool pressed = grenadeAction.WasPressedThisFrame();
-        if (pressed && cd <= 0f && grenades != 0)
+        // botón presionado, hay granadas y pasó el cooldown
+        if (grenadeAction.WasPressedThisFrame()
+            && Time.time >= nextTime
+            && (GameManager.instancia == null || GameManager.instancia.TieneGranadas()))
         {
             ThrowGrenade();
-            cd = cooldown;
-            if (grenades > 0) grenades--;
+            // ⬇️ AQUÍ ES DONDE SE DESCUENTA Y SE ACTUALIZA LA UI
+            GameManager.instancia?.CambiarGranadas(-1);
+
+            nextTime = Time.time + cooldown;
         }
     }
 
-    void ThrowGrenade()
+    private void ThrowGrenade()
     {
+        if (!grenadePrefab || !throwPoint) return;
+
+        // dirección según flip del sprite
         Vector2 dir = (sr && sr.flipX) ? Vector2.left : Vector2.right;
-        Vector2 vel = dir * throwForce + Vector2.up * upwardForce;
 
+        // instancia
         var g = Instantiate(grenadePrefab, throwPoint.position, Quaternion.identity);
-        g.Init(vel, gameObject);
 
-        // Evita colisionar contigo al salir
+        // lanzar (si tu Grenade2D tiene método Launch, úsalo; si no, fuerza directa)
+        var grb = g.GetComponent<Rigidbody2D>();
+        if (grb)
+        {
+            Vector2 force = dir * throwForce + Vector2.up * upwardForce;
+            grb.AddForce(force, ForceMode2D.Impulse);
+        }
+
+        // evitar que choque con el propio player al salir
         var gCol = g.GetComponent<Collider2D>();
         if (myCol && gCol) Physics2D.IgnoreCollision(myCol, gCol, true);
     }

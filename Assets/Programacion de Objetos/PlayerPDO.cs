@@ -17,18 +17,27 @@ public class PlayerPDO : MonoBehaviour
     int saltos;
     bool Ready;
 
-    public int puntos; //esto tamien se puede y tambien es un variable global, es mejor declarar siempre hasta arriba, pero se puede por que esta acomodado correctamente em la jerarquia de las llaves 
+    public int puntos; 
     public TextMeshProUGUI textoScore;
     public Transform respawnPoint;//coordenadas demi punto de respawn
     Animator animationPlayer;
     public Transform spawnBalas;
     public bool bulletCD;
 
+    [SerializeField] TimerScript timerScript;
+
     private IEnumerator Start()
     {
-        
+        // Pequeño delay como tenías
         yield return new WaitForSeconds(0.1f);
-        controlador = FindObjectOfType<GameManager>();
+
+        // ===== ARREGLO DEL WARNING (FindObjectOfType deprecado) =====
+#if UNITY_2023_1_OR_NEWER
+        controlador = GameManager.instancia ?? Object.FindFirstObjectByType<GameManager>();
+#else
+        controlador = GameManager.instancia ?? FindObjectOfType<GameManager>();
+#endif
+        // ============================================================
 
         //Obtenemos el componente rigidbody de nuestro objeto
         cuerpoPlayer = GetComponent<Rigidbody2D>();
@@ -36,8 +45,8 @@ public class PlayerPDO : MonoBehaviour
         //Obtenemos en componente animator de nuestro pl
         animationPlayer = GetComponent<Animator>();
         Ready = true;
-        
     }
+
     void CongelarJugador()
     {
         Debug.Log("jugadorcongelado");
@@ -47,64 +56,53 @@ public class PlayerPDO : MonoBehaviour
     {
         if (Time.timeScale <= 0 || Ready == false)
             return;
-        //esto es lo del movimiento
-        float posX = Input.GetAxis("Horizontal") * velocidad;
 
+        // movimiento
+        float posX = Input.GetAxis("Horizontal") * velocidad;
         cuerpoPlayer.linearVelocity = new Vector2(posX, cuerpoPlayer.linearVelocity.y);
+
         if (posX > 0)
         {
             animationPlayer.SetBool("RUN", true);
-            //esto es si no escalaron a su peronsaje manualmente pero si lo hicieron en la imagen
             transform.localScale = new Vector3(1, 1, 1);
-            //usarlo solo mi movi la escala del personaje en el scale (estiraron personaje)
-            //transform.localScale = new Vector3(transform.localScale.x,transform.localScale.y,transform.localScale.z);
-
         }
         else if (posX < 0)
         {
             animationPlayer.SetBool("RUN", true);
-            //esto es si no escalaron a su peronsaje manualmente pero si lo hicieron en la imagen
             transform.localScale = new Vector3(-1, 1, 1);
-            //usarlo solo mi movi la escala del personaje en el scale (estiraron personaje)
-            //transform.localScale = new Vector3(transform.localScale.x,transform.localScale.y,transform.localScale.z);
-
         }
         else
         {
             animationPlayer.SetBool("RUN", false);
-            //aqui va la animacion de esperar
         }
-        //esto es el salto
+
+        // salto
         if (Input.GetButtonDown("Jump") && saltos > 0)
         {
-            //animacion de brinco
             animationPlayer.SetTrigger("jump");
             animationPlayer.SetBool("ground", false);
             cuerpoPlayer.AddForce(new Vector2(0, fuerzaBrinco));
             saltos -= 1;
-            //tambien se puede poner asi: saltos--
-
         }
+
+        // tecla R (timer)
         if (Input.GetKey(KeyCode.R))
         {
-            //timerScript.Settimer(10, CongelarJugador);
-
-            //anonimo
-           // timerScript.Settimer(10, delegate () { Debug.Log("anonimo");  });
-
-            //lambda expresion
+            // ejemplos que ya tenías
+            // timerScript.Settimer(10, CongelarJugador);
+            // timerScript.Settimer(10, delegate () { Debug.Log("anonimo");  });
             timerScript.Settimer(10, () => { Debug.Log("lambda"); });
         }
-        if (Input.GetButtonDown("Fire1") && bulletCD == false)//esto es cuando el tiempo coore se activa sino no se activa
+
+        // anim de ataque
+        if (Input.GetButtonDown("Fire1") && bulletCD == false)
         {
             animationPlayer.SetTrigger("attack");
-
         }
+
         Shoot();
         granadaLanzar();
-
     }
-
 
     //este bloque se ejecuta cuando colisionamos con "algo"
     void OnCollisionEnter2D(Collision2D other)
@@ -114,6 +112,7 @@ public class PlayerPDO : MonoBehaviour
             timerScript.addtimer(-2);
         }
     }
+
     public void Shoot()
     {
         if (Input.GetButtonDown("Fire1") && bulletCD == false)
@@ -134,42 +133,25 @@ public class PlayerPDO : MonoBehaviour
 
     public void granadaLanzar()
     {
-        if (controlador.numGranadas <= 0)
+        if (controlador != null && controlador.numGranadas <= 0)
         {
             return;
         }
-        if (Input.GetButtonDown("Fire2") /*&& Time.timeScale > 0*/)
+
+        if (Input.GetButtonDown("Fire2"))
         {
             GameObject tiro = Instantiate(granada, transform.position, Quaternion.identity);
             Rigidbody2D rb = tiro.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector2.right * 10 * transform.localScale.x, ForceMode2D.Impulse);
+
             //controlador.numGranadas--;
-            controlador.CambiarGranadas();
+            controlador?.CambiarGranadas();
         }
-
     }
-    [SerializeField] TimerScript timerScript;
 
-    /*void Start()
-    {
-
-    }*/
-    /*void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("coin"))
-        {
-            tiempo.tiempoActual += 2;
-            puntos+=1;
-            //al combinar dos textos se le llama concatenacion 
-            textoScore.text = "Puntos: " + puntos.ToString();//convierte de numeros a texto
-            Destroy(collision.gameObject);//destruimos el punto
-        }
-      
-
-    }*/
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag ==("coin"))
+        if (other.gameObject.tag == ("coin"))
         {
             timerScript.addtimer(2);
         }

@@ -27,8 +27,8 @@ TagManager:
   - Projectile
   - Throwable
   - damageMask
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 
