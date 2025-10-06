@@ -145,7 +145,7 @@ public class PlayerPDO : MonoBehaviour
             rb.AddForce(Vector2.right * 10 * transform.localScale.x, ForceMode2D.Impulse);
 
             //controlador.numGranadas--;
-            controlador?.CambiarGranadas();
+           // controlador?.CambiarGranadas();
         }
     }
 

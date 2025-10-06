@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1170651492911490824}
   - component: {fileID: 2991932042391546234}
   - component: {fileID: -6907354763334947281}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BulletIcon (1)_0
   m_TagString: balaMuerte
   m_Icon: {fileID: 0}
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 7977757559366577888}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6970127, y: -2.3486922, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.6962, y: -2.3448, z: 0}
+  m_LocalScale: {x: 1.4101, y: 1.4101, z: 1.4101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,7 +123,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -145,7 +145,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 100
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -169,7 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb791e84af90c854fa6948dc89769255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bala_pos: {fileID: 0}
   speed: 15
-  velocidad: 600
-  Fuerza: {x: 0, y: 0}
+  lifeTime: 4
+  faceVelocity: 0
+  damage: 1
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 2112

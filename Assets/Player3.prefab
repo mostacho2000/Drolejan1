@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 6731538678162693967}
   - component: {fileID: 1425414311047638915}
   - component: {fileID: 538496927369567581}
+  - component: {fileID: 740649815013693854}
   m_Layer: 11
   m_Name: Player3
   m_TagString: Player1
@@ -287,41 +288,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a877474486dee74aa6ced7d89979f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController2D
-  moveRef: {fileID: 1549109245299231487, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
-  jumpRef: {fileID: -437757540520741222, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
-  fireRef: {fileID: 5565242490628257078, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
+  rb: {fileID: 0}
+  sr: {fileID: 0}
+  anim: {fileID: 1425414311047638915}
   moveSpeed: 10
   acceleration: 80
   deceleration: 60
-  inputDeadzone: 0.25
   jumpForce: 10
-  jumpCutMultiplier: 1
   groundCheck: {fileID: 3395847267846611925}
   groundCheckRadius: 0.57
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  coyoteTime: 0.15
-  jumpBuffer: 0.15
   maxJumps: 2
   secondJumpMultiplier: 0.85
+  jumpCutMultiplier: 1
   firePoint: {fileID: 7308279077700672170}
-  bulletPrefab: {fileID: 8265689518021450880, guid: 414b868d93d8b614097895a2c4d2742c, type: 3}
+  bulletPrefab: {fileID: 0}
   fireRate: 0.5
   autoFire: 0
-  anim: {fileID: 1425414311047638915}
-  animSpeedThreshold: 0.2
-  controlador: {fileID: 0}
-  tiempo: {fileID: 0}
-  textoScore: {fileID: 0}
-  respawnPoint: {fileID: 0}
-  puntos: 0
-  coinScoreValue: 1
-  coinTimeBonus: 2
-  dbgMoveInput: 0
-  dbgLinearVel: {x: 0, y: 0}
-  dbgIsGrounded: 0
-  dbgJumpCount: 0
+  throwPoint: {fileID: 1104350911356971975}
+  grenadePrefab: {fileID: 4535329510098820136, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
+  throwForce: 10
+  upwardForce: 6
+  grenadeCooldown: 0.6
+  moveRef: {fileID: 1549109245299231487, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
+  jumpRef: {fileID: -437757540520741222, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
+  fireRef: {fileID: 5565242490628257078, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
+  grenadeRef: {fileID: 0}
 --- !u!95 &1425414311047638915
 Animator:
   serializedVersion: 7
@@ -362,6 +356,27 @@ MonoBehaviour:
   throwForce: 10
   upwardForce: 6
   cooldown: 0.6
+--- !u!114 &740649815013693854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608587365515698270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c710ff8c1ed934180639991287fe9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSkinSwitcher
+  baseController: {fileID: 22100000, guid: 4b9ec53a85859a843ab062ed1cb6c81a, type: 2}
+  arma2Controller: {fileID: 22100000, guid: 509d1951a2e59554fbab6678f984c79a, type: 2}
+  arma3Controller: {fileID: 22100000, guid: 0c74659156e478d4c91b64fc2428431c, type: 2}
+  bulletArma1: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
+  fireRateArma1: 0.5
+  bulletArma2: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
+  fireRateArma2: 0.45
+  bulletArma3: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
+  fireRateArma3: 0.4
 --- !u!1 &7434856946720046289
 GameObject:
   m_ObjectHideFlags: 0

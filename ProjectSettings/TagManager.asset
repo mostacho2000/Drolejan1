@@ -29,7 +29,7 @@ TagManager:
   - damageMask
   - Enemy
   - Player
-  - 
+  - EnemyProjectile
   - 
   - 
   - 

@@ -1,118 +1,102 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Collider2D))]
+[DisallowMultipleComponent]
 public class PlayerController2D : MonoBehaviour
 {
-    [Header("Input Actions (drag & drop)")]
-    [SerializeField] private InputActionReference moveRef;    // Move (Axis -1..1)
-    [SerializeField] private InputActionReference jumpRef;    // Jump (Button)
-    [SerializeField] private InputActionReference fireRef;    // Fire (Button)
+    // =========================
+    //  Referencias
+    // =========================
+    [Header("Refs")]
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private Animator anim;
 
+    // =========================
+    //  Movimiento
+    // =========================
     [Header("Movimiento")]
     [SerializeField] private float moveSpeed = 8f;
     [SerializeField] private float acceleration = 60f;
     [SerializeField] private float deceleration = 70f;
-    [SerializeField, Range(0f, 1f)] private float inputDeadzone = 0.2f;
 
+    // =========================
+    //  Salto
+    // =========================
     [Header("Salto")]
     [SerializeField] private float jumpForce = 12f;
-    [SerializeField, Range(0f, 1f)] private float jumpCutMultiplier = 0.5f;
-
-    [Header("Suelo")]
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRadius = 0.12f;
+    [SerializeField] private float groundCheckRadius = .1f;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private int maxJumps = 2;
+    [SerializeField, Range(.2f, 1.2f)] private float secondJumpMultiplier = .85f;
+    [SerializeField, Range(.3f, 1f)] private float jumpCutMultiplier = .6f; // suelta botón para salto corto
 
-    [Header("Coyote / Buffer")]
-    [SerializeField] private float coyoteTime = 0.1f;
-    [SerializeField] private float jumpBuffer = 0.1f;
+    private int jumpsRemaining;
+    private bool grounded;
 
-    [Header("Salto múltiple")]
-    [SerializeField] private int maxJumps = 2;                       // 2 = doble salto
-    [SerializeField, Range(0.5f, 1.2f)] private float secondJumpMultiplier = 0.85f;
-
+    // =========================
+    //  Disparo (bala)
+    // =========================
     [Header("Disparo (bala)")]
-    [SerializeField] private Transform firePoint;                    // boca del arma
-    [SerializeField] private Bullet2D bulletPrefab;                  // tu prefab de bala
-    [SerializeField] private float fireRate = 0.3333333f;            // 1/3 ≈ cooldown 3s (semi-auto)
-    [SerializeField] private bool autoFire = false;                  // si true y fireRate > 0 = ráfaga
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float fireRate = 0.5f; // segundos entre tiros
+    [SerializeField] private bool autoFire = false;
+    private float fireTimer;
 
-    [Header("Animator")]
-    [SerializeField] private Animator anim;                          // usa parámetros, no nombres de estados
-    [SerializeField] private float animSpeedThreshold = 0.2f;        // evita Run por ruido
+    // =========================
+    //  Granada (opcional)
+    // =========================
+    [Header("Granada (opcional)")]
+    [SerializeField] private Transform throwPoint;
+    [SerializeField] private GameObject grenadePrefab;
+    [SerializeField] private float throwForce = 10f;
+    [SerializeField] private float upwardForce = 6f;
+    [SerializeField] private float grenadeCooldown = 0.6f;
+    private float grenadeTimer;
 
-    // ================= UI / GAME =================
-    [Header("UI / Game Manager")]
-    [SerializeField] private GameManager controlador;                // se rellena en Inspector o por fallback
-    [SerializeField] private TimeControler tiempo;                   // opcional (para sumar tiempo por moneda)
-    [SerializeField] private TextMeshProUGUI textoScore;             // opcional si quieres que el Player lo toque
-    [SerializeField] private Transform respawnPoint;                 // opcional
-    [SerializeField] private int puntos = 0;                         // marcador local si lo usas
-    [SerializeField] private int coinScoreValue = 1;
-    [SerializeField] private int coinTimeBonus = 2;
-
-    // Debug (solo lectura)
-    [Header("Debug")]
-    [SerializeField] private float dbgMoveInput;
-    [SerializeField] private Vector2 dbgLinearVel;
-    [SerializeField] private bool dbgIsGrounded;
-    [SerializeField] private int dbgJumpCount;
-
-    // Components
-    private Rigidbody2D rb;
-    private SpriteRenderer sr;
-
-    // Input
-    private InputAction moveAction, jumpAction, fireAction;
-
-    // Runtime
-    private float moveInput;
-    private bool isGrounded;
-    private float coyoteTimer;
-    private float bufferTimer;
-    private int jumpCount;
-    private float fireCooldown;
-
-    // Animator hashes
-    private static readonly int HASH_SPEED      = Animator.StringToHash("Speed");
+    // =========================
+    //  Animator params
+    // =========================
+    private static readonly int HASH_SPEED = Animator.StringToHash("Speed");
     private static readonly int HASH_ISGROUNDED = Animator.StringToHash("IsGrounded");
-    private static readonly int HASH_SHOOT      = Animator.StringToHash("Shoot");
+    private static readonly int HASH_SHOOT = Animator.StringToHash("Shoot");
+
     private bool hasSpeedParam, hasIsGroundedParam, hasShootParam;
 
+    // =========================
+    //  Input System refs
+    // (arrastra desde tu Input Actions)
+    // =========================
+    [Header("Inputs (Input System)")]
+    public InputActionReference moveRef;
+    public InputActionReference jumpRef;
+    public InputActionReference fireRef;
+    public InputActionReference grenadeRef;
+
+    private InputAction moveAction, jumpAction, fireAction, grenadeAction;
+
+    // =========================
+    //  Ciclo de vida
+    // =========================
     private void Awake()
     {
-        rb  = GetComponent<Rigidbody2D>();
-        sr  = GetComponent<SpriteRenderer>();
+        if (!rb) rb = GetComponent<Rigidbody2D>();
+        if (!sr) sr = GetComponentInChildren<SpriteRenderer>();
         if (!anim) anim = GetComponent<Animator>();
 
-        rb.freezeRotation = true;
-        rb.interpolation  = RigidbodyInterpolation2D.Interpolate;
-
-        if (groundLayer == 0) groundLayer = LayerMask.GetMask("Ground");
-
-        // Cachea parámetros del Animator
-        if (anim && anim.runtimeAnimatorController != null)
+        // Detecta si el Animator tiene esos parámetros
+        if (anim)
         {
             foreach (var p in anim.parameters)
             {
-                if (p.nameHash == HASH_SPEED)      hasSpeedParam = true;
-                if (p.nameHash == HASH_ISGROUNDED) hasIsGroundedParam = true;
-                if (p.nameHash == HASH_SHOOT)      hasShootParam = true;
+                if (p.nameHash == HASH_SPEED) hasSpeedParam = true;
+                else if (p.nameHash == HASH_ISGROUNDED) hasIsGroundedParam = true;
+                else if (p.nameHash == HASH_SHOOT) hasShootParam = true;
             }
         }
-
-        // === UI/GameManager fallback (sin warnings deprecados) ===
-#if UNITY_2023_1_OR_NEWER
-        controlador ??= GameManager.instancia ?? Object.FindFirstObjectByType<GameManager>();
-#else
-        controlador ??= GameManager.instancia ?? FindObjectOfType<GameManager>();
-#endif
-
-        // (Opcional) inicializa texto local si lo tienes conectado
-        if (textoScore) textoScore.text = "Puntos: " + puntos.ToString();
     }
 
     private void OnEnable()
@@ -120,10 +104,14 @@ public class PlayerController2D : MonoBehaviour
         moveAction = moveRef ? moveRef.action : null;
         jumpAction = jumpRef ? jumpRef.action : null;
         fireAction = fireRef ? fireRef.action : null;
+        grenadeAction = grenadeRef ? grenadeRef.action : null;
 
         moveAction?.Enable();
         jumpAction?.Enable();
         fireAction?.Enable();
+        grenadeAction?.Enable();
+
+        jumpsRemaining = maxJumps;
     }
 
     private void OnDisable()
@@ -131,167 +119,247 @@ public class PlayerController2D : MonoBehaviour
         moveAction?.Disable();
         jumpAction?.Disable();
         fireAction?.Disable();
+        grenadeAction?.Disable();
     }
 
     private void Update()
     {
-        if (moveAction == null || jumpAction == null) return;
+        // Timers
+        fireTimer -= Time.deltaTime;
+        grenadeTimer -= Time.deltaTime;
 
-        // ===== INPUT HORIZONTAL =====
-        float raw = moveAction.ReadValue<float>();
-        moveInput = (Mathf.Abs(raw) < inputDeadzone) ? 0f : raw;
-        dbgMoveInput = moveInput;
+        // Ground check
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (grounded) jumpsRemaining = maxJumps;
 
-        // Voltear sprite por input
-        if (sr && Mathf.Abs(moveInput) > 0.01f)
-            sr.flipX = moveInput < 0f;
-
-        // ===== COYOTE / BUFFER / RESET SALTOS =====
-        if (isGrounded) { coyoteTimer = coyoteTime; jumpCount = 0; }
-        else            { coyoteTimer -= Time.deltaTime; }
-
-        if (jumpAction.WasPressedThisFrame()) bufferTimer = jumpBuffer;
-        else                                  bufferTimer -= Time.deltaTime;
-
-        bool canExtraJump    = jumpCount < maxJumps;
-        bool canGroundedJump = (isGrounded || coyoteTimer > 0f);
-
-        if (bufferTimer > 0f && (canGroundedJump || canExtraJump))
+        // Anim
+        if (anim)
         {
-            DoJump();
-            bufferTimer = 0f;
-            coyoteTimer = 0f;
+            if (hasIsGroundedParam) anim.SetBool(HASH_ISGROUNDED, grounded);
+            if (hasSpeedParam) anim.SetFloat(HASH_SPEED, Mathf.Abs(GetVel().x));
         }
 
-        // Salto variable
-        if (jumpAction.WasReleasedThisFrame() && rb.linearVelocity.y > 0f)
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
+        // Saltar
+        if (jumpAction != null && jumpAction.WasPressedThisFrame())
+            TryJump();
 
-        // ===== DISPARO =====
-        if (fireAction != null && bulletPrefab && firePoint)
+        // Disparo
+        if (fireAction != null)
         {
-            if (fireCooldown > 0f) fireCooldown -= Time.deltaTime;
+            bool pressed = fireAction.WasPressedThisFrame();
+            bool holding = fireAction.IsPressed();
 
-            bool pressedFrame = fireAction.WasPressedThisFrame();
-            bool held         = fireAction.IsPressed();
-
-            bool wantFire = (autoFire && fireRate > 0f)
-                ? (held && fireCooldown <= 0f)           // ráfaga
-                : (pressedFrame && fireCooldown <= 0f);  // 1 por clic
-
-            if (wantFire)
-            {
-                fireCooldown = (fireRate > 0f) ? (1f / fireRate) : 0f;
-
-                Fire(); // instancia bala
-
-                // Trigger de anim (funciona en suelo/aire con tus transiciones)
-                if (anim && anim.runtimeAnimatorController != null && hasShootParam)
-                    anim.SetTrigger(HASH_SHOOT);
-            }
+            if (fireTimer <= 0f && ((autoFire && holding) || pressed))
+                Shoot();
         }
 
-        // ===== ANIMATOR PARAMS =====
-        if (anim && anim.runtimeAnimatorController != null)
-        {
-            float speedForAnim = Mathf.Abs(rb.linearVelocity.x);
-            if (speedForAnim < animSpeedThreshold) speedForAnim = 0f;
+        // Granada (opcional + GameManager granadas)
+        if (grenadeAction != null && grenadeAction.WasPressedThisFrame())
+            ThrowGrenade();
 
-            if (hasSpeedParam)      anim.SetFloat(HASH_SPEED,      speedForAnim);
-            if (hasIsGroundedParam) anim.SetBool (HASH_ISGROUNDED, isGrounded);
-        }
-
-        // Debug
-        dbgLinearVel  = rb.linearVelocity;
-        dbgIsGrounded = isGrounded;
-        dbgJumpCount  = jumpCount;
+        // Flip mirando
+        HandleFlipByInput();
+        // Movimiento en Update -> mejor pasarlo a FixedUpdate para físicas, aquí solo inputs
     }
 
     private void FixedUpdate()
     {
-        // Ground check
-        if (groundCheck)
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        // Movimiento suavizado
+        float target = ReadMoveX() * moveSpeed;
+        float current = GetVel().x;
+        float accel = Mathf.Abs(target) > 0.01f ? acceleration : deceleration;
+        float newX = Mathf.MoveTowards(current, target, accel * Time.fixedDeltaTime);
+        SetVel(new Vector2(newX, GetVel().y));
 
-        // Movimiento con aceleración/desaceleración
-        float targetSpeed = moveInput * moveSpeed;
-        float speedDiff   = targetSpeed - rb.linearVelocity.x;
-        float accel       = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deceleration;
-        float movement    = Mathf.Clamp(speedDiff * accel, -Mathf.Abs(accel), Mathf.Abs(accel)) * Time.fixedDeltaTime;
-
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x + movement, rb.linearVelocity.y);
-
-        dbgLinearVel = rb.linearVelocity;
-    }
-
-    private void DoJump()
-    {
-        float force = (jumpCount == 0) ? jumpForce : (jumpForce * secondJumpMultiplier);
-
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-
-        jumpCount++;
-        dbgJumpCount = jumpCount;
-    }
-
-    private void Fire()
-    {
-        Vector2 dir = (sr && sr.flipX) ? Vector2.left : Vector2.right;
-
-        Bullet2D bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        bullet.Init(dir);
-
-        // Ignorar colisión inicial con el Player
-        var myCol     = GetComponent<Collider2D>();
-        var bulletCol = bullet.GetComponent<Collider2D>();
-        if (myCol && bulletCol) Physics2D.IgnoreCollision(myCol, bulletCol, true);
-    }
-
-    // ===================== UI / GAME HOOKS =====================
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Ejemplos de integración con tu GameManager/tags del proyecto:
-        if (collision.gameObject.CompareTag("balaMuerte"))
-            controlador?.CambiarVidas(-1);
-
-        if (collision.gameObject.CompareTag("aguita") ||
-            collision.gameObject.CompareTag("BALAFINAL"))
-            GameManager.instancia?.GameOverr();
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // Monedas (puntos + tiempo)
-        if (other.gameObject.CompareTag("coin"))
+        // Si suelta salto y va subiendo, corta
+        if (jumpAction != null && jumpAction.WasReleasedThisFrame() && GetVel().y > 0f)
         {
-            if (tiempo) tiempo.tiempoActual += coinTimeBonus;
-
-            puntos += coinScoreValue;                        // local (si lo usas)
-            if (textoScore) textoScore.text = "Puntos: " + puntos.ToString();
-
-            GameManager.instancia?.CambiarPuntos(coinScoreValue);    // global UI
-            Destroy(other.gameObject);
+            SetVel(new Vector2(GetVel().x, GetVel().y * jumpCutMultiplier));
         }
     }
 
-    /// Llama esto tras lanzar una granada para actualizar la UI del GameManager.
-    public void NotifyGrenadeThrown()
+    // =========================
+    //  Movimiento helpers
+    // =========================
+    float ReadMoveX()
     {
+        if (moveAction == null) return 0f;
+
+        // soporta bindings de Vector2 o 1D
+        if (moveAction.expectedControlType == "Vector2")
+        {
+            Vector2 v = moveAction.ReadValue<Vector2>();
+            return v.x;
+        }
+        else
+        {
+            return moveAction.ReadValue<float>();
+        }
+    }
+
+    void HandleFlipByInput()
+    {
+        float x = ReadMoveX();
+        if (Mathf.Abs(x) > 0.01f && sr)
+            sr.flipX = x < 0f;
+    }
+
+    // =========================
+    //  Salto
+    // =========================
+    void TryJump()
+    {
+        if (jumpsRemaining <= 0) return;
+
+        float force = jumpForce;
+        if (jumpsRemaining < maxJumps) // segundo salto
+            force *= secondJumpMultiplier;
+
+        SetVel(new Vector2(GetVel().x, 0f));
+        AddVel(new Vector2(0f, force));
+        jumpsRemaining--;
+    }
+
+    // =========================
+    //  Disparo
+    // =========================
+    void Shoot()
+    {
+        if (!bulletPrefab || !firePoint) return;
+
+        // instanciar bala
+        var go = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+        // dirección según flip
+        var dir = sr && sr.flipX ? Vector2.left : Vector2.right;
+
+        // velocidad a la bala si tiene rigidbody
+        var brb = go.GetComponent<Rigidbody2D>();
+        if (brb)
+        {
+#if UNITY_6000_0_OR_NEWER
+            brb.linearVelocity = dir * 18f; // o la velocidad interna de tu bala
+#else
+            brb.velocity = dir * 18f;
+#endif
+        }
+
+        // rotar visual si quieres
+        if (dir.x < 0f) go.transform.localScale = new Vector3(-go.transform.localScale.x, go.transform.localScale.y, go.transform.localScale.z);
+
+        fireTimer = fireRate;
+
+        // anim
+        if (anim && hasShootParam)
+        {
+            anim.SetBool(HASH_SHOOT, true);
+            // lo apagamos en un frame
+            StartCoroutine(ResetShootBoolNextFrame());
+        }
+    }
+
+    System.Collections.IEnumerator ResetShootBoolNextFrame()
+    {
+        yield return null;
+        if (anim && hasShootParam) anim.SetBool(HASH_SHOOT, false);
+    }
+
+    // =========================
+    //  Granada
+    // =========================
+    void ThrowGrenade()
+    {
+        if (grenadeTimer > 0f) return;
+        if (!grenadePrefab || !throwPoint) return;
+
+        // Si manejas granadas con GameManager:
+        if (GameManager.instancia && !GameManager.instancia.TieneGranadas())
+            return;
+
+        var go = Instantiate(grenadePrefab, throwPoint.position, Quaternion.identity);
+        var grb = go.GetComponent<Rigidbody2D>();
+        if (grb)
+        {
+            var dir = sr && sr.flipX ? -1f : 1f;
+#if UNITY_6000_0_OR_NEWER
+            grb.AddForce(new Vector2(dir * throwForce, upwardForce), ForceMode2D.Impulse);
+#else
+            grb.AddForce(new Vector2(dir * throwForce, upwardForce), ForceMode2D.Impulse);
+#endif
+        }
+
+        grenadeTimer = grenadeCooldown;
         GameManager.instancia?.CambiarGranadas(-1);
     }
 
-    /// Si quieres validar que aún hay granadas antes de lanzar.
-    public bool CanThrowGrenade()
+    // =========================
+    //  Daño (para que enemigos te golpeen)
+    // =========================
+    public void ApplyDamage(int amount)
     {
-        return (GameManager.instancia == null) || GameManager.instancia.TieneGranadas();
+        int dmg = Mathf.Abs(amount);
+        GameManager.instancia?.CambiarVidas(-dmg);
+        // Aquí puedes lanzar animación "Hurt" si la tienes
+        // anim.SetTrigger("Hurt");
     }
 
+    // =========================
+    //  Cambiar parámetros de arma (usado por PlayerSkinSwitcher)
+    // =========================
+    /// <summary>
+    /// Llamado por PlayerSkinSwitcher para cambiar el prefab de bala y el fire rate
+    /// según el arma seleccionada.
+    /// </summary>
+    public void SetWeaponParams(GameObject newBulletPrefab, float newFireRate)
+    {
+        if (newBulletPrefab) bulletPrefab = newBulletPrefab;
+        fireRate = newFireRate;
+    }
+
+    // =========================
+    //  Helpers Rigidbody (Unity 6 usa linearVelocity)
+    // =========================
+    Vector2 GetVel()
+    {
+#if UNITY_6000_0_OR_NEWER
+        return rb.linearVelocity;
+#else
+        return rb.velocity;
+#endif
+    }
+
+    void SetVel(Vector2 v)
+    {
+#if UNITY_6000_0_OR_NEWER
+        rb.linearVelocity = v;
+#else
+        rb.velocity = v;
+#endif
+    }
+
+    void AddVel(Vector2 dv)
+    {
+#if UNITY_6000_0_OR_NEWER
+        rb.linearVelocity += dv;
+#else
+        rb.velocity += dv;
+#endif
+    }
+
+    // =========================
+    //  Gizmos
+    // =========================
     private void OnDrawGizmosSelected()
     {
-        if (!groundCheck) return;
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        if (groundCheck)
+        {
+            Gizmos.color = grounded ? Color.green : Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        }
+        if (firePoint)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(firePoint.position, firePoint.position + Vector3.right * .3f);
+        }
     }
 }

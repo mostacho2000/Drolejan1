@@ -123,21 +123,15 @@ public class JefeFinal : MonoBehaviour, IDamageable
     // Llamado desde el frame del destello en la animación de disparo
     public void AnimEvent_Fire()
     {
-        if (dead) return;
-        if (!bulletPrefab || !shootOrigin) return;
+    if (dead) return;
+    if (!bulletPrefab || !shootOrigin) return;
 
-        int dir = 1;
-        if (sr) dir = sr.flipX ? -1 : 1;
-        else    dir = transform.localScale.x >= 0 ? 1 : -1;
+    int dirX = (sr && sr.flipX) ? -1 : 1;
 
-        var b = Instantiate(bulletPrefab, shootOrigin.position, Quaternion.identity);
-        var rbB = b.GetComponent<Rigidbody2D>();
-#if UNITY_6000_0_OR_NEWER
-        if (rbB) rbB.linearVelocity = new Vector2(dir * bulletSpeed, 0f);
-#else
-        if (rbB) rbB.velocity = new Vector2(dir * bulletSpeed, 0f);
-#endif
-    }
+    var go = Instantiate(bulletPrefab, shootOrigin.position, Quaternion.identity);
+    var bullet = go.GetComponent<EnemyBullet2D>();
+    if (bullet != null) bullet.Setup(new Vector2(dirX, 0f), bulletSpeed);
+}
 
     // Sistema nuevo (IDamageable)
     public void TakeDamage(int amount, Vector2 hitPoint, Vector2 hitDir)

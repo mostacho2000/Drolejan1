@@ -105,7 +105,7 @@ public class playerControl : MonoBehaviour
         // al chocar con el enemigo hago respawn al punto indicado
         if (collision.gameObject.CompareTag("balaMuerte"))
         {
-            controlador.CambiarVidas();
+           // controlador.CambiarVidas();
         }
         /*if (collision.gameObject.CompareTag("VIctoria"))
         {
@@ -153,7 +153,7 @@ public class playerControl : MonoBehaviour
             Rigidbody2D rb = tiro.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector2.right * 10 * transform.localScale.x, ForceMode2D.Impulse);
             //controlador.numGranadas--;
-            controlador.CambiarGranadas();
+           // controlador.CambiarGranadas();
         }
         
     }

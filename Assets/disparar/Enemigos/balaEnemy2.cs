@@ -1,77 +1,84 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class balaEnemy2 : MonoBehaviour
+public class EnemyBullet2D : MonoBehaviour
 {
-    public Transform bala_pos;
-    public float speed;
-     public float velocidad =166;
-    public Vector2 Fuerza;//esto es direccion
+    [Header("Movimiento")]
+    [SerializeField] float speed = 15f;
+    [SerializeField] float lifeTime = 4f;
+    [SerializeField] bool faceVelocity = true;
 
+    [Header("Daño")]
+    [SerializeField] int damage = 1;
+    [Tooltip("Opcional: si lo pones, solo reaccionará a estos layers (Player, Ground, etc.).")]
+    [SerializeField] LayerMask hitMask;
 
+    Rigidbody2D rb;
+    Vector2 dir = Vector2.right;
+    bool initialized;
 
-
-    void Start()
+    /// Llamar justo al instanciar para enviar dirección/velocidad
+    public void Setup(Vector2 direction, float customSpeed = -1f)
     {
-        //bala_pos = GameObject vikingo;
-        bala_pos = GameObject.Find("Player3").transform;
+        dir = direction.sqrMagnitude > 0.001f ? direction.normalized : Vector2.right;
+        if (customSpeed > 0f) speed = customSpeed;
+        ApplyVelocity();
+    }
 
+    void Awake() => rb = GetComponent<Rigidbody2D>();
 
-       Vector2 direccion = transform.position - bala_pos.position;//, speed * Time.deltaTime);
-       Fuerza = new Vector2(-direccion.x, transform.position.y);
+    void OnEnable()
+    {
+        if (lifeTime > 0f) Destroy(gameObject, lifeTime);
+        if (!initialized) ApplyVelocity(); // por si no llamaron Setup
+    }
 
-        Fuerza.Normalize();
-        Fuerza *=velocidad;
-        GetComponent<Rigidbody2D>().AddForce(Fuerza);
-        Invoke("Destruir_", 4);
-
-        //flip
-        #region
-        if (bala_pos.position.x > this.transform.position.x)
+    void ApplyVelocity()
+    {
+        initialized = true;
+#if UNITY_6000_0_OR_NEWER
+        if (rb) rb.linearVelocity = dir * speed;
+#else
+        if (rb) rb.velocity = dir * speed;
+#endif
+        if (faceVelocity && dir.x < 0f)
         {
-            this.transform.localScale = new Vector2(1, 1);
+            var s = transform.localScale;
+            s.x = Mathf.Abs(s.x) * -1f;
+            transform.localScale = s;
         }
-        else
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Filtrado por Layer opcional
+        if (hitMask.value != 0 && ((1 << other.gameObject.layer) & hitMask) == 0)
+            return;
+
+        // 1) Camino moderno: interfaz IDamageable
+        var dmg = other.GetComponent<IDamageable>();
+        if (dmg != null)
         {
-            this.transform.localScale = new Vector2(-1, 1);
+            Vector2 hitPoint = other.ClosestPoint(transform.position);
+#if UNITY_6000_0_OR_NEWER
+            Vector2 hitDir = rb ? (rb.linearVelocity.sqrMagnitude > 0 ? rb.linearVelocity.normalized : dir) : dir;
+#else
+            Vector2 hitDir = rb ? (rb.velocity.sqrMagnitude > 0 ? rb.velocity.normalized : dir) : dir;
+#endif
+            dmg.TakeDamage(damage, hitPoint, hitDir);
+            Destroy(gameObject);
+            return;
         }
-        #endregion
-    }
 
-
-    void Update()
-    {
-        //movimiento
-        #region
-        
-        
-            Vector2 direccion  = Vector2.MoveTowards(transform.position, bala_pos.position, speed * Time.deltaTime);
-       // transform.position =new Vector2(direccion.x, transform.position.y);
-
-
-        #endregion
-       
-        //disparar
-       /* #region
-        tiempo += Time.deltaTime;
-        if (tiempo >= 2)
+        // 2) Fallback por Tag: Player -> GameManager
+        if (other.CompareTag("Player") || other.CompareTag("Player1"))
         {
-            Instantiate(bala, Insatncia.position, Quaternion.identity);
-            tiempo = 0;
+            GameManager.instancia?.CambiarVidas(-damage);
+            Destroy(gameObject);
+            return;
         }
-        #endregion*/
 
+        // 3) Si pega con algo sólido, destruir
+        if (!other.isTrigger)
+            Destroy(gameObject);
     }
-
-    void Destruir_()
-    {
-        Destroy(this.gameObject);
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destruir_();
-    }
-    
-    
 }
