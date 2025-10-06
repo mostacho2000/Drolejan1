@@ -1,0 +1,2002 @@
+fileFormatVersion: 2
+guid: 90d35d50b17c5944c9558e1d4bbe2443
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6245582081004492650
+    second: Muerte_Enemigo_bigote_0
+  - first:
+      213: 700126916953472485
+    second: Muerte_Enemigo_bigote_1
+  - first:
+      213: 7648151191439778958
+    second: Muerte_Enemigo_bigote_2
+  - first:
+      213: -673757441778509357
+    second: Muerte_Enemigo_bigote_3
+  - first:
+      213: 1601776121808089621
+    second: Muerte_Enemigo_bigote_4
+  - first:
+      213: 7594715401053722052
+    second: Muerte_Enemigo_bigote_5
+  - first:
+      213: -833521879271394764
+    second: Muerte_Enemigo_bigote_6
+  - first:
+      213: 364813056214759643
+    second: Muerte_Enemigo_bigote_7
+  - first:
+      213: 1021153887387919168
+    second: Muerte_Enemigo_bigote_8
+  - first:
+      213: 9050047985076649262
+    second: Muerte_Enemigo_bigote_9
+  - first:
+      213: -3791430527837155287
+    second: Muerte_Enemigo_bigote_10
+  - first:
+      213: 4576911463044060672
+    second: Muerte_Enemigo_bigote_11
+  - first:
+      213: 1412341356222469643
+    second: Muerte_Enemigo_bigote_12
+  - first:
+      213: 3383964917925561202
+    second: Muerte_Enemigo_bigote_13
+  - first:
+      213: -6472175259361755232
+    second: Muerte_Enemigo_bigote_14
+  - first:
+      213: -598883227319263983
+    second: Muerte_Enemigo_bigote_15
+  - first:
+      213: -2427277187962302559
+    second: Muerte_Enemigo_bigote_16
+  - first:
+      213: 5279041753650840832
+    second: Muerte_Enemigo_bigote_17
+  - first:
+      213: 3268162866303217939
+    second: Muerte_Enemigo_bigote_18
+  - first:
+      213: 4490484711292138396
+    second: Muerte_Enemigo_bigote_19
+  - first:
+      213: 2176180466338054741
+    second: Muerte_Enemigo_bigote_20
+  - first:
+      213: 7641476494152596845
+    second: Muerte_Enemigo_bigote_21
+  - first:
+      213: -5453843658195684024
+    second: Muerte_Enemigo_bigote_22
+  - first:
+      213: 7690163877038202366
+    second: Muerte_Enemigo_bigote_23
+  - first:
+      213: -5071690508418603220
+    second: Muerte_Enemigo_bigote_24
+  - first:
+      213: 276939310420414550
+    second: Muerte_Enemigo_bigote_25
+  - first:
+      213: 5571812882931234279
+    second: Muerte_Enemigo_bigote_26
+  - first:
+      213: -451706582907741609
+    second: Muerte_Enemigo_bigote_27
+  - first:
+      213: 4055881669705239005
+    second: Muerte_Enemigo_bigote_28
+  - first:
+      213: 6888243801427268594
+    second: Muerte_Enemigo_bigote_29
+  - first:
+      213: -5299876427097543174
+    second: Muerte_Enemigo_bigote_30
+  - first:
+      213: -7708471967268310986
+    second: Muerte_Enemigo_bigote_31
+  - first:
+      213: -606850139035813729
+    second: Muerte_Enemigo_bigote_32
+  - first:
+      213: 1308506133396184257
+    second: Muerte_Enemigo_bigote_33
+  - first:
+      213: 4798147769015273010
+    second: Muerte_Enemigo_bigote_34
+  - first:
+      213: 1594014371950369380
+    second: Muerte_Enemigo_bigote_35
+  - first:
+      213: 5879106777650265615
+    second: Muerte_Enemigo_bigote_36
+  - first:
+      213: 8871015071828255465
+    second: Muerte_Enemigo_bigote_37
+  - first:
+      213: -4902173719831920191
+    second: Muerte_Enemigo_bigote_38
+  - first:
+      213: -5066820167565736051
+    second: Muerte_Enemigo_bigote_39
+  - first:
+      213: 7545979243497506805
+    second: Muerte_Enemigo_bigote_40
+  - first:
+      213: 5979412037094396015
+    second: Muerte_Enemigo_bigote_41
+  - first:
+      213: 784712873706166888
+    second: Muerte_Enemigo_bigote_42
+  - first:
+      213: -5060031776957709765
+    second: Muerte_Enemigo_bigote_43
+  - first:
+      213: -1543815399852097364
+    second: Muerte_Enemigo_bigote_44
+  - first:
+      213: 2717923795242689204
+    second: Muerte_Enemigo_bigote_45
+  - first:
+      213: -649308957314706626
+    second: Muerte_Enemigo_bigote_46
+  - first:
+      213: -7824260693387008900
+    second: Muerte_Enemigo_bigote_47
+  - first:
+      213: 1484158809075158520
+    second: Muerte_Enemigo_bigote_48
+  - first:
+      213: 287849113788590069
+    second: Muerte_Enemigo_bigote_49
+  - first:
+      213: -1475880890328500801
+    second: Muerte_Enemigo_bigote_50
+  - first:
+      213: 8858150368522525405
+    second: Muerte_Enemigo_bigote_51
+  - first:
+      213: 2081239530299378551
+    second: Muerte_Enemigo_bigote_52
+  - first:
+      213: 1438572214759749986
+    second: Muerte_Enemigo_bigote_53
+  - first:
+      213: -2419249536711210526
+    second: Muerte_Enemigo_bigote_54
+  - first:
+      213: 4267005177917466101
+    second: Muerte_Enemigo_bigote_55
+  - first:
+      213: 4757043188710892680
+    second: Muerte_Enemigo_bigote_56
+  - first:
+      213: 3880004509621387629
+    second: Muerte_Enemigo_bigote_57
+  - first:
+      213: 4646067380524702923
+    second: Muerte_Enemigo_bigote_58
+  - first:
+      213: 5843240156194906686
+    second: Muerte_Enemigo_bigote_59
+  - first:
+      213: -2250034775069041409
+    second: Muerte_Enemigo_bigote_60
+  - first:
+      213: -4329889111795194535
+    second: Muerte_Enemigo_bigote_61
+  - first:
+      213: -4535211669385536868
+    second: Muerte_Enemigo_bigote_62
+  - first:
+      213: -3162645983264082929
+    second: Muerte_Enemigo_bigote_63
+  - first:
+      213: -7751754188112330156
+    second: Muerte_Enemigo_bigote_64
+  - first:
+      213: 4485751664839043514
+    second: Muerte_Enemigo_bigote_65
+  - first:
+      213: 5060308916563778732
+    second: Muerte_Enemigo_bigote_66
+  - first:
+      213: 1739380294480272783
+    second: Muerte_Enemigo_bigote_67
+  - first:
+      213: -3223297026730390092
+    second: Muerte_Enemigo_bigote_68
+  - first:
+      213: 5294879049008379364
+    second: Muerte_Enemigo_bigote_69
+  - first:
+      213: -173032688202432354
+    second: Muerte_Enemigo_bigote_70
+  - first:
+      213: -6175677217035521912
+    second: Muerte_Enemigo_bigote_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 698ae26103c3359a0800000000000000
+      internalID: -6245582081004492650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed73b6b8b957b900800000000000000
+      internalID: 700126916953472485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e84af3aacf0b32a60800000000000000
+      internalID: 7648151191439778958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d9140a2d2556a6f0800000000000000
+      internalID: -673757441778509357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512f21e65e6aa3610800000000000000
+      internalID: 1601776121808089621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_5
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c5def13b69d56960800000000000000
+      internalID: 7594715401053722052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_6
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4323389544cbe64f0800000000000000
+      internalID: -833521879271394764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_7
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8fa11ba83101500800000000000000
+      internalID: 364813056214759643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_8
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04324cedc0edb2e00800000000000000
+      internalID: 1021153887387919168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_9
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2dbbb671ba389d70800000000000000
+      internalID: 9050047985076649262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_10
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920d1b5d502226bc0800000000000000
+      internalID: -3791430527837155287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_11
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0069723e9b4748f30800000000000000
+      internalID: 4576911463044060672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_12
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06db370bf4a99310800000000000000
+      internalID: 1412341356222469643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_13
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2734651f92246fe20800000000000000
+      internalID: 3383964917925561202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_14
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0afbba584e63e26a0800000000000000
+      internalID: -6472175259361755232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_15
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11d12b5b0e650b7f0800000000000000
+      internalID: -598883227319263983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_16
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af09100244905ed0800000000000000
+      internalID: -2427277187962302559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_17
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00540d0618ce24940800000000000000
+      internalID: 5279041753650840832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_18
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 311302abfc8da5d20800000000000000
+      internalID: 3268162866303217939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_19
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 57
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c93f3e5ad08615e30800000000000000
+      internalID: 4490484711292138396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_20
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552493faa98533e10800000000000000
+      internalID: 2176180466338054741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_21
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 49
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6d7679926afb0a60800000000000000
+      internalID: 7641476494152596845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_22
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 62
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845babca61e0054b0800000000000000
+      internalID: -5453843658195684024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_23
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 52
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efd176b4d43f8ba60800000000000000
+      internalID: 7690163877038202366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_24
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 57
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c272df28a5cbd99b0800000000000000
+      internalID: -5071690508418603220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_25
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 59
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65053f5e5d2e7d300800000000000000
+      internalID: 276939310420414550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_26
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 49
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e5bf0adb4e035d40800000000000000
+      internalID: 5571812882931234279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_27
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 52
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75a141f81473bb9f0800000000000000
+      internalID: -451706582907741609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_28
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 49
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd98ccdb3e2694830800000000000000
+      internalID: 4055881669705239005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_29
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 3
+        width: 266
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3db5eed35f79f50800000000000000
+      internalID: 6888243801427268594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_30
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 21
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd6261387e0376b0800000000000000
+      internalID: -5299876427097543174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_31
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 30
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6307ae54691060590800000000000000
+      internalID: -7708471967268310986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_32
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 43
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98bfd683090497f0800000000000000
+      internalID: -606850139035813729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_33
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 41
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ccdf73456fb82210800000000000000
+      internalID: 1308506133396184257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_34
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 42
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2360df769f1769240800000000000000
+      internalID: 4798147769015273010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_35
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 37
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46a18f630a31f1610800000000000000
+      internalID: 1594014371950369380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_36
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 36
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e7f662778c69150800000000000000
+      internalID: 5879106777650265615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_37
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 44
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2a579053d2c1b70800000000000000
+      internalID: 8871015071828255465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_38
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 50
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c1c92289faf7fbb0800000000000000
+      internalID: -4902173719831920191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_39
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 17
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d87857b17e90fa9b0800000000000000
+      internalID: -5066820167565736051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_40
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 42
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f7c3234424b8b860800000000000000
+      internalID: 7545979243497506805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_41
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 29
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f60d4b441932bf250800000000000000
+      internalID: 5979412037094396015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_42
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 30
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a9ee7733cd3ea00800000000000000
+      internalID: 784712873706166888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_43
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 36
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b324f3678e727c9b0800000000000000
+      internalID: -5060031776957709765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_44
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 5
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca0c905c214439ae0800000000000000
+      internalID: -1543815399852097364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_45
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 3
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2a506aa4108b520800000000000000
+      internalID: 2717923795242689204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_46
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 16
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3317c981f03df6f0800000000000000
+      internalID: -649308957314706626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_47
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 24
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74ad94aa54aa6390800000000000000
+      internalID: -7824260693387008900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_48
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 28
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd013dc29ac89410800000000000000
+      internalID: 1484158809075158520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_49
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 18
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f7a7407e35aef300800000000000000
+      internalID: 287849113788590069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_50
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 7
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb5be29562e948be0800000000000000
+      internalID: -1475880890328500801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_51
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 18
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddad7c2e3d87eea70800000000000000
+      internalID: 8858150368522525405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_52
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 16
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77bceff635c02ec10800000000000000
+      internalID: 2081239530299378551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_53
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 24
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2697084bec5d6f310800000000000000
+      internalID: 1438572214759749986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_54
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 12
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9cc453d591d6ed0800000000000000
+      internalID: -2419249536711210526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_55
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 7
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5e58c0a92773b30800000000000000
+      internalID: 4267005177917466101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_56
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 3
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884ed448399640240800000000000000
+      internalID: 4757043188710892680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_57
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 3
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6185ea5b8b88d530800000000000000
+      internalID: 3880004509621387629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_58
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 11
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc54baaaa52a7040800000000000000
+      internalID: 4646067380524702923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_59
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 3
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e32ab4796fb571150800000000000000
+      internalID: 5843240156194906686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_60
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffcdbb31b4546c0e0800000000000000
+      internalID: -2250034775069041409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_61
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 3
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 955ad962bc429e3c0800000000000000
+      internalID: -4329889111795194535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_62
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 3
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a9119e301bf01c0800000000000000
+      internalID: -4535211669385536868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_63
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 9
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f047a311c360c14d0800000000000000
+      internalID: -3162645983264082929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_64
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 11
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4520b6fe2ac3c6490800000000000000
+      internalID: -7751754188112330156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_65
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 3
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab929556f57904e30800000000000000
+      internalID: 4485751664839043514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_66
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 11
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cac96812624d93640800000000000000
+      internalID: 5060308916563778732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_67
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d9fc58925832810800000000000000
+      internalID: 1739380294480272783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_68
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 9
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd89249e6c8443d0800000000000000
+      internalID: -3223297026730390092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_69
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 3
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e57dcc01703b7940800000000000000
+      internalID: 5294879049008379364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_70
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 9
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90c925dfa3499df0800000000000000
+      internalID: -173032688202432354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Muerte_Enemigo_bigote_71
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 11
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 880ff1f8a469b4aa0800000000000000
+      internalID: -6175677217035521912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Muerte_Enemigo_bigote_0: -6245582081004492650
+      Muerte_Enemigo_bigote_1: 700126916953472485
+      Muerte_Enemigo_bigote_10: -3791430527837155287
+      Muerte_Enemigo_bigote_11: 4576911463044060672
+      Muerte_Enemigo_bigote_12: 1412341356222469643
+      Muerte_Enemigo_bigote_13: 3383964917925561202
+      Muerte_Enemigo_bigote_14: -6472175259361755232
+      Muerte_Enemigo_bigote_15: -598883227319263983
+      Muerte_Enemigo_bigote_16: -2427277187962302559
+      Muerte_Enemigo_bigote_17: 5279041753650840832
+      Muerte_Enemigo_bigote_18: 3268162866303217939
+      Muerte_Enemigo_bigote_19: 4490484711292138396
+      Muerte_Enemigo_bigote_2: 7648151191439778958
+      Muerte_Enemigo_bigote_20: 2176180466338054741
+      Muerte_Enemigo_bigote_21: 7641476494152596845
+      Muerte_Enemigo_bigote_22: -5453843658195684024
+      Muerte_Enemigo_bigote_23: 7690163877038202366
+      Muerte_Enemigo_bigote_24: -5071690508418603220
+      Muerte_Enemigo_bigote_25: 276939310420414550
+      Muerte_Enemigo_bigote_26: 5571812882931234279
+      Muerte_Enemigo_bigote_27: -451706582907741609
+      Muerte_Enemigo_bigote_28: 4055881669705239005
+      Muerte_Enemigo_bigote_29: 6888243801427268594
+      Muerte_Enemigo_bigote_3: -673757441778509357
+      Muerte_Enemigo_bigote_30: -5299876427097543174
+      Muerte_Enemigo_bigote_31: -7708471967268310986
+      Muerte_Enemigo_bigote_32: -606850139035813729
+      Muerte_Enemigo_bigote_33: 1308506133396184257
+      Muerte_Enemigo_bigote_34: 4798147769015273010
+      Muerte_Enemigo_bigote_35: 1594014371950369380
+      Muerte_Enemigo_bigote_36: 5879106777650265615
+      Muerte_Enemigo_bigote_37: 8871015071828255465
+      Muerte_Enemigo_bigote_38: -4902173719831920191
+      Muerte_Enemigo_bigote_39: -5066820167565736051
+      Muerte_Enemigo_bigote_4: 1601776121808089621
+      Muerte_Enemigo_bigote_40: 7545979243497506805
+      Muerte_Enemigo_bigote_41: 5979412037094396015
+      Muerte_Enemigo_bigote_42: 784712873706166888
+      Muerte_Enemigo_bigote_43: -5060031776957709765
+      Muerte_Enemigo_bigote_44: -1543815399852097364
+      Muerte_Enemigo_bigote_45: 2717923795242689204
+      Muerte_Enemigo_bigote_46: -649308957314706626
+      Muerte_Enemigo_bigote_47: -7824260693387008900
+      Muerte_Enemigo_bigote_48: 1484158809075158520
+      Muerte_Enemigo_bigote_49: 287849113788590069
+      Muerte_Enemigo_bigote_5: 7594715401053722052
+      Muerte_Enemigo_bigote_50: -1475880890328500801
+      Muerte_Enemigo_bigote_51: 8858150368522525405
+      Muerte_Enemigo_bigote_52: 2081239530299378551
+      Muerte_Enemigo_bigote_53: 1438572214759749986
+      Muerte_Enemigo_bigote_54: -2419249536711210526
+      Muerte_Enemigo_bigote_55: 4267005177917466101
+      Muerte_Enemigo_bigote_56: 4757043188710892680
+      Muerte_Enemigo_bigote_57: 3880004509621387629
+      Muerte_Enemigo_bigote_58: 4646067380524702923
+      Muerte_Enemigo_bigote_59: 5843240156194906686
+      Muerte_Enemigo_bigote_6: -833521879271394764
+      Muerte_Enemigo_bigote_60: -2250034775069041409
+      Muerte_Enemigo_bigote_61: -4329889111795194535
+      Muerte_Enemigo_bigote_62: -4535211669385536868
+      Muerte_Enemigo_bigote_63: -3162645983264082929
+      Muerte_Enemigo_bigote_64: -7751754188112330156
+      Muerte_Enemigo_bigote_65: 4485751664839043514
+      Muerte_Enemigo_bigote_66: 5060308916563778732
+      Muerte_Enemigo_bigote_67: 1739380294480272783
+      Muerte_Enemigo_bigote_68: -3223297026730390092
+      Muerte_Enemigo_bigote_69: 5294879049008379364
+      Muerte_Enemigo_bigote_7: 364813056214759643
+      Muerte_Enemigo_bigote_70: -173032688202432354
+      Muerte_Enemigo_bigote_71: -6175677217035521912
+      Muerte_Enemigo_bigote_8: 1021153887387919168
+      Muerte_Enemigo_bigote_9: 9050047985076649262
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

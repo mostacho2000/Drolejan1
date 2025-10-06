@@ -30,7 +30,7 @@ public class playerControl : MonoBehaviour
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(0.1f);
-        controlador =FindObjectOfType<GameManager>();
+       // controlador =FindObjectOfType<GameManager>();
         
         //Obtenemos el componente rigidbody de nuestro objeto
         cuerpoPlayer = GetComponent<Rigidbody2D>();

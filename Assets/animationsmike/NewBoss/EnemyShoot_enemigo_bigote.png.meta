@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 18be21569b468de47b60075cebbc8bef
+guid: e9694bd0edf56b24bac53b3a2c8e9cd8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8054635855995632328
-    second: pantallaDerrota_0
+      213: -2540993290247773703
+    second: EnemyShoot_enemigo_bigote_0
+  - first:
+      213: -7455300097096588989
+    second: EnemyShoot_enemigo_bigote_1
+  - first:
+      213: -6850483193887572439
+    second: EnemyShoot_enemigo_bigote_2
+  - first:
+      213: 3406859126466704705
+    second: EnemyShoot_enemigo_bigote_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pantallaDerrota_0
+      name: EnemyShoot_enemigo_bigote_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 180
+        x: 3
+        y: 2
+        width: 62
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8ca7ebfb2a0d7cf60800000000000000
-      internalID: 8054635855995632328
+      spriteID: 9f16126b0149cbcd0800000000000000
+      internalID: -2540993290247773703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyShoot_enemigo_bigote_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 2
+        width: 65
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3416f92cf04798890800000000000000
+      internalID: -7455300097096588989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyShoot_enemigo_bigote_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 2
+        width: 65
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e3c80a4d13ee0a0800000000000000
+      internalID: -6850483193887572439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyShoot_enemigo_bigote_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 2
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14578d04358974f20800000000000000
+      internalID: 3406859126466704705
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pantallaDerrota_0: 8054635855995632328
+      EnemyShoot_enemigo_bigote_0: -2540993290247773703
+      EnemyShoot_enemigo_bigote_1: -7455300097096588989
+      EnemyShoot_enemigo_bigote_2: -6850483193887572439
+      EnemyShoot_enemigo_bigote_3: 3406859126466704705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
