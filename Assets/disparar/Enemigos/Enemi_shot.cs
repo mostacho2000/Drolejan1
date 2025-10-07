@@ -19,9 +19,17 @@ public class Enemi_shot : MonoBehaviour
     private float tiempoEspera = 2f;
     private float esperaActual = 0f;
 
+    // --- NUEVAS VARIABLES ---
+    private Animator animator; // Referencia al componente Animator
+    public float tiempoAnimacionMuerte = 1f; // Duración en segundos de tu animación de muerte. Ajústala en el Inspector.
+    private bool isDead = false; // Para evitar que se active la muerte múltiples veces
+
     void Start()
     {
-        // Busca el jugador por tag "Player1"
+        // --- NUEVO ---
+        // Obtenemos el componente Animator que está en el mismo GameObject
+        animator = GetComponent<Animator>();
+
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player1");
         if (playerObj != null)
         {
@@ -41,6 +49,9 @@ public class Enemi_shot : MonoBehaviour
 
     void Update()
     {
+        // Si está muerto, no hace nada
+        if (isDead) return;
+
         if (player_pos == null)
             return;
 
@@ -48,14 +59,12 @@ public class Enemi_shot : MonoBehaviour
 
         if (distanciaJugador <= rangoDeteccion)
         {
-            // Perseguir y disparar
             patrullando = false;
             PerseguirJugador();
             Disparar();
         }
         else
         {
-            // Patrullar
             if (!patrullando)
             {
                 patrullando = true;
@@ -69,6 +78,10 @@ public class Enemi_shot : MonoBehaviour
     {
         if (esperando)
         {
+            // --- NUEVO ---
+            // Está esperando, así que activamos la animación Idle
+            animator.SetBool("isMoving", false);
+
             esperaActual += Time.deltaTime;
             if (esperaActual >= tiempoEspera)
             {
@@ -79,9 +92,11 @@ public class Enemi_shot : MonoBehaviour
             return;
         }
 
-        // Solo mueve en X, manteniendo la Y actual
+        // --- NUEVO ---
+        // Se está moviendo, así que activamos la animación de movimiento
+        animator.SetBool("isMoving", true);
+
         Vector2 destino = new Vector2(puntoObjetivo.x, transform.position.y);
-        // Girar sprite según dirección
         if (destino.x > transform.position.x)
             transform.localScale = new Vector2(1, 1);
         else if (destino.x < transform.position.x)
@@ -97,7 +112,10 @@ public class Enemi_shot : MonoBehaviour
 
     void PerseguirJugador()
     {
-        // Girar sprite según dirección hacia el jugador
+        // --- NUEVO ---
+        // Siempre se está moviendo al perseguir
+        animator.SetBool("isMoving", true);
+
         if (player_pos.position.x > transform.position.x)
             transform.localScale = new Vector2(1, 1);
         else if (player_pos.position.x < transform.position.x)
@@ -107,21 +125,62 @@ public class Enemi_shot : MonoBehaviour
     }
 
     void Disparar()
+{
+    tiempoDisparo += Time.deltaTime;
+    if (tiempoDisparo >= 1f)
     {
-        tiempoDisparo += Time.deltaTime;
-        if (tiempoDisparo >= 1f)
+        animator.SetTrigger("Shoot");
+
+        // --- LÓGICA MODIFICADA ---
+
+        // 1. Definimos la rotación por defecto (mirando a la derecha)
+        Quaternion rotacionBala = Quaternion.identity;
+
+        // 2. Comprobamos si el enemigo está mirando a la izquierda (escala en X es -1)
+        if (transform.localScale.x < 0)
         {
-            GameObject bullet = Instantiate(bala, Insatncia.position, Quaternion.identity);
-            // Puedes agregar fuerza a la bala aquí si lo necesitas
-            tiempoDisparo = 0f;
+            // Si mira a la izquierda, giramos la bala 180 grados
+            rotacionBala = Quaternion.Euler(0, 180f, 0);
+        }
+
+        // 3. Instanciamos la bala con la posición y la ROTACIÓN CORRECTA
+        GameObject bullet = Instantiate(bala, Insatncia.position, rotacionBala);
+        
+        // --- FIN DE LA MODIFICACIÓN ---
+
+        tiempoDisparo = 0f;
+    }
+}
+    
+    // --- MODIFICADO ---
+    // Cambiamos la función de colisión para que inicie la corutina de muerte
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDead) return; // Si ya está muriendo, no hacemos nada
+
+        if (collision.gameObject.CompareTag("balaBuena") || collision.gameObject.CompareTag("granada"))
+        {
+            StartCoroutine(Morir());
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // --- NUEVA CORUTINA ---
+    // Esta función maneja el proceso de muerte
+    IEnumerator Morir()
     {
-        if (collision.gameObject.CompareTag("balaBuena") || collision.gameObject.CompareTag("granada"))
-        {
-            Destroy(gameObject);
-        }
+        isDead = true;
+
+        // 1. Activa la animación de muerte
+        animator.SetTrigger("Die");
+        
+        // 2. Desactiva la lógica del enemigo para que no pueda moverse ni disparar más
+        this.enabled = false;
+        GetComponent<Collider2D>().enabled = false; // También desactiva el collider para no recibir más daño
+
+        // 3. Espera a que la animación de muerte termine
+        yield return new WaitForSeconds(tiempoAnimacionMuerte);
+
+        // 4. Destruye el objeto
+        Destroy(gameObject);
     }
 }

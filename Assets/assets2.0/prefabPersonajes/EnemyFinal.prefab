@@ -84,8 +84,8 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 2014039279, guid: 51131fd8a23ac3a488e860146fb7b19c, type: 3}
+  m_SortingOrder: 100
+  m_Sprite: {fileID: 21300000, guid: f4a97b4ef0867564bbdb8e27ae03265f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ Animator:
   m_GameObject: {fileID: 6058342806709774509}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f127c447810af2548816104dd1cd96d9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9f058a197b0ad8747907c5fd17733bbd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -152,8 +152,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.310472, y: 0}
-  m_Size: {x: 1.1425829, y: 2.1875}
+  m_Offset: {x: -0.13952112, y: -0.11904979}
+  m_Size: {x: 1.0420237, y: 2.4255996}
   m_Direction: 0
 --- !u!50 &6058342806709774504
 Rigidbody2D:
@@ -200,6 +200,7 @@ MonoBehaviour:
   Insatncia: {fileID: 6058342807577293239}
   bala: {fileID: 7977757559366577888, guid: d04ab38ff690226478182921254d02ec, type: 3}
   Fuerza: 0
+  tiempoAnimacionMuerte: 1
 --- !u!114 &9063116228264080303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,8 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHP: 2
   pointsOnDeath: 2
-  destroyOnDeath: 1
   hitKnockback: 4
+  tiempoAnimacionMuerte: 1
 --- !u!1 &6058342807577293224
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +242,7 @@ Transform:
   m_GameObject: {fileID: 6058342807577293224}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.1, z: 0}
+  m_LocalPosition: {x: 1.01, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

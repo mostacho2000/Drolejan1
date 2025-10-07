@@ -24,7 +24,11 @@ public class EnemyBullet2D : MonoBehaviour
         ApplyVelocity();
     }
 
-    void Awake() => rb = GetComponent<Rigidbody2D>();
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        dir = transform.right; // <<< ¡ESTA ES LA LÍNEA QUE LO ARREGLA TODO!
+    }
 
     void OnEnable()
     {
