@@ -25,6 +25,7 @@ public class ControladorFPS : MonoBehaviour
 
         // Ocultamos el texto de los FPS al iniciar el juego.
         textoFPS.gameObject.SetActive(false);
+        Application.targetFrameRate = 60;
     }
 
     void Update()
