@@ -45,6 +45,7 @@ public class Enemi_shot : MonoBehaviour
         puntoIzquierda = new Vector2(x - 5f, y);
         puntoDerecha = new Vector2(x + 5f, y);
         puntoObjetivo = puntoDerecha;
+        Application.targetFrameRate = 90;
     }
 
     void Update()

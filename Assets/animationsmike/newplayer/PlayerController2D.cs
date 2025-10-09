@@ -207,7 +207,7 @@ public class PlayerController2D : MonoBehaviour
     // =========================
     //  Salto
     // =========================
-    void TryJump()
+   public void TryJump()
     {
         if (jumpsRemaining <= 0) return;
 
@@ -223,7 +223,7 @@ public class PlayerController2D : MonoBehaviour
     // =========================
     //  Disparo
     // =========================
-    void Shoot()
+    public void Shoot()
     {
         if (!bulletPrefab || !firePoint) return;
 
