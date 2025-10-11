@@ -44,5 +44,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectorDeNiveles.unity
     guid: ca21dbcd102e1c44eaa7341b00e02ddf
+  - enabled: 0
+    path: Assets/Scenes/NIvelesAndroid/Nivel1Android.unity
+    guid: 0b9d0bc10c1b4be4182aa51f28f9b5fb
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
