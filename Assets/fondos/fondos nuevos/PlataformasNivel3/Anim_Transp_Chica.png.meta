@@ -1,10 +1,34 @@
 fileFormatVersion: 2
-guid: efb4d6a5ed3b7dc428b9706216b6ab70
+guid: 93d0cb6e809fe17419d2a09041aa8aba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8236734323642942031
-    second: Fondo_Nivel_3_Final_0
+      213: 7802889652229287380
+    second: Anim_Transp_Chica_0
+  - first:
+      213: -103092378453531920
+    second: Anim_Transp_Chica_1
+  - first:
+      213: 8077157509588414302
+    second: Anim_Transp_Chica_2
+  - first:
+      213: 2826807403842322380
+    second: Anim_Transp_Chica_3
+  - first:
+      213: 980483176428829140
+    second: Anim_Transp_Chica_4
+  - first:
+      213: 800926818679873189
+    second: Anim_Transp_Chica_5
+  - first:
+      213: 1280537817529856662
+    second: Anim_Transp_Chica_6
+  - first:
+      213: -3722240189696207296
+    second: Anim_Transp_Chica_7
+  - first:
+      213: -2485392114360485249
+    second: Anim_Transp_Chica_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,11 +71,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
-  spriteMeshType: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,10 +96,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,6 +109,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -109,128 +146,203 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_0
+      name: Anim_Transp_Chica_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 49
         y: 0
-        width: 3603
-        height: 200
+        width: 51
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f42410e2a32ce4270800000000000000
-      internalID: 8236734323642942031
+      spriteID: 4dda2b61cce694c60800000000000000
+      internalID: 7802889652229287380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_1
+      name: Anim_Transp_Chica_1
       rect:
         serializedVersion: 2
-        x: 3221
-        y: 45
-        width: 93
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e9f6095a874c0a41939b9ad2060dbea
-      internalID: -529508779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_2
-      rect:
-        serializedVersion: 2
-        x: 609
+        x: 199
         y: 0
-        width: 125
-        height: 22
+        width: 51
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6f7ef9599204c11408cadca72a83dba1
-      internalID: 1446221645
+      spriteID: 0f22a3b270eb19ef0800000000000000
+      internalID: -103092378453531920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_3
+      name: Anim_Transp_Chica_2
       rect:
         serializedVersion: 2
-        x: 966
+        x: 349
         y: 0
-        width: 250
-        height: 23
+        width: 51
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cd4a57418cbee524191a4804c6554da5
-      internalID: -1319564115
+      spriteID: e5f65e9d5f3d71070800000000000000
+      internalID: 8077157509588414302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_4
+      name: Anim_Transp_Chica_3
       rect:
         serializedVersion: 2
-        x: 1949
+        x: 499
         y: 0
-        width: 750
-        height: 20
+        width: 51
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fefb0a385eeca6846b767f40093df65f
-      internalID: -1346326200
+      spriteID: ccf37725b56da3720800000000000000
+      internalID: 2826807403842322380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_Transp_Chica_4
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 0
+        width: 51
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9794f01406b9d00800000000000000
+      internalID: 980483176428829140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_Transp_Chica_5
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 0
+        width: 51
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae5f76b2b67d1b00800000000000000
+      internalID: 800926818679873189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_Transp_Chica_6
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 0
+        width: 51
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69232574c5265c110800000000000000
+      internalID: 1280537817529856662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_Transp_Chica_7
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 0
+        width: 51
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046997cc442f75cc0800000000000000
+      internalID: -3722240189696207296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_Transp_Chica_8
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 0
+        width: 51
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a7cf74a0d128dd0800000000000000
+      internalID: -2485392114360485249
       vertices: []
       indices: 
       edges: []
@@ -239,7 +351,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -249,11 +361,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fondo_Nivel_3_Final_0: 8236734323642942031
-      Fondo_Nivel_3_Final_1: -529508779
-      Fondo_Nivel_3_Final_2: 1446221645
-      Fondo_Nivel_3_Final_3: -1319564115
-      Fondo_Nivel_3_Final_4: -1346326200
+      Anim_Transp_Chica_0: 7802889652229287380
+      Anim_Transp_Chica_1: -103092378453531920
+      Anim_Transp_Chica_2: 8077157509588414302
+      Anim_Transp_Chica_3: 2826807403842322380
+      Anim_Transp_Chica_4: 980483176428829140
+      Anim_Transp_Chica_5: 800926818679873189
+      Anim_Transp_Chica_6: 1280537817529856662
+      Anim_Transp_Chica_7: -3722240189696207296
+      Anim_Transp_Chica_8: -2485392114360485249
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

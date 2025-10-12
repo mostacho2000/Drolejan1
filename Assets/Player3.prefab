@@ -294,7 +294,7 @@ MonoBehaviour:
   moveSpeed: 10
   acceleration: 80
   deceleration: 60
-  jumpForce: 10
+  jumpForce: 13
   groundCheck: {fileID: 3395847267846611925}
   groundCheckRadius: 0.57
   groundLayer:

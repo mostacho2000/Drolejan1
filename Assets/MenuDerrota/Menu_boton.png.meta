@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: efb4d6a5ed3b7dc428b9706216b6ab70
+guid: 55bd7e812d997714c851c64d52ffc0d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8236734323642942031
-    second: Fondo_Nivel_3_Final_0
+      213: -3241243276800067460
+    second: Menu_boton_0
+  - first:
+      213: -732777405327247402
+    second: Menu_boton_1
+  - first:
+      213: 6333357316599764746
+    second: Menu_boton_2
+  - first:
+      213: -7720011222244866964
+    second: Menu_boton_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -47,11 +56,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
-  spriteMeshType: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,10 +81,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,6 +94,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -109,30 +131,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_0
+      name: Menu_boton_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 3603
-        height: 200
+        x: 32
+        y: 53
+        width: 48
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,96 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f42410e2a32ce4270800000000000000
-      internalID: 8236734323642942031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_1
-      rect:
-        serializedVersion: 2
-        x: 3221
-        y: 45
-        width: 93
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e9f6095a874c0a41939b9ad2060dbea
-      internalID: -529508779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_2
-      rect:
-        serializedVersion: 2
-        x: 609
-        y: 0
-        width: 125
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f7ef9599204c11408cadca72a83dba1
-      internalID: 1446221645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_3
-      rect:
-        serializedVersion: 2
-        x: 966
-        y: 0
-        width: 250
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd4a57418cbee524191a4804c6554da5
-      internalID: -1319564115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fondo_Nivel_3_Final_4
-      rect:
-        serializedVersion: 2
-        x: 1949
-        y: 0
-        width: 750
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fefb0a385eeca6846b767f40093df65f
-      internalID: -1346326200
+      spriteID: c7875bf996ac403d0800000000000000
+      internalID: -3241243276800067460
       vertices: []
       indices: 
       edges: []
@@ -239,7 +160,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 4b16d07b2f6ffe34c8a7e819debaa570
     internalID: 0
     vertices: []
     indices: 
@@ -249,11 +170,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fondo_Nivel_3_Final_0: 8236734323642942031
-      Fondo_Nivel_3_Final_1: -529508779
-      Fondo_Nivel_3_Final_2: 1446221645
-      Fondo_Nivel_3_Final_3: -1319564115
-      Fondo_Nivel_3_Final_4: -1346326200
+      Menu_boton_0: -3241243276800067460
+      Menu_boton_1: -732777405327247402
+      Menu_boton_2: 6333357316599764746
+      Menu_boton_3: -7720011222244866964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

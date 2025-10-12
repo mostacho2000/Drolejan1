@@ -46,20 +46,31 @@ public class Bullet2D : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other)
+{
+    // 1. COMPROBACIÓN DEL TAG
+    // Si el objeto con el que colisionamos tiene el tag "FajoFinal",
+    // salimos de la función inmediatamente. La bala no se destruirá.
+    if (other.gameObject.CompareTag("FajoFinal"))
     {
-        // filtra por máscara (Enemy, Ground, etc.)
-        if (hitMask != 0 && ((1 << other.gameObject.layer) & hitMask) == 0) return;
-
-        // daño si el objetivo lo soporta
-        var target = other.GetComponent<IDamageable>();
-        if (target != null)
-        {
-            target.TakeDamage(damage, transform.position, moveDir);
-            Destroy(gameObject);
-            return;
-        }
-
-        // si tocó algo de la máscara (ej. Ground) y no es IDamageable, también se destruye
-        Destroy(gameObject);
+        return;
     }
+
+    // --- El resto de tu código original permanece igual ---
+
+    // 2. Filtra por máscara (Enemy, Ground, etc.)
+    // Si el objeto no está en la máscara, no hacemos nada.
+    if (hitMask != 0 && ((1 << other.gameObject.layer) & hitMask) == 0) return;
+
+    // 3. Daño si el objetivo lo soporta
+    var target = other.GetComponent<IDamageable>();
+    if (target != null)
+    {
+        target.TakeDamage(damage, transform.position, moveDir);
+        Destroy(gameObject); // La bala se destruye después de hacer daño
+        return;
+    }
+
+    // 4. Si tocó algo de la máscara (ej. Ground) y no es IDamageable, también se destruye
+    Destroy(gameObject);
+}
 }
