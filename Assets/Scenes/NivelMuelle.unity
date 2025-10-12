@@ -2849,17 +2849,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &536304518 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9039617240597056200, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
-  m_PrefabInstance: {fileID: 1886829889}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984d9956f1f89264d9bd29f23193b30f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PausaMenu
 --- !u!1001 &558473066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8036,6 +8025,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60bf934e2319b344a12c2c376d17268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1782613581 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6643162335736135811, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+  m_PrefabInstance: {fileID: 1886829889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1c1bc45b958fb4290e53c1285f0001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PausaMenu2
 --- !u!1001 &1783475363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8506,10 +8506,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1768276252887505050, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2303050746183508320, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 536304518}
+      objectReference: {fileID: 0}
     - target: {fileID: 2303050746183508320, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ShowVolumeOptions
@@ -8517,7 +8521,7 @@ PrefabInstance:
     - target: {fileID: 4293886694579751624, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 536304518}
+      objectReference: {fileID: 1782613581}
     - target: {fileID: 4293886694579751624, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoBackToPauseMenu
@@ -8569,7 +8573,7 @@ PrefabInstance:
     - target: {fileID: 4566772377458960912, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 536304518}
+      objectReference: {fileID: 1782613581}
     - target: {fileID: 4566772377458960912, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoToMainMenu
@@ -8577,7 +8581,7 @@ PrefabInstance:
     - target: {fileID: 4668088079421374729, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 536304518}
+      objectReference: {fileID: 1782613581}
     - target: {fileID: 4668088079421374729, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
@@ -8585,15 +8589,19 @@ PrefabInstance:
     - target: {fileID: 6178877350204588841, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 536304518}
+      objectReference: {fileID: 1782613581}
     - target: {fileID: 6178877350204588841, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ShowVolumeOptions
       objectReference: {fileID: 0}
+    - target: {fileID: 6992080760653591352, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9020034144902731689, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 536304518}
+      objectReference: {fileID: 0}
     - target: {fileID: 9020034144902731689, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ShowControlPanel

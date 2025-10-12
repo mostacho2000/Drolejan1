@@ -1,68 +1,98 @@
 using UnityEngine;
-using TMPro; // Necesario para usar TextMeshPro
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class ControladorFPS : MonoBehaviour
+public class PausaMenu : MonoBehaviour
 {
-    // Referencia pública al texto que mostrará los FPS.
-    // La asignaremos desde el inspector de Unity.
-    public TextMeshProUGUI textoFPS;
+    public GameObject pauseMenuPanel;
+    public GameObject volumeOptionsPanel;
+    
+    public static bool isPaused = false;
+    private Pausa pausaControls;
 
-    // Variables para promediar el cálculo de FPS y no actualizarlo en cada fotograma.
-    private float tiempoAcumulado = 0.0f;
-    private int fotogramasAcumulados = 0;
-    private float intervaloActualizacion = 0.5f; // Actualizar cada medio segundo
+    // Es mejor práctica inicializar los controles en Awake()
+    private void Awake()
+    {
+        pausaControls = new Pausa();
+    }
+
+    // --- CÓDIGO CORREGIDO Y ROBUSTO ---
+    private void OnEnable()
+    {
+        pausaControls.UI.Enable();
+        // Suscribimos el método dedicado "HandlePauseInput"
+        pausaControls.UI.Pausar.performed += HandlePauseInput;
+    }
+
+    private void OnDisable()
+    {
+        // Desuscribimos el MISMO método dedicado, asegurando que se elimine correctamente
+        pausaControls.UI.Pausar.performed -= HandlePauseInput;
+        pausaControls.UI.Disable();
+    }
+
+    // Este es nuestro método dedicado para manejar la entrada de pausa
+    private void HandlePauseInput(InputAction.CallbackContext context)
+    {
+        TogglePause();
+    }
+    // --- FIN DE LA CORRECCIÓN ---
 
     void Start()
     {
-        // Es una buena práctica asegurarse de que el texto está asignado.
-        if (textoFPS == null)
-        {
-            Debug.LogError("No se ha asignado el componente TextMeshProUGUI para los FPS.");
-            // Desactivamos el script si no hay texto para evitar errores.
-            this.enabled = false; 
-            return;
-        }
-
-        // Ocultamos el texto de los FPS al iniciar el juego.
-        textoFPS.gameObject.SetActive(false);
-        Application.targetFrameRate = 60;
+        // Asegurarse de que el juego siempre empiece sin pausa
+        ResumeGame();
     }
 
-    void Update()
+    public void TogglePause()
     {
-        // Acumulamos el tiempo y los fotogramas.
-        // Usamos unscaledDeltaTime para que no se vea afectado por cambios en la escala de tiempo (ej. slow motion).
-        tiempoAcumulado += Time.unscaledDeltaTime;
-        fotogramasAcumulados++;
+        // Simplificamos la lógica. Invertimos el estado y luego actuamos.
+        isPaused = !isPaused; 
 
-        // Si ha pasado el intervalo de tiempo definido...
-        if (tiempoAcumulado > intervaloActualizacion)
+        if (isPaused)
         {
-            // Calculamos los FPS promediados durante ese intervalo.
-            float fps = fotogramasAcumulados / tiempoAcumulado;
-            
-            // Formateamos el texto para mostrar solo dos decimales.
-            string textoResultado = string.Format("{0:F2} FPS", fps);
-            
-            // Actualizamos el contenido del texto en la UI.
-            textoFPS.text = textoResultado;
-
-            // Reiniciamos los contadores para el próximo intervalo.
-            tiempoAcumulado = 0.0f;
-            fotogramasAcumulados = 0;
+            PauseGame();
+        }
+        else
+        {
+            ResumeGame();
         }
     }
 
-    /// <summary>
-    /// Este es el método PÚBLICO que llamará nuestro botón.
-    /// Activa o desactiva el objeto de texto de los FPS.
-    /// </summary>
-    public void AlternarVisibilidadFPS()
+    public void PauseGame()
     {
-        // Obtenemos el estado actual del objeto (activo o inactivo).
-        bool estadoActual = textoFPS.gameObject.activeSelf;
+        pauseMenuPanel.SetActive(true);
+        volumeOptionsPanel.SetActive(false);
         
-        // Asignamos el estado contrario para alternar su visibilidad.
-        textoFPS.gameObject.SetActive(!estadoActual);
+        Time.timeScale = 0f;
+        isPaused = true; // Aseguramos el estado
+    }
+
+    public void ResumeGame()
+    {
+        pauseMenuPanel.SetActive(false);
+        volumeOptionsPanel.SetActive(false); // También oculta este panel al reanudar
+        
+        Time.timeScale = 1f;
+        isPaused = false; // Aseguramos el estado
+    }
+
+    public void ShowVolumeOptions()
+    {
+        pauseMenuPanel.SetActive(false);
+        volumeOptionsPanel.SetActive(true);
+    }
+    
+    public void GoBackToPauseMenu()
+    {
+        volumeOptionsPanel.SetActive(false);
+        pauseMenuPanel.SetActive(true);
+    }
+
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f; // Siempre reanudar el tiempo antes de cambiar de escena
+        SceneManager.LoadScene("Menu RICARDO");
     }
 }

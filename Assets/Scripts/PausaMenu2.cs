@@ -3,11 +3,11 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PausaMenu : MonoBehaviour
+public class PausaMenu2 : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
     public GameObject volumeOptionsPanel;
-    public GameObject controlPanel;
+    
 
     public static bool isPaused = false;
 
@@ -34,7 +34,7 @@ public class PausaMenu : MonoBehaviour
     {
         pauseMenuPanel.SetActive(false);
         volumeOptionsPanel.SetActive(false);
-        controlPanel.SetActive(false);
+     
         isPaused = false;
         Time.timeScale = 1f;
     }
@@ -55,7 +55,7 @@ public class PausaMenu : MonoBehaviour
     {
         pauseMenuPanel.SetActive(true);
         volumeOptionsPanel.SetActive(false);
-        controlPanel.SetActive(false);
+      
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -71,21 +71,16 @@ public class PausaMenu : MonoBehaviour
     {
         pauseMenuPanel.SetActive(false);
         volumeOptionsPanel.SetActive(true);
-        controlPanel.SetActive(false);
+       
     }
     
-    public void ShowControlPanel()
-    {
-        pauseMenuPanel.SetActive(false);
-        volumeOptionsPanel.SetActive(false);
-        controlPanel.SetActive(true);
-    }
+
 
     public void GoBackToPauseMenu()
     {
         // Este método ahora funciona para regresar desde cualquier panel de submenú
         volumeOptionsPanel.SetActive(false);
-        controlPanel.SetActive(false);
+
         pauseMenuPanel.SetActive(true);
     }
 

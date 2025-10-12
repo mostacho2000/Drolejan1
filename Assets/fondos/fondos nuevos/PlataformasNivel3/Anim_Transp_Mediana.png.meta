@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -153,12 +153,12 @@ TextureImporter:
       name: Anim_Transp_Mediana_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 0
-        width: 78
-        height: 15
+        x: 37
+        y: 1
+        width: 76
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: Anim_Transp_Mediana_1
       rect:
         serializedVersion: 2
-        x: 186
-        y: 0
-        width: 78
-        height: 15
+        x: 187
+        y: 1
+        width: 76
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: Anim_Transp_Mediana_2
       rect:
         serializedVersion: 2
-        x: 336
-        y: 0
-        width: 78
-        height: 15
+        x: 337
+        y: 1
+        width: 76
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: Anim_Transp_Mediana_3
       rect:
         serializedVersion: 2
-        x: 486
-        y: 0
-        width: 78
-        height: 15
+        x: 487
+        y: 1
+        width: 76
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: Anim_Transp_Mediana_4
       rect:
         serializedVersion: 2
-        x: 636
-        y: 0
-        width: 78
-        height: 15
+        x: 637
+        y: 1
+        width: 76
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,12 +263,12 @@ TextureImporter:
       name: Anim_Transp_Mediana_5
       rect:
         serializedVersion: 2
-        x: 786
-        y: 0
-        width: 78
-        height: 15
+        x: 787
+        y: 1
+        width: 76
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -285,12 +285,12 @@ TextureImporter:
       name: Anim_Transp_Mediana_6
       rect:
         serializedVersion: 2
-        x: 936
-        y: 0
-        width: 78
-        height: 15
+        x: 937
+        y: 1
+        width: 76
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -307,12 +307,12 @@ TextureImporter:
       name: Anim_Transp_Mediana_7
       rect:
         serializedVersion: 2
-        x: 1086
-        y: 0
-        width: 78
-        height: 15
+        x: 1087
+        y: 1
+        width: 76
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -329,12 +329,12 @@ TextureImporter:
       name: Anim_Transp_Mediana_8
       rect:
         serializedVersion: 2
-        x: 1236
-        y: 0
-        width: 78
-        height: 15
+        x: 1237
+        y: 1
+        width: 76
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -351,7 +351,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 372ede0e26397264ca8913dfbfdb39d7
     internalID: 0
     vertices: []
     indices: 
