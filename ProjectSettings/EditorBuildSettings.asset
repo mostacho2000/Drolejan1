@@ -6,31 +6,31 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu RICARDO.unity
+    path: Assets/Scenes/scenasrpincipales/Menu RICARDO.unity
     guid: d4b74040a40cf9240b51992387ebc290
   - enabled: 1
-    path: Assets/Scenes/ProyectoFinal.unity
+    path: Assets/Scenes/scenasrpincipales/ProyectoFinal.unity
     guid: 937ad8d745d535e4db9b1e61265d99b5
   - enabled: 1
-    path: Assets/Scenes/GameOver Ricardo.unity
+    path: Assets/Scenes/scenasrpincipales/GameOver Ricardo.unity
     guid: c0dbc855c19064b419b3c35593c85f14
   - enabled: 1
-    path: Assets/Scenes/Vendedor Ricardo.unity
+    path: Assets/Scenes/scenasrpincipales/Vendedor Ricardo.unity
     guid: 27e6ff785a3e6064c8a116031219fff0
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 5e97275d4c90b28498af81de89749f71
   - enabled: 1
-    path: Assets/Scenes/NivelMuelle.unity
+    path: Assets/Scenes/scenasrpincipales/NivelMuelle.unity
     guid: a6a5124bcc6907c4890a16cabe96c3e3
   - enabled: 0
     path: Assets/Scenes/Tienda2.unity
     guid: 7c13cec24952b784db9c5511e86cc724
   - enabled: 1
-    path: Assets/Scenes/Escena Win Ricardo.unity
+    path: Assets/Scenes/scenasrpincipales/Escena Win Ricardo.unity
     guid: 0523ed8bf9fcfa14aad18f885b29502d
   - enabled: 1
-    path: Assets/Scenes/NivelFinal.unity
+    path: Assets/Scenes/scenasrpincipales/NivelFinal.unity
     guid: 9f6b41fe37c560049b5278ed8ce2de26
   - enabled: 1
     path: Assets/Scenes/escenaPruevaMike.unity
@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Vendedor Ricardo 1.unity
     guid: 241c278c3864cd942bc8790c373a1b6b
   - enabled: 1
-    path: Assets/Scenes/SelectorDeNiveles.unity
+    path: Assets/Scenes/scenasrpincipales/SelectorDeNiveles.unity
     guid: ca21dbcd102e1c44eaa7341b00e02ddf
   - enabled: 0
     path: Assets/Scenes/NIvelesAndroid/Nivel1Android.unity

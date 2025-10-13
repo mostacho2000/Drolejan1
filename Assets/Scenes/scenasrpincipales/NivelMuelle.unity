@@ -3084,7 +3084,7 @@ Transform:
   m_GameObject: {fileID: 616718087}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.6, y: -4, z: -10}
+  m_LocalPosition: {x: -53, y: -4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10066,6 +10066,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 866128367169364874, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 616718090}
     - target: {fileID: 3395847267846611925, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.313
@@ -10076,7 +10080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3885541111877812212, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.92
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 3885541111877812212, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10126,40 +10130,15 @@ PrefabInstance:
       propertyPath: controlador
       value: 
       objectReference: {fileID: 1782613579}
+    - target: {fileID: 6731538678162693967, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
+      propertyPath: groundCheckRadius
+      value: 0.78
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5608587365515698270, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2137564508}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
---- !u!1 &2137564507 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5608587365515698270, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
-  m_PrefabInstance: {fileID: 2137564506}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2137564508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137564507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19c710ff8c1ed934180639991287fe9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  baseController: {fileID: 0}
-  arma2Controller: {fileID: 0}
-  arma3Controller: {fileID: 0}
-  bulletArma1: {fileID: 0}
-  fireRateArma1: 0.5
-  bulletArma2: {fileID: 0}
-  fireRateArma2: 0.45
-  bulletArma3: {fileID: 0}
-  fireRateArma3: 0.4
 --- !u!1001 &383854419791245697
 PrefabInstance:
   m_ObjectHideFlags: 0
