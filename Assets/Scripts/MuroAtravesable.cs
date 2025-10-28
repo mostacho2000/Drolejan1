@@ -1,74 +1,89 @@
 using UnityEngine;
-using System.Collections.Generic; // Necesario para usar List<T>
+using System.Collections.Generic; // List<T>
 
 [RequireComponent(typeof(Collider2D))]
 public class MuroAtravesable : MonoBehaviour
 {
     [Header("Referencias")]
-    [SerializeField]
-    private Collider2D playerCollider; // Arrastra al jugador aquí
+    [SerializeField] private Collider2D playerCollider;   // Arrastra el collider del player
+    [SerializeField] private string playerTag = "Player1"; // Fallback si no se asigna por Inspector
+    [SerializeField] private string enemyTag  = "enemy";   // Tag de enemigos
 
-    // Listas para guardar las referencias de todos los enemigos
-    private List<Collider2D> enemyColliders = new List<Collider2D>();
-    private List<Rigidbody2D> enemyRbs = new List<Rigidbody2D>();
+    // Listas paralelas (collider/rb) de enemigos
+    private readonly List<Collider2D>  enemyColliders = new List<Collider2D>();
+    private readonly List<Rigidbody2D> enemyRbs       = new List<Rigidbody2D>();
 
-    private Collider2D wallCollider;
+    private Collider2D  wallCollider;
     private Rigidbody2D playerRb;
 
     void Awake()
     {
         wallCollider = GetComponent<Collider2D>();
 
-        // 1. Configurar al jugador (igual que antes)
-        if (playerCollider != null)
+        // --- Player ---
+        if (playerCollider)
         {
             playerRb = playerCollider.GetComponent<Rigidbody2D>();
         }
-        else // Plan B: buscarlo por tag si no se arrastró
+        else
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player1");
-            if (player != null)
+            var player = GameObject.FindGameObjectWithTag(playerTag);
+            if (player)
             {
                 playerCollider = player.GetComponent<Collider2D>();
-                playerRb = player.GetComponent<Rigidbody2D>();
+                playerRb       = player.GetComponent<Rigidbody2D>();
             }
         }
 
-        // 2. Encontrar y configurar a TODOS los enemigos
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
-        foreach (GameObject enemy in enemies)
+        // --- Enemigos (semilla inicial) ---
+        var enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        foreach (var e in enemies)
         {
-            Collider2D enemyCol = enemy.GetComponent<Collider2D>();
-            Rigidbody2D enemyBody = enemy.GetComponent<Rigidbody2D>();
+            if (!e) continue;
 
-            if (enemyCol != null && enemyBody != null)
+            // Si el collider está en un hijo, puedes usar GetComponentInChildren
+            var col = e.GetComponent<Collider2D>();
+            var rb  = e.GetComponent<Rigidbody2D>();
+
+            if (col && rb)
             {
-                enemyColliders.Add(enemyCol);
-                enemyRbs.Add(enemyBody);
+                enemyColliders.Add(col);
+                enemyRbs.Add(rb);
             }
         }
     }
 
     void Update()
     {
-        // Procesa la lógica para el jugador
-        if (playerCollider != null && playerRb != null)
-        {
+        // Player seguro
+        if (wallCollider && playerCollider && playerRb)
             ProcessPlayer(playerCollider, playerRb);
-        }
 
-        // Procesa la lógica para cada enemigo en la lista
-        for (int i = 0; i < enemyColliders.Count; i++)
+        // Enemigos: iterar hacia atrás y limpiar referencias destruidas
+        for (int i = enemyColliders.Count - 1; i >= 0; i--)
         {
-            ProcessEnemy(enemyColliders[i], enemyRbs[i]);
+            var col = enemyColliders[i];
+            var rb  = (i < enemyRbs.Count) ? enemyRbs[i] : null;
+
+            // Si el enemigo se destruyó o perdió componentes, se elimina de las listas
+            if (!col || !rb)
+            {
+                if (i < enemyRbs.Count) enemyRbs.RemoveAt(i);
+                enemyColliders.RemoveAt(i);
+                continue;
+            }
+
+            ProcessEnemy(col, rb);
         }
     }
 
-    // Lógica específica para el JUGADOR (puede saltar y aterrizar)
+    // -------------------- Lógica Player (salto/aterrizaje + horizontal) --------------------
     void ProcessPlayer(Collider2D targetCollider, Rigidbody2D targetRb)
     {
-        // Prioridad 1: Comprobación vertical para aterrizar
-        float platformTopY = wallCollider.bounds.max.y;
+        if (!wallCollider || !targetCollider || !targetRb) return;
+
+        // 1) Prioridad vertical: permitir colisionar si ya está "arriba" (aterriza)
+        float platformTopY  = wallCollider.bounds.max.y;
         float playerBottomY = targetCollider.bounds.min.y;
 
         if (playerBottomY >= platformTopY - 0.05f)
@@ -77,20 +92,32 @@ public class MuroAtravesable : MonoBehaviour
             return;
         }
 
-        // Prioridad 2: Lógica horizontal para atravesar
-        float targetVelocityX = targetRb.linearVelocity.x;
-        bool shouldIgnore = (targetCollider.transform.position.x < transform.position.x && targetVelocityX > 0.1f) ||
-                            (targetCollider.transform.position.x > transform.position.x && targetVelocityX < -0.1f);
-        
+        // 2) Horizontal: permitir atravesar si se mueve hacia el muro
+#if UNITY_6000_0_OR_NEWER
+        float vx = targetRb.linearVelocity.x;
+#else
+        float vx = targetRb.velocity.x;
+#endif
+        bool shouldIgnore =
+            (targetCollider.transform.position.x < transform.position.x && vx >  0.1f) ||
+            (targetCollider.transform.position.x > transform.position.x && vx < -0.1f);
+
         Physics2D.IgnoreCollision(wallCollider, targetCollider, shouldIgnore);
     }
 
-    // Lógica simplificada para los ENEMIGOS (solo atraviesan horizontalmente)
+    // -------------------- Lógica Enemigos (solo horizontal) --------------------
     void ProcessEnemy(Collider2D targetCollider, Rigidbody2D targetRb)
     {
-        float targetVelocityX = targetRb.linearVelocity.x;
-        bool shouldIgnore = (targetCollider.transform.position.x < transform.position.x && targetVelocityX > 0f) ||
-                            (targetCollider.transform.position.x > transform.position.x && targetVelocityX < 0f);
+        if (!wallCollider || !targetCollider || !targetRb) return;
+
+#if UNITY_6000_0_OR_NEWER
+        float vx = targetRb.linearVelocity.x;
+#else
+        float vx = targetRb.velocity.x;
+#endif
+        bool shouldIgnore =
+            (targetCollider.transform.position.x < transform.position.x && vx > 0f) ||
+            (targetCollider.transform.position.x > transform.position.x && vx < 0f);
 
         Physics2D.IgnoreCollision(wallCollider, targetCollider, shouldIgnore);
     }

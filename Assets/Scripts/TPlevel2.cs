@@ -28,4 +28,15 @@ public class TPlevel2 : MonoBehaviour
         SceneManager.LoadScene("NivelMuelle");
 
     }
+     public void finallevel()//esto se le ayade al boton de restart
+    {
+
+
+        Time.timeScale = 1;
+
+
+
+        SceneManager.LoadScene("NivelFinal");
+
+    }
 }

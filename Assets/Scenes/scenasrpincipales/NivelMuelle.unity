@@ -2463,7 +2463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TP
   playerTag: Player1
   loadNextByBuildIndex: 0
-  sceneToLoad: Vendedor Ricardo
+  sceneToLoad: Vendedor Ricardo1
   delay: 0
 --- !u!1001 &485236976
 PrefabInstance:
