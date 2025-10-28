@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7389f7e361084e24289c1fcc1e4b9f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopWeaponButton
-  armaIndex: 2
+  armaIndex: 1
   costo: 2
 --- !u!1 &388779449
 GameObject:
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7389f7e361084e24289c1fcc1e4b9f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopWeaponButton
-  armaIndex: 1
+  armaIndex: 2
   costo: 2
 --- !u!1 &543634511
 GameObject:

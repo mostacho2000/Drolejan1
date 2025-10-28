@@ -530,6 +530,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &87249371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1001 &314142236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2405,6 +2409,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!4 &831742485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3885541111877812212, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
@@ -2672,6 +2678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &870108963 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7534633060775824525, guid: 664c0d3273917074c87404a24cc5eea5, type: 3}
@@ -2782,6 +2790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1017770694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7534633060775824525, guid: 664c0d3273917074c87404a24cc5eea5, type: 3}
@@ -3013,6 +3023,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1115130503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,6 +3180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1168960178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7534633060775824525, guid: 664c0d3273917074c87404a24cc5eea5, type: 3}
@@ -3186,6 +3200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1001 &1171560396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3331,6 +3347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1001 &1240439929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3542,6 +3560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1314509806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,6 +3738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1001 &1398018748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4185,6 +4207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1001 &1521078663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4264,6 +4288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1001 &1534215064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4343,6 +4369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1565845127
 GameObject:
   m_ObjectHideFlags: 0
@@ -4581,6 +4609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1616669553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4689,6 +4719,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1674835624
 GameObject:
   m_ObjectHideFlags: 0
@@ -5018,6 +5050,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1001 &1819928881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5097,6 +5131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1860013766
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,6 +5241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1923435290
 GameObject:
   m_ObjectHideFlags: 0
@@ -5500,6 +5538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &1968147385
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,6 +5770,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &2009810729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7534633060775824525, guid: 664c0d3273917074c87404a24cc5eea5, type: 3}
@@ -5748,6 +5790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &2017388919 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7534633060775824525, guid: 664c0d3273917074c87404a24cc5eea5, type: 3}
@@ -5766,6 +5810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &2039164210
 GameObject:
   m_ObjectHideFlags: 0
@@ -5874,6 +5920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1 &2055367331
 GameObject:
   m_ObjectHideFlags: 0
@@ -6043,6 +6091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1001 &2101468599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6360,6 +6410,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoBackToPauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 4321406421062628856, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7510842675793702081, guid: 9ba6f6498cc37ad4da280f03b8e10e49, type: 3}
+    - target: {fileID: 4321406421160540446, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -367772620838246966, guid: fa39d8dfb33274f4dbac4b709b94ba3c, type: 3}
+    - target: {fileID: 4321406421882817513, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7510842675793702081, guid: 9ba6f6498cc37ad4da280f03b8e10e49, type: 3}
+    - target: {fileID: 4321406422177600334, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -367772620838246966, guid: fa39d8dfb33274f4dbac4b709b94ba3c, type: 3}
     - target: {fileID: 4321406422465220773, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -6408,6 +6474,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4321406422484407826, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -367772620838246966, guid: fa39d8dfb33274f4dbac4b709b94ba3c, type: 3}
+    - target: {fileID: 4321406422559972005, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7510842675793702081, guid: 9ba6f6498cc37ad4da280f03b8e10e49, type: 3}
     - target: {fileID: 4566772377458960912, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6581,6 +6655,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuroAtravesable
   playerCollider: {fileID: 0}
+  playerTag: Player1
+  enemyTag: enemy
 --- !u!1001 &6166200604682293153
 PrefabInstance:
   m_ObjectHideFlags: 0
