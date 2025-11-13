@@ -2323,6 +2323,7 @@ GameObject:
   - component: {fileID: 450371929}
   - component: {fileID: 450371928}
   - component: {fileID: 450371931}
+  - component: {fileID: 450371932}
   m_Layer: 0
   m_Name: TPFinal
   m_TagString: Tienda
@@ -2465,6 +2466,19 @@ MonoBehaviour:
   loadNextByBuildIndex: 0
   sceneToLoad: Vendedor Ricardo 1
   delay: 0
+--- !u!114 &450371932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450371927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7af1886ba7f9741904bdc44344a76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NivelCompletado
+  nivelADesbloquear: 3
 --- !u!1001 &485236976
 PrefabInstance:
   m_ObjectHideFlags: 0
