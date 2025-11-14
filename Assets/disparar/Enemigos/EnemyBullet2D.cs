@@ -1,87 +1,85 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 public class EnemyBullet2D : MonoBehaviour
 {
-    [Header("Movimiento")]
-    public float speed = 6f;
-    public Vector2 dir = Vector2.left;
+    [Header("Ajustes")]
+    [SerializeField] int damage = 1;
+    [SerializeField] float lifeTime = 4f;      // segundos antes de autodestruirse
+    [SerializeField] LayerMask hitMask = ~0;   // por si quieres filtrar capas (opcional)
 
-    [Header("Daño")]
-    public int damage = 1;
-
-    private Rigidbody2D rb;
+    Rigidbody2D rb;
+    Vector2 dir = Vector2.right;
+    float speed = 10f;
+    float life;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+#if UNITY_6000_0_OR_NEWER
+        rb.bodyType = RigidbodyType2D.Kinematic;
+#else
+        rb.isKinematic = true;
+#endif
+        rb.freezeRotation = true;
+
+        // El collider de la bala debe ser "Is Trigger"
+        var col = GetComponent<Collider2D>();
+        col.isTrigger = true;
     }
 
-    void OnEnable()
+    /// <summary>
+    /// Llamado por el jefe al crear la bala.
+    /// </summary>
+    public void Setup(Vector2 direction, float bulletSpeed)
     {
-        if (rb == null) rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = dir.normalized * speed;
+        dir = direction.sqrMagnitude > 0.0001f ? direction.normalized : Vector2.right;
+        speed = Mathf.Max(0f, bulletSpeed);
     }
 
-    /// Llamar esto al instanciar la bala desde el enemigo
-    public void Launch(Vector2 direction, float speedOverride = -1f)
+    void FixedUpdate()
     {
-        dir = direction.normalized;
-        if (speedOverride > 0) speed = speedOverride;
-        if (rb == null) rb = GetComponent<Rigidbody2D>();
+#if UNITY_6000_0_OR_NEWER
         rb.linearVelocity = dir * speed;
+#else
+        rb.velocity = dir * speed;
+#endif
+    }
+
+    void Update()
+    {
+        life += Time.deltaTime;
+        if (life >= lifeTime) Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Ignora otros triggers (por ejemplo, de detección)
-        if (other.isTrigger) return;
-
-        // ¿Golpeó al jugador?
-        if (other.CompareTag("Player") || other.CompareTag("Player1"))
-        {
-            // 1) Si tu Player implementa una interfaz de daño:
-            var iDamage = other.GetComponent<IDamageable>();
-            if (iDamage != null)
-            {
-                iDamage.ApplyDamage(damage);
-            }
-            else
-            {
-                // 2) Si tienes un script PlayerHealth:
-                var ph = other.GetComponent<PlayerHealth>();
-                if (ph != null) ph.ApplyDamage(damage);
-                else
-                {
-                    // 3) Fallback: usa tu GameManager (ajusta el método al que SÍ tengas)
-                    // Si tu GameManager tiene CambiarVidas(int delta):
-                    GameManager.instancia?.CambiarVidas(-damage);
-
-                    // Si en tu proyecto el método se llama distinto,
-                    // cámbialo por el correcto (p.ej. UpdateHearts(-damage), RestarVidas(damage), etc.)
-                }
-            }
-
-            Destroy(gameObject);
+        // Si definiste hitMask, respeta el filtro
+        if (((1 << other.gameObject.layer) & hitMask) == 0)
             return;
+
+        // Evita dañar a otros enemigos (opcional)
+        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
+            return;
+
+        // Busca a alguien dañable en el objeto o su padre
+        var dmg = other.GetComponentInParent<IDamageable>();
+        if (dmg != null)
+        {
+            Vector2 hitPoint = transform.position;
+            Vector2 hitDir   = dir;
+            dmg.TakeDamage(damage, hitPoint, hitDir);
         }
 
-        // Si golpea suelo/pared/escenario, destruye la bala
-        int ground = LayerMask.NameToLayer("Ground");
-        if (other.gameObject.layer == ground)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        // Evita matar a otros enemigos por accidente
-        if (other.GetComponent<EnemyController2D>() != null) return;
-
-        // Por defecto destruye si pega algo sólido
+        // Destruye siempre al impactar algo relevante
         Destroy(gameObject);
     }
 
     void OnBecameInvisible()
     {
+        // Seguridad extra por si no colisiona
         Destroy(gameObject);
     }
 }
