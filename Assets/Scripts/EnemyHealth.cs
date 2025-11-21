@@ -10,13 +10,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] float hitKnockback = 4f;
 
     [Header("Animación")]
-    [Tooltip("Duración de la animación de muerte antes de destruir")]
     [SerializeField] float deathAnimTime = 1f;
 
     Animator anim;
     Rigidbody2D rb;
     EnemyController2D controller;
-    Enemi_shot shooter;
+    Enemi_shot shooter; // Asumiendo que así se llama tu clase
 
     int hp;
     bool isDying = false;
@@ -30,7 +29,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         shooter = GetComponent<Enemi_shot>();
     }
 
-    // Firma compatible con tu sistema de daño
     public void TakeDamage(int amount, Vector2 hitPoint, Vector2 hitDir)
     {
         if (isDying) return;
@@ -42,34 +40,50 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         if (hp <= 0)
         {
-            isDying = true;
-            StartCoroutine(Die());
+            StartDeathSequence();
         }
     }
 
-    // Muerte por áreas/tiles con tag "Acido"
+    // CASO 1: El acido es un Trigger (Is Trigger marcado)
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (isDying) return;
+        if (other.CompareTag("Acido")) StartDeathSequence();
+    }
 
-        if (other.CompareTag("Acido"))
-        {
-            isDying = true;
-            StartCoroutine(Die());
-        }
+    // CASO 2: El acido es un Collider solido (Suelo, pinchos físicos)
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (isDying) return;
+        if (other.gameObject.CompareTag("Acido")) StartDeathSequence();
+    }
+
+    // Método unificado para evitar repetir código
+    void StartDeathSequence()
+    {
+        isDying = true;
+        StartCoroutine(Die());
     }
 
     IEnumerator Die()
     {
-        // Da puntos UNA sola vez
         GameManager.instancia?.CambiarPuntos(pointsOnDeath);
 
-        // Desactiva IA y físicas para que la anim corra limpia
         if (shooter) shooter.enabled = false;
-        if (controller) controller.OnDeath();  // si no tienes este método, quita esta línea
-        if (rb) rb.simulated = false;
+        if (controller) controller.OnDeath();
 
-        if (anim) anim.SetTrigger("Die");      // asegúrate de tener el trigger "Die" en el Animator
+        // CAMBIO IMPORTANTE: Detener velocidad en vez de apagar simulación inmediatamente
+        if (rb)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Kinematic; // Se queda quieto pero el Animator funciona
+        }
+
+        // Asegúrate que el collider ya no choque con el jugador mientras muere
+        GetComponent<Collider2D>().enabled = false;
+
+        if (anim) anim.SetTrigger("Die");
+
         yield return new WaitForSeconds(deathAnimTime);
 
         Destroy(gameObject);
