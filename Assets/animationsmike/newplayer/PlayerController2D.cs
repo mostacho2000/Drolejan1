@@ -158,10 +158,19 @@ public class PlayerController2D : MonoBehaviour
     {
         facingRight = toRight;
 
-        if (sr) sr.flipX = !facingRight; // voltea sprite
+        // 1) Voltear sprite del personaje
+        if (sr) sr.flipX = !facingRight;
 
-        if (weaponPivot)                 // voltea arma y firePoint
+        // 2) Mover y voltear el weaponPivot (arma + firePoint)
+        if (weaponPivot)
         {
+            // Mover el pivot al lado correcto manteniendo su distancia en X
+            var pos = weaponPivot.localPosition;
+            float absX = Mathf.Abs(pos.x);
+            pos.x = absX * (facingRight ? 1f : -1f);
+            weaponPivot.localPosition = pos;
+
+            // Ajustar escala para que el arma/fuego apunten correctamente
             var s = weaponPivot.localScale;
             s.x = facingRight ? 1f : -1f;
             weaponPivot.localScale = s;

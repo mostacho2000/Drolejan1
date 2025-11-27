@@ -6614,6 +6614,26 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -367772620838246966, guid: fa39d8dfb33274f4dbac4b709b94ba3c, type: 3}
+    - target: {fileID: 4321406421878266640, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1202
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321406421878266640, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1202
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321406421878266640, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1202
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321406421878266640, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -800
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321406421878266640, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 358
+      objectReference: {fileID: 0}
     - target: {fileID: 4321406421882817513, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -6678,6 +6698,26 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7510842675793702081, guid: 9ba6f6498cc37ad4da280f03b8e10e49, type: 3}
+    - target: {fileID: 4321406423142661524, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1202
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321406423142661524, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1202
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321406423142661524, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1202
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321406423142661524, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -799.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321406423142661524, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 238.09996
+      objectReference: {fileID: 0}
     - target: {fileID: 4566772377458960912, guid: 682d6968c657a4c4fa5cc6d04abb71e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 1425414311047638915}
   - component: {fileID: 538496927369567581}
   - component: {fileID: 740649815013693854}
+  - component: {fileID: -2562367393667175224}
   m_Layer: 11
   m_Name: Player3
   m_TagString: Player1
@@ -254,8 +255,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.28491724, y: 0.014788151}
-  m_Size: {x: 1.3812988, y: 2.742024}
+  m_Offset: {x: -0.3096733, y: 0.014788151}
+  m_Size: {x: 0.9647522, y: 2.742024}
   m_Direction: 0
 --- !u!114 &866128367169364874
 MonoBehaviour:
@@ -328,7 +329,7 @@ MonoBehaviour:
   acceleration: 80
   deceleration: 60
   groundCheck: {fileID: 3395847267846611925}
-  groundCheckRadius: 0.56
+  groundCheckRadius: 0.78
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -408,6 +409,32 @@ MonoBehaviour:
   fireRateArma2: 0.5
   bulletArma3: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
   fireRateArma3: 0.5
+--- !u!114 &-2562367393667175224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608587365515698270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c703459e0cf71cf408773949d783db25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth2D
+  maxHealth: 5
+  destroyOnDeath: 0
+  invulnTime: 1
+  blinkInterval: 0.1
+  hitKnockback: 4
+  anim: {fileID: 1425414311047638915}
+  hurtTrigger: Hurt
+  dieTrigger: Die
+  deadBool: Dead
+  controller: {fileID: 6731538678162693967}
+  shooter: {fileID: 866128367169364874}
+  gameOverSceneName: GameOver Ricardo
+  gameOverDelay: 1
+  dbgCurrentHP: 0
 --- !u!1 &7402578562293298815
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +493,7 @@ Transform:
   m_GameObject: {fileID: 7434856946720046289}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23, y: -1.279, z: 0}
+  m_LocalPosition: {x: -0.23, y: -1.313, z: 0}
   m_LocalScale: {x: 0.49795, y: 0.49795, z: 0.49795}
   m_ConstrainProportionsScale: 0
   m_Children: []

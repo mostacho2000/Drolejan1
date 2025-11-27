@@ -13,21 +13,41 @@ public class BulletEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player1"))
+        // Buscamos el objeto raíz (por si el collider está en un hijo)
+        Transform root = collision.transform.root;
+
+        // DEBUG general de impacto
+        Debug.Log("Bullet hit: " + collision.name + " (root: " + root.name + ")");
+
+        // 1) ¿Es el player?
+        if (root.CompareTag("Player1"))
         {
-            var player = collision.GetComponent<IDamageable>();
-            if (player != null)
+            Debug.Log("✅ La bala tocó al PLAYER");
+
+            // Buscamos IDamageable en el padre o en el mismo objeto
+            var damageable = root.GetComponent<IDamageable>();
+            if (damageable == null)
+                damageable = collision.GetComponent<IDamageable>();
+
+            if (damageable != null)
             {
-                Vector2 dir = collision.transform.position - transform.position;
-                player.TakeDamage(damage, transform.position, dir);
+                Debug.Log("✅ Player tiene IDamageable, aplicando daño");
+                Vector2 dir = root.position - transform.position;
+                damageable.TakeDamage(damage, transform.position, dir);
+            }
+            else
+            {
+                Debug.LogWarning("⚠ La bala tocó al player PERO no encontré IDamageable en él");
             }
 
             Destroy(gameObject);
+            return;
         }
 
-        // si pega con pisos o paredes
+        // 2) Si pega con el piso / pared (layer Ground) se destruye
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
+            Debug.Log("💥 La bala pegó en el suelo y se destruye");
             Destroy(gameObject);
         }
     }

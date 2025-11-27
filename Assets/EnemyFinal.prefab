@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2818381105567016639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.038, y: 0.644, z: 0}
+  m_LocalPosition: {x: 0.42, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 4837729338608366523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.094, y: -1.21, z: 0}
+  m_LocalPosition: {x: -0.094, y: -1.176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -228,7 +228,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6058342806709774509}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -261,12 +261,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootOrigin: {fileID: 6058342807577293239}
   bulletPrefab: {fileID: 928158966808962472, guid: ccce462d6ff154b448d5dfc81c40dce4, type: 3}
-  fireRate: 0.5
-  bulletSpeed: 8
-  fireRange: 6
+  fireRate: 1
+  bulletSpeed: 12
+  fireRange: 9
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &9063116228264080303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,12 +300,12 @@ MonoBehaviour:
   anim: {fileID: 6058342806709774508}
   rb: {fileID: 6058342806709774504}
   sr: {fileID: 6058342806709774507}
-  speed: 2
-  patrol: 0
+  speed: 2.5
+  patrol: 1
   shootWhileRunning: 0
   groundCheck: {fileID: 8254621804866168018}
   wallCheck: {fileID: 2496869697861655580}
-  checkDistance: 0.5
+  checkDistance: -0.08
   groundMask:
     serializedVersion: 2
     m_Bits: 64
