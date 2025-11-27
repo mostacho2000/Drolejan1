@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -53.1, y: 3.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -171,11 +171,11 @@ MonoBehaviour:
   fuseTime: 2
   maxBounces: 3
   explodeOnEnemyHit: 0
-  explosionRadius: 0.58
-  explosionForce: 14
+  explosionRadius: 1.13
+  explosionForce: 14.8
   damage: 2
   damageMask:
     serializedVersion: 2
-    m_Bits: 512
-  explosionFX: {fileID: 0}
+    m_Bits: 1024
+  explosionFX: {fileID: 3345369731309118720, guid: 07d16e6e816f85c4f8c8f4bc522e9ef3, type: 3}
   drawRadius: 1

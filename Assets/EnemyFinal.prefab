@@ -261,12 +261,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootOrigin: {fileID: 6058342807577293239}
   bulletPrefab: {fileID: 928158966808962472, guid: ccce462d6ff154b448d5dfc81c40dce4, type: 3}
-  fireRate: 1
-  bulletSpeed: 12
-  fireRange: 9
+  fireRate: 0.5
+  bulletSpeed: 8
+  fireRange: 6
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!114 &9063116228264080303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHP: 2
   pointsOnDeath: 2
-  hitKnockback: 4
+  hitKnockback: 3.85
   deathAnimTime: 1
 --- !u!114 &8899017368496168601
 MonoBehaviour:
@@ -295,22 +295,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803d3e4f8892684ea5168d769d6abdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  player: {fileID: 0}
+  player: {fileID: 3885541111877812212, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
   shooter: {fileID: 6058342806709774505}
   anim: {fileID: 6058342806709774508}
   rb: {fileID: 6058342806709774504}
   sr: {fileID: 6058342806709774507}
   speed: 2
-  patrol: 1
+  patrol: 0
   shootWhileRunning: 0
   groundCheck: {fileID: 8254621804866168018}
   wallCheck: {fileID: 2496869697861655580}
-  checkDistance: 2
+  checkDistance: 0.5
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  aggroDistance: 12
-  stopDistance: 2
+  aggroDistance: 6
+  stopDistance: 3
 --- !u!1 &6058342807577293224
 GameObject:
   m_ObjectHideFlags: 0

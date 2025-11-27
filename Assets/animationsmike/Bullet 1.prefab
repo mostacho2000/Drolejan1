@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7384957120328010397}
   - component: {fileID: 5793010275115919902}
   - component: {fileID: 1089262622570136969}
+  - component: {fileID: 7342197622847071534}
   m_Layer: 7
   m_Name: Bullet 1
   m_TagString: Untagged
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1188141047, guid: ba7104ccd280edc4695e4d1ad3854873, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -155,3 +156,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.056001067, y: 0.004012823}
   m_Radius: 0.21846259
+--- !u!114 &7342197622847071534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928158966808962472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc74abd5d2573949ab6464a90d9a604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletEnemy
+  damage: 1
+  lifeTime: 4
+  hitKnockback: 4

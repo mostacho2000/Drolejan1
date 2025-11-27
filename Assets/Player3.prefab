@@ -337,7 +337,7 @@ MonoBehaviour:
   jumpCutMultiplier: 1
   bulletPrefab: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
   bulletSpeed: 18
-  fireRate: 1
+  fireRate: 3
   throwPoint: {fileID: 1104350911356971975}
   grenadePrefab: {fileID: 4535329510098820136, guid: 34c1d2fecbd9d5b4a83c17ebd3dc5107, type: 3}
   throwForce: 10
@@ -405,9 +405,9 @@ MonoBehaviour:
   bulletArma1: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
   fireRateArma1: 0.5
   bulletArma2: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
-  fireRateArma2: 0.45
+  fireRateArma2: 0.5
   bulletArma3: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
-  fireRateArma3: 0.4
+  fireRateArma3: 0.5
 --- !u!1 &7402578562293298815
 GameObject:
   m_ObjectHideFlags: 0
