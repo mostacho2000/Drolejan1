@@ -10,7 +10,7 @@ public class PuertaFinalNivel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // (Esta parte se queda igual)
-        if (other.CompareTag("Player1") && !nivelCompletado)
+        if (other.CompareTag("Player") && !nivelCompletado)
         {
             nivelCompletado = true;
             CompletarYGuardar();
@@ -19,17 +19,17 @@ public class PuertaFinalNivel : MonoBehaviour
 
     private void CompletarYGuardar()
     {
-        // --- CAMBIO AQUÍ ---
-        // Leemos de la variable estática
+        // --- CAMBIO AQUï¿½ ---
+        // Leemos de la variable estï¿½tica
         int nivelActual = GameProgressManager.nivelAlcanzado;
 
         // Si este nivel desbloquea uno nuevo...
         if (nivelADesbloquear > nivelActual)
         {
-            // ...lo "guardamos" en la variable estática
+            // ...lo "guardamos" en la variable estï¿½tica
             GameProgressManager.nivelAlcanzado = nivelADesbloquear;
 
-            Debug.Log("¡Progreso 'guardado' en variable estática! Nuevo valor: " + nivelADesbloquear);
+            Debug.Log("ï¿½Progreso 'guardado' en variable estï¿½tica! Nuevo valor: " + nivelADesbloquear);
         }
         else
         {

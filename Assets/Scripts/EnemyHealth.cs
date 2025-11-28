@@ -1,91 +1,45 @@
 using UnityEngine;
-using System.Collections;
 
-[RequireComponent(typeof(Collider2D))]
-public class EnemyHealth : MonoBehaviour, IDamageable
+[RequireComponent(typeof(EnemyController2D))]
+public class EnemyHealth : MonoBehaviour
 {
     [Header("Vida")]
-    [SerializeField] int maxHP = 3;
-    [SerializeField] int pointsOnDeath = 1;
-    [SerializeField] float hitKnockback = 4f;
+    public int maxHealth = 3;
+    int currentHealth;
 
-    [Header("Animación")]
-    [SerializeField] float deathAnimTime = 1f;
-
-    Animator anim;
-    Rigidbody2D rb;
     EnemyController2D controller;
-    Enemi_shot shooter; // Asumiendo que así se llama tu clase
+    Animator anim;
 
-    int hp;
-    bool isDying = false;
+    static readonly int HASH_DEAD = Animator.StringToHash("Dead");
 
     void Awake()
     {
-        hp = maxHP;
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
         controller = GetComponent<EnemyController2D>();
-        shooter = GetComponent<Enemi_shot>();
+        anim       = GetComponent<Animator>();
     }
 
-    public void TakeDamage(int amount, Vector2 hitPoint, Vector2 hitDir)
+    public void TakeDamage(int amount)
     {
-        if (isDying) return;
+        if (currentHealth <= 0) return;
 
-        hp -= amount;
+        currentHealth -= amount;
 
-        if (rb)
-            rb.AddForce(hitDir.normalized * hitKnockback, ForceMode2D.Impulse);
+        // Aquí puedes meter anim de daño si quieres
 
-        if (hp <= 0)
-        {
-            StartDeathSequence();
-        }
+        if (currentHealth <= 0)
+            Die();
     }
 
-    // CASO 1: El acido es un Trigger (Is Trigger marcado)
-    public void OnTriggerEnter2D(Collider2D other)
+    void Die()
     {
-        if (isDying) return;
-        if (other.CompareTag("Acido")) StartDeathSequence();
-    }
+        if (controller != null)
+            controller.OnDeath();   // ya existe en tu EnemyController2D :contentReference[oaicite:1]{index=1}
 
-    // CASO 2: El acido es un Collider solido (Suelo, pinchos físicos)
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        if (isDying) return;
-        if (other.gameObject.CompareTag("Acido")) StartDeathSequence();
-    }
+        if (anim != null)
+            anim.SetTrigger(HASH_DEAD);   // Usa un trigger "Dead" en tu Animator si lo tienes
 
-    // Método unificado para evitar repetir código
-    void StartDeathSequence()
-    {
-        isDying = true;
-        StartCoroutine(Die());
-    }
-
-    IEnumerator Die()
-    {
-        GameManager.instancia?.CambiarPuntos(pointsOnDeath);
-
-        if (shooter) shooter.enabled = false;
-        if (controller) controller.OnDeath();
-
-        // CAMBIO IMPORTANTE: Detener velocidad en vez de apagar simulación inmediatamente
-        if (rb)
-        {
-            rb.linearVelocity = Vector2.zero;
-            rb.bodyType = RigidbodyType2D.Kinematic; // Se queda quieto pero el Animator funciona
-        }
-
-        // Asegúrate que el collider ya no choque con el jugador mientras muere
-        GetComponent<Collider2D>().enabled = false;
-
-        if (anim) anim.SetTrigger("Die");
-
-        yield return new WaitForSeconds(deathAnimTime);
-
-        Destroy(gameObject);
+        // destruir el enemigo después de un ratito
+        Destroy(gameObject, 0.5f);
     }
 }

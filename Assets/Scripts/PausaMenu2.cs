@@ -1,87 +1,62 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;   // solo si usas el nuevo Input System
 
 public class PausaMenu2 : MonoBehaviour
 {
-    public GameObject pauseMenuPanel;
-    public GameObject volumeOptionsPanel;
-    
+    [Header("Panels")]
+    public GameObject pauseMenuPanel;      // Panel MenuPausa
+    public GameObject volumeOptionsPanel;  // Panel MenuVolumen
 
-    public static bool isPaused = false;
-
-    private Pausa pausaControls;
-
-    private void OnEnable()
-    {
-        if (pausaControls == null)
-        {
-            pausaControls = new Pausa();
-        }
-
-        pausaControls.UI.Enable();
-        pausaControls.UI.Pausar.performed += ctx => TogglePause();
-    }
-
-    private void OnDisable()
-    {
-        pausaControls.UI.Disable();
-        pausaControls.UI.Pausar.performed -= ctx => TogglePause();
-    }
+    public static bool isPaused { get; private set; }
 
     void Start()
     {
-        pauseMenuPanel.SetActive(false);
-        volumeOptionsPanel.SetActive(false);
-     
-        isPaused = false;
-        Time.timeScale = 1f;
+        // Asegurarnos de que todo empiece sin pausa
+        ResumeGame();
     }
 
-    public void TogglePause()
+    void Update()
     {
-        if (isPaused)
+        // Tecla ESC para pausar / reanudar
+        if (Keyboard.current != null &&
+            Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            ResumeGame();
-        }
-        else
-        {
-            PauseGame();
+            if (isPaused) ResumeGame();
+            else PauseGame();
         }
     }
 
     public void PauseGame()
     {
-        pauseMenuPanel.SetActive(true);
-        volumeOptionsPanel.SetActive(false);
-      
-        Time.timeScale = 0f;
         isPaused = true;
+        Time.timeScale = 0f;
+
+        if (pauseMenuPanel)      pauseMenuPanel.SetActive(true);
+        if (volumeOptionsPanel)  volumeOptionsPanel.SetActive(false);
     }
 
     public void ResumeGame()
     {
-        pauseMenuPanel.SetActive(false);
-        Time.timeScale = 1f;
         isPaused = false;
+        Time.timeScale = 1f;
+
+        if (pauseMenuPanel)      pauseMenuPanel.SetActive(false);
+        if (volumeOptionsPanel)  volumeOptionsPanel.SetActive(false);
     }
 
     public void ShowVolumeOptions()
     {
-        pauseMenuPanel.SetActive(false);
-        volumeOptionsPanel.SetActive(true);
-       
+        // Ir del menú de pausa al menú de volumen
+        if (pauseMenuPanel)      pauseMenuPanel.SetActive(false);
+        if (volumeOptionsPanel)  volumeOptionsPanel.SetActive(true);
     }
-    
-
 
     public void GoBackToPauseMenu()
     {
-        // Este método ahora funciona para regresar desde cualquier panel de submenú
-        volumeOptionsPanel.SetActive(false);
-
-        pauseMenuPanel.SetActive(true);
+        // Regresar de volumen al menú de pausa
+        if (pauseMenuPanel)      pauseMenuPanel.SetActive(true);
+        if (volumeOptionsPanel)  volumeOptionsPanel.SetActive(false);
     }
 
     public void GoToMainMenu()

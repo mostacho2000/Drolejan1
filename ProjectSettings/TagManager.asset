@@ -18,6 +18,7 @@ TagManager:
   - Player1
   - FajoFinal
   - Acido
+  - Enemy
   layers:
   - Default
   - TransparentFX
