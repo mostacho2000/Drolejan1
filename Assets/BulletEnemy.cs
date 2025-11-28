@@ -20,7 +20,7 @@ public class BulletEnemy : MonoBehaviour
         Debug.Log("Bullet hit: " + collision.name + " (root: " + root.name + ")");
 
         // 1) ¿Es el player?
-        if (root.CompareTag("Player1"))
+        if (root.CompareTag("Player"))
         {
             Debug.Log("✅ La bala tocó al PLAYER");
 

@@ -6,37 +6,50 @@ using UnityEngine.SceneManagement;
 
 public class TPlevel2 : MonoBehaviour
 {
+    [Header("UI (opcional)")]
     public TextMeshProUGUI textoReinciar;
-    void Start()
-    {
 
+    [Header("Nombres de escenas")]
+    [Tooltip("Nombre de la escena del nivel del muelle")]
+    public string escenaNivelMuelle = "NivelMuelle";
+
+    [Tooltip("Nombre de la escena del último nivel")]
+    public string escenaNivelFinal = "NivelFinal";
+
+    [Tooltip("Escena a la que se irá desde la TIENDA (tiendamike)")]
+    public string escenaSiguienteDesdeTienda = "NivelMuelle";
+
+    // --------------------------------------------------------------------
+    //  Botón que usas en el TP del muelle (si ya lo tenías)
+    // --------------------------------------------------------------------
+    public void muelle()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(escenaNivelMuelle);
     }
 
-    // Update is called once per frame
-    void Update()
+    // --------------------------------------------------------------------
+    //  Botón que usas para ir al último nivel (si ya lo tenías)
+    // --------------------------------------------------------------------
+    public void finallevel()
     {
-
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(escenaNivelFinal);
     }
-    public void muelle()//esto se le ayade al boton de restart
+
+    // --------------------------------------------------------------------
+    //  Botón "Siguiente Nivel" de la TIENDA (tiendamike)
+    // --------------------------------------------------------------------
+    public void SiguienteDesdeTienda()
     {
+        Time.timeScale = 1f;
 
+        if (string.IsNullOrEmpty(escenaSiguienteDesdeTienda))
+        {
+            Debug.LogError("[TPlevel2] No se ha configurado escenaSiguienteDesdeTienda");
+            return;
+        }
 
-        Time.timeScale = 1;
-
-
-
-        SceneManager.LoadScene("NivelMuelle");
-
-    }
-     public void finallevel()//esto se le ayade al boton de restart
-    {
-
-
-        Time.timeScale = 1;
-
-
-
-        SceneManager.LoadScene("NivelFinal");
-
+        SceneManager.LoadScene(escenaSiguienteDesdeTienda);
     }
 }

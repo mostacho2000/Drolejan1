@@ -15,19 +15,19 @@ public class PlayerGrenade2D : MonoBehaviour
     [SerializeField] private float cooldown = 0.6f;
 
     private InputAction grenadeAction;
-    private float nextTime;                                     // control de cooldown
-    private SpriteRenderer sr;
+    private float nextTime;
     private Collider2D myCol;
 
     void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
+        if (grenadeRef != null)
+            grenadeAction = grenadeRef.action;
+
         myCol = GetComponent<Collider2D>();
     }
 
     void OnEnable()
     {
-        grenadeAction = grenadeRef ? grenadeRef.action : null;
         grenadeAction?.Enable();
     }
 
@@ -38,34 +38,38 @@ public class PlayerGrenade2D : MonoBehaviour
 
     void Update()
     {
-        if (grenadeAction == null) return;
+        if (grenadeAction == null)
+            return;
 
         // botón presionado, hay granadas y pasó el cooldown
         if (grenadeAction.WasPressedThisFrame()
             && Time.time >= nextTime
-            && (GameManager.instancia == null || GameManager.instancia.TieneGranadas()))
+            && (GameManager.instancia == null || GameManager.instancia.TieneGranadas))
         {
             ThrowGrenade();
-            // ⬇️ AQUÍ ES DONDE SE DESCUENTA Y SE ACTUALIZA LA UI
+
+            // aquí es donde se descuenta y se actualiza la UI
             GameManager.instancia?.CambiarGranadas(-1);
 
             nextTime = Time.time + cooldown;
         }
     }
 
-    private void ThrowGrenade()
+    void ThrowGrenade()
     {
-        if (!grenadePrefab || !throwPoint) return;
+        if (grenadePrefab == null || throwPoint == null)
+            return;
 
-        // dirección según flip del sprite
-        Vector2 dir = (sr && sr.flipX) ? Vector2.left : Vector2.right;
+        // dirección según hacia dónde mira el player (localScale.x)
+        float dirX = Mathf.Sign(transform.localScale.x == 0 ? 1f : transform.localScale.x);
+        Vector2 dir = new Vector2(dirX, 0f).normalized;
 
-        // instancia
-        var g = Instantiate(grenadePrefab, throwPoint.position, Quaternion.identity);
+        // instanciar granada
+        Grenade2D g = Instantiate(grenadePrefab, throwPoint.position, Quaternion.identity);
 
-        // lanzar (si tu Grenade2D tiene método Launch, úsalo; si no, fuerza directa)
+        // lanzar con fuerza física
         var grb = g.GetComponent<Rigidbody2D>();
-        if (grb)
+        if (grb != null)
         {
             Vector2 force = dir * throwForce + Vector2.up * upwardForce;
             grb.AddForce(force, ForceMode2D.Impulse);
@@ -73,6 +77,7 @@ public class PlayerGrenade2D : MonoBehaviour
 
         // evitar que choque con el propio player al salir
         var gCol = g.GetComponent<Collider2D>();
-        if (myCol && gCol) Physics2D.IgnoreCollision(myCol, gCol, true);
+        if (myCol != null && gCol != null)
+            Physics2D.IgnoreCollision(myCol, gCol, true);
     }
 }

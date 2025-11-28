@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scenasrpincipales/GameOver Ricardo.unity
     guid: c0dbc855c19064b419b3c35593c85f14
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/scenasrpincipales/Vendedor Ricardo.unity
     guid: 27e6ff785a3e6064c8a116031219fff0
   - enabled: 1
@@ -44,8 +44,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/NIvelesAndroid/Nivel1Android.unity
     guid: 0b9d0bc10c1b4be4182aa51f28f9b5fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/scenasrpincipales/Vendedor Ricardo 1.unity
     guid: f19bc1811bf31b043ba3e9ad41996f21
+  - enabled: 1
+    path: Assets/Scenes/scenasrpincipales/tiendamike.unity
+    guid: fb736109078372440be60c9c8e29dabf
+  - enabled: 1
+    path: Assets/Scenes/scenasrpincipales/tiendamike 1.unity
+    guid: 8c4091ae6861b494987db0c1b63268fe
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -3,14 +3,14 @@ using UnityEngine;
 public class EnemyController2D : MonoBehaviour
 {
     [Header("Referencias")]
-    public Transform player;             // se auto-asigna por tag "Player" si está vacío
-    public Enemi_shot shooter;           // script de disparo (mismo objeto)
-    public Animator anim;                // parámetros: Speed (float), Shoot (bool), Die (trigger)
-    public Rigidbody2D rb;               
+    public Transform player;             // Se auto-asigna por Tag "Player" si está vacío
+    public Enemi_shot shooter;           // Script de disparo del enemigo
+    public Animator anim;
+    public Rigidbody2D rb;
     public SpriteRenderer sr;
 
     [Header("Movimiento")]
-    public float speed = 2f;
+    public float speed = 2.5f;
     public bool patrol = true;
     public bool shootWhileRunning = false;
 
@@ -21,8 +21,8 @@ public class EnemyController2D : MonoBehaviour
     public LayerMask groundMask;
 
     [Header("Detección de jugador")]
-    public float aggroDistance = 12f;    // distancia para empezar a interactuar
-    public float stopDistance = 2f;      // no nos acercamos más que esto
+    public float aggroDistance = 6f;   // Distancia para empezar a perseguir
+    public float stopDistance = 2f;    // Distancia a la que deja de moverse y solo dispara
 
     bool facingRight = true;
     bool dead = false;
@@ -30,8 +30,8 @@ public class EnemyController2D : MonoBehaviour
     void Reset()
     {
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        rb   = GetComponent<Rigidbody2D>();
+        sr   = GetComponent<SpriteRenderer>();
         shooter = GetComponent<Enemi_shot>();
     }
 
@@ -39,14 +39,20 @@ public class EnemyController2D : MonoBehaviour
     {
         if (!player)
         {
-            var p = GameObject.FindGameObjectWithTag("Player");
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
             if (p) player = p.transform;
         }
+
+        if (!rb)      rb      = GetComponent<Rigidbody2D>();
+        if (!anim)    anim    = GetComponent<Animator>();
+        if (!sr)      sr      = GetComponent<SpriteRenderer>();
+        if (!shooter) shooter = GetComponent<Enemi_shot>();
     }
 
     void Update()
     {
         if (dead) return;
+
         if (anim) anim.SetBool("Shoot", false);
 
         if (!player)
@@ -56,81 +62,129 @@ public class EnemyController2D : MonoBehaviour
         }
 
         float dist = Vector2.Distance(transform.position, player.position);
-        LookAt(player.position);
-
         bool canSee = shooter ? shooter.HasLOS(player) : true;
+
+        // Siempre mirar hacia el player si está en rango de aggro
+        if (dist <= aggroDistance)
+            LookAt(player.position);
 
         if (dist <= aggroDistance && canSee)
         {
-            if (dist > Mathf.Max(stopDistance, shooter ? shooter.fireRange : 0f))
+            bool withinStop = dist <= stopDistance;
+            bool withinFire = shooter ? dist <= shooter.fireRange : true;
+
+            if (!withinStop)
             {
-                // acercarse
+                // 🔹 PERSEGUIR AL PLAYER
                 MoveTowards(player.position);
+
+                if (shootWhileRunning && withinFire)
+                    shooter.TryShoot(player, anim);
             }
             else
             {
-                // detenerse y disparar
-                if (!shootWhileRunning) StopX();
-                shooter?.TryShoot(player, anim);
+                // 🔹 YA ESTÁ CERCA → SE DETIENE Y DISPARA
+                StopX();
+
+                if (withinFire)
+                    shooter.TryShoot(player, anim);
             }
         }
         else
         {
+            // 🔹 Fuera de rango → patrulla
             MovePatrol();
         }
 
-        if (anim) anim.SetFloat("Speed", Mathf.Abs(rb ? rb.linearVelocity.x : 0f));
+        if (anim)
+            anim.SetFloat("Speed", Mathf.Abs(rb ? rb.linearVelocity.x : 0f));  // 👉 linearVelocity
     }
+
+    //================== Movimiento ==================
 
     void MoveTowards(Vector3 target)
     {
+        if (!rb) return;
+
         float dir = Mathf.Sign(target.x - transform.position.x);
-        if (rb) rb.linearVelocity = new Vector2(dir * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(dir * speed, rb.linearVelocity.y);      // 👉 linearVelocity
     }
 
     void StopX()
     {
-        if (rb) rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        if (rb)
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);           // 👉 linearVelocity
     }
 
     void MovePatrol()
     {
-        if (!patrol) { StopX(); return; }
+        if (!patrol)
+        {
+            StopX();
+            return;
+        }
+
+        if (!rb)
+            return;
 
         float dir = facingRight ? 1f : -1f;
-        if (rb) rb.linearVelocity = new Vector2(dir * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(dir * speed, rb.linearVelocity.y);      // 👉 linearVelocity
 
-        bool noGround = groundCheck && !Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistance, groundMask);
-        bool hitWall  = wallCheck   &&  Physics2D.Raycast(wallCheck.position, new Vector2(dir, 0f), checkDistance, groundMask);
+        bool noGround = groundCheck &&
+                        !Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistance, groundMask);
 
-        if (noGround || hitWall) Flip();
+        bool hitWall = wallCheck &&
+                       Physics2D.Raycast(wallCheck.position,
+                                         facingRight ? Vector2.right : Vector2.left,
+                                         checkDistance,
+                                         groundMask);
+
+        if (noGround || hitWall)
+            Flip();
     }
 
     void LookAt(Vector3 target)
     {
-        if ((target.x > transform.position.x) != facingRight) Flip();
+        if ((target.x > transform.position.x) != facingRight)
+            Flip();
     }
 
     void Flip()
     {
         facingRight = !facingRight;
-        var ls = transform.localScale; ls.x *= -1f; transform.localScale = ls;
+
+        Vector3 s = transform.localScale;
+        s.x *= -1f;
+        transform.localScale = s;
     }
 
     public void OnDeath()
     {
         dead = true;
         StopX();
-        if (rb) rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        if (rb) rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);       // 👉 linearVelocity
     }
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = new Color(1, 1, 0, .5f);
+        // Aggro
+        Gizmos.color = new Color(1f, 1f, 0f, 0.4f);
         Gizmos.DrawWireSphere(transform.position, aggroDistance);
-        if (shooter) { Gizmos.color = Color.red; Gizmos.DrawWireSphere(transform.position, shooter.fireRange); }
+
+        // Rango de disparo
+        if (shooter)
+        {
+            Gizmos.color = new Color(1f, 0f, 0f, 0.3f);
+            Gizmos.DrawWireSphere(transform.position, shooter.fireRange);
+        }
+
+        // Chequeos de suelo / pared
         Gizmos.color = Color.cyan;
-        if (groundCheck) Gizmos.DrawLine(groundCheck.position, groundCheck.position + Vector3.down * checkDistance);
-        if (wallCheck)   Gizmos.DrawLine(wallCheck.position,   wallCheck.position   + (facingRight ? Vector3.right : Vector3.left) * checkDistance);
+        if (groundCheck)
+            Gizmos.DrawLine(groundCheck.position,
+                            groundCheck.position + Vector3.down * checkDistance);
+        if (wallCheck)
+            Gizmos.DrawLine(wallCheck.position,
+                            wallCheck.position + (facingRight ? Vector3.right : Vector3.left) * checkDistance);
     }
 }

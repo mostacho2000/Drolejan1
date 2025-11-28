@@ -2702,7 +2702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuertaFinalNivel
   nivelADesbloquear: 3
-  nombreEscenaACargar: Vendedor Ricardo 1
+  nombreEscenaACargar: tiendamike 1
 --- !u!1001 &485236976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10813,6 +10813,14 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 836152003}
+    - target: {fileID: 740649815013693854, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 836152003}
+    - target: {fileID: 740649815013693854, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
+      propertyPath: baseAnimator
+      value: 
+      objectReference: {fileID: 836152002}
     - target: {fileID: 866128367169364874, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
       propertyPath: m_Camera
       value: 
@@ -11317,7 +11325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ControladorTienda
   precioWhisky: 1
   precioGranada: 1
-  controlador: {fileID: 4321406421663428071}
+  controlador: {fileID: 0}
   btnWhisky: {fileID: 0}
   btnGranada: {fileID: 0}
   txtPrecioWhisky: {fileID: 0}
@@ -11686,7 +11694,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6643162337613725122}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PausaMenu2, Assembly-CSharp
         m_MethodName: GoBackToPauseMenu
         m_Mode: 1
@@ -11756,70 +11764,6 @@ RectTransform:
   m_AnchoredPosition: {x: -872, y: 200.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &4321406421663428068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4321406421663428070}
-  - component: {fileID: 4321406421663428071}
-  - component: {fileID: 6643162337613725122}
-  - component: {fileID: 4416698065282049578}
-  - component: {fileID: 5609141753328275422}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4321406421663428070
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4321406421663428068}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 133.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4321406421663428071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4321406421663428068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a60bf934e2319b344a12c2c376d17268, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMesh: {fileID: 4321406421901668538}
-  hearts:
-  - {fileID: 4321406421677697873}
-  - {fileID: 4321406423036265565}
-  - {fileID: 4321406421901667853}
-  granadas:
-  - {fileID: 4321406421753259994}
-  - {fileID: 4321406422948579519}
-  - {fileID: 4321406422146119342}
-  vidasMax: 3
-  vidas: 3
-  numGranadasMax: 3
-  numGranadas: 3
-  puntos: 0
-  armaSeleccionada: 0
-  dontDestroyOnLoad: 1
-  gameOverSceneName: 
 --- !u!1 &4321406421677697873
 GameObject:
   m_ObjectHideFlags: 0
@@ -12553,19 +12497,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4416698065282049578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4321406421663428068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802b20592f36ab644bb27ab673609981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VolumeManager
-  volumeSlider: {fileID: 6803837543237193832}
 --- !u!114 &4566772378808833873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12610,7 +12541,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6643162337613725122}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PausaMenu2, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
@@ -12674,7 +12605,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6643162337613725122}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PausaMenu2, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -12866,103 +12797,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3529030745964606178, guid: 94939034d7b9b94488995fadef2fd61c, type: 3}
   m_PrefabInstance: {fileID: 5577526675934627598}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &5609141753328275422
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4321406421663428068}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 86b691cc265f36240ac21261d0c703b7, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!224 &5852691291786984594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13198,7 +13032,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6643162337613725122}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PausaMenu2, Assembly-CSharp
         m_MethodName: ShowVolumeOptions
         m_Mode: 1
@@ -13280,20 +13114,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8843766250022234275}
   m_CullTransparentMesh: 1
---- !u!114 &6643162337613725122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4321406421663428068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa1c1bc45b958fb4290e53c1285f0001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PausaMenu2
-  pauseMenuPanel: {fileID: 5953476530008250298}
-  volumeOptionsPanel: {fileID: 4830513864943457917}
 --- !u!1001 &6682646679710002874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13499,7 +13319,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4416698065282049578}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VolumeManager, Assembly-CSharp
         m_MethodName: ChangeVolume
         m_Mode: 1
@@ -14148,7 +13968,6 @@ SceneRoots:
   - {fileID: 370595544}
   - {fileID: 504158526}
   - {fileID: 4321406422138982249}
-  - {fileID: 4321406421663428070}
   - {fileID: 722545813}
   - {fileID: 2137564506}
   - {fileID: 817916148}

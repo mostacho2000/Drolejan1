@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: -2562367393667175224}
   m_Layer: 11
   m_Name: Player3
-  m_TagString: Player1
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +182,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1011980208300379386, guid: 6e7304466b5bdd740871095508104cb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -400,15 +400,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c710ff8c1ed934180639991287fe9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSkinSwitcher
-  baseController: {fileID: 22100000, guid: 4b9ec53a85859a843ab062ed1cb6c81a, type: 2}
+  player: {fileID: 6731538678162693967}
+  baseAnimator: {fileID: 1425414311047638915}
+  arma1Controller: {fileID: 22100000, guid: 4b9ec53a85859a843ab062ed1cb6c81a, type: 2}
   arma2Controller: {fileID: 22100000, guid: 509d1951a2e59554fbab6678f984c79a, type: 2}
   arma3Controller: {fileID: 22100000, guid: 0c74659156e478d4c91b64fc2428431c, type: 2}
   bulletArma1: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
   fireRateArma1: 0.5
+  bulletSpeedArma1: 18
   bulletArma2: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
   fireRateArma2: 0.5
+  bulletSpeedArma2: 22
   bulletArma3: {fileID: 928158966808962472, guid: e38330b3d68a7974098f75cf542398ef, type: 3}
   fireRateArma3: 0.5
+  bulletSpeedArma3: 26
+  playerCollider: {fileID: 0}
+  offsetArma1: {x: 0, y: 0}
+  sizeArma1: {x: 1, y: 2}
+  offsetArma2: {x: 0, y: 0}
+  sizeArma2: {x: 1, y: 2}
+  offsetArma3: {x: 0, y: 0}
+  sizeArma3: {x: 1, y: 2}
 --- !u!114 &-2562367393667175224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,8 +433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c703459e0cf71cf408773949d783db25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth2D
-  maxHealth: 5
-  destroyOnDeath: 0
+  maxHealth: 3
+  destroyOnDeath: 1
   invulnTime: 1
   blinkInterval: 0.1
   hitKnockback: 4

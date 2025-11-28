@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerHealth2D : MonoBehaviour, IDamageable
 {
     [Header("Vida")]
-    [SerializeField] private int maxHealth = 5;
+    [SerializeField] private int maxHealth = 3;
     [SerializeField] private bool destroyOnDeath = false;
 
     [Header("Invencibilidad")]
@@ -17,13 +19,13 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
     [Header("Knockback")]
     [SerializeField] private float hitKnockback = 4f;
 
-    [Header("Animator (coincidir con tu controller)")]
+    [Header("Animator")]
     [SerializeField] private Animator anim;
     [SerializeField] private string hurtTrigger = "Hurt";
     [SerializeField] private string dieTrigger = "Die";
     [SerializeField] private string deadBool = "Dead";
 
-    [Header("Control de movimiento/disparo")]
+    [Header("Control de movimiento / disparo")]
     [SerializeField] private PlayerController2D controller;
     [SerializeField] private MonoBehaviour shooter;
 
@@ -34,11 +36,9 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
     [Header("Debug")]
     [SerializeField] private int dbgCurrentHP;
 
-    // Propiedades para la UI
     public int CurrentHP => hp;
-    public int MaxHP    => maxHealth;
+    public int MaxHP => maxHealth;
 
-    // Evento para que la UI se actualice
     public Action<int, int> OnHealthChanged;
 
     int hp;
@@ -49,29 +49,52 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
 
     void Awake()
     {
-        hp = maxHealth;
-        dbgCurrentHP = hp;
-
         if (!anim)      anim = GetComponent<Animator>();
         sr  = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
         rb  = GetComponent<Rigidbody2D>();
         if (!controller) controller = GetComponent<PlayerController2D>();
 
-        // avisar al Canvas del valor inicial de vida
+        // 🔹 Si hay GameManager, usamos SUS vidas para arrancar el nivel
+        if (GameManager.instancia != null)
+        {
+            maxHealth = GameManager.instancia.vidasMax;
+            hp        = Mathf.Clamp(GameManager.instancia.vidas, 0, maxHealth);
+
+            // Si por alguna razón estaba en 0 (venimos de algo raro), lo rellenamos
+            if (hp <= 0) hp = maxHealth;
+        }
+        else
+        {
+            // Sin GameManager, iniciamos con vida llena
+            hp = maxHealth;
+        }
+
+        dbgCurrentHP = hp;
+
+        // ⚠️ IMPORTANTE: aquí YA NO llamamos SetVidas(hp).
+        // El GameManager ya trae la vida correcta, no la queremos resetear.
+
         OnHealthChanged?.Invoke(hp, maxHealth);
     }
 
-    // Curar vida (por si luego usas botellas, etc.)
+    // =========================================================
+    //  CURAR
+    // =========================================================
     public void Heal(int amount)
     {
         hp = Mathf.Clamp(hp + amount, 0, maxHealth);
         dbgCurrentHP = hp;
 
+        if (GameManager.instancia != null)
+            GameManager.instancia.SetVidas(hp);
+
         OnHealthChanged?.Invoke(hp, maxHealth);
     }
 
-    // IMPLEMENTACIÓN DE IDAMAGEABLE (la bala llama esto)
+    // =========================================================
+    //  IDamageable (la bala llama esto)
+    // =========================================================
     public void TakeDamage(int amount, Vector2 hitPoint, Vector2 hitDir)
     {
         if (rb)
@@ -80,7 +103,6 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
         Damage(amount);
     }
 
-    // Lógica principal de daño
     public void Damage(int amount)
     {
         if (invuln || hp <= 0) return;
@@ -88,14 +110,15 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
         hp -= amount;
         dbgCurrentHP = hp;
 
-        // avisar al Canvas
+        if (GameManager.instancia != null)
+            GameManager.instancia.SetVidas(hp);
+
         OnHealthChanged?.Invoke(hp, maxHealth);
 
         if (hp <= 0)
         {
             hp = 0;
 
-            // Animación de muerte
             if (anim)
             {
                 if (!string.IsNullOrEmpty(deadBool))
@@ -105,18 +128,14 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
                     anim.SetTrigger(dieTrigger);
             }
 
-            // apagar controles
             if (controller) controller.enabled = false;
             if (shooter)    shooter.enabled    = false;
-
             if (rb) rb.linearVelocity = Vector2.zero;
 
-            // lanzar corrutina de Game Over
             StartCoroutine(GameOverCo());
         }
         else
         {
-            // Anim de daño + invencibilidad con parpadeo
             if (anim && !string.IsNullOrEmpty(hurtTrigger))
                 anim.SetTrigger(hurtTrigger);
 
@@ -124,6 +143,9 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
         }
     }
 
+    // =========================================================
+    //  INVULNERABILIDAD / PARPADEO
+    // =========================================================
     IEnumerator InvulnCo()
     {
         invuln = true;
@@ -144,12 +166,20 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
         invuln = false;
     }
 
+    // =========================================================
+    //  GAME OVER
+    // =========================================================
     IEnumerator GameOverCo()
     {
-        // espera a que se vea la anim de muerte
         yield return new WaitForSeconds(gameOverDelay);
 
-        // opcional: destruir el player antes de cambiar de escena
+        if (GameManager.instancia != null)
+        {
+            GameManager.instancia.SetVidas(0);
+            GameManager.instancia.GameOver();
+            yield break;
+        }
+
         if (destroyOnDeath)
             Destroy(gameObject);
 
