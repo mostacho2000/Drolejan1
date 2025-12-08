@@ -225,25 +225,31 @@ private float ReadMoveX()
     }
 
     // ============================= GRANADA (opcional) =============================
-    private void ThrowGrenade()
+    // ============================= GRANADA (opcional) =============================
+private void ThrowGrenade()
 {
+    // cooldown o falta de prefab/punto de lanzamiento
     if (grenadeTimer > 0f || !grenadePrefab || !throwPoint) return;
 
-    // Dirección según hacia dónde está mirando el player
-    float xDir = facingRight ? 1f : -1f;
+    // si hay GameManager y NO tiene granadas, no lanza
+    if (GameManager.instancia != null && !GameManager.instancia.TieneGranadas)
+        return;
 
-    // Velocidad inicial de la granada
-    Vector2 initialVelocity = new Vector2(xDir * throwForce, upwardForce);
+    // dirección según hacia dónde está mirando el player
+    float x = facingRight ? 1f : -1f;
 
-    // Instanciar la granada usando el prefab Grenade2D
-    Grenade2D grenade = Instantiate(grenadePrefab, throwPoint.position, Quaternion.identity);
+    var go  = Instantiate(grenadePrefab, throwPoint.position, Quaternion.identity);
+    var grb = go.GetComponent<Rigidbody2D>();
+    if (grb)
+        grb.AddForce(new Vector2(x * throwForce, upwardForce), ForceMode2D.Impulse);
 
-    // Inicializar la granada: le pasamos la velocidad y el dueño (el player)
-    grenade.Init(initialVelocity, gameObject);
-
-    // Cooldown
+    // cooldown
     grenadeTimer = grenadeCooldown;
+
+    // 🔴 aquí avisamos al GameManager para que actualice contador + UI
+    GameManager.instancia?.CambiarGranadas(-1);
 }
+
 
 
     // ============================= API para cambiar arma =============================

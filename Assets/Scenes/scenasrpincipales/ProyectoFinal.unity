@@ -2499,37 +2499,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5844940545448262772, guid: 4aae400fbc2b5914d8865abc133a13d3, type: 3}
   m_PrefabInstance: {fileID: 416227265}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &419432075
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 419432076}
-  m_Layer: 0
-  m_Name: "Enemy\xB4s"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &419432076
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419432075}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.5, y: 1.24, z: -10}
-  m_LocalScale: {x: 1.6081, y: 1.6081, z: 1.6081}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &436393825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13814,7 +13783,6 @@ SceneRoots:
   - {fileID: 414239621297399090}
   - {fileID: 1057587761}
   - {fileID: 668247033}
-  - {fileID: 419432076}
   - {fileID: 264156058}
   - {fileID: 608497032}
   - {fileID: 1799643939}
