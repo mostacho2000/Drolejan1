@@ -49,17 +49,17 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
 
     void Awake()
     {
-        if (!anim)      anim = GetComponent<Animator>();
-        sr  = GetComponent<SpriteRenderer>();
+        if (!anim) anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
-        rb  = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         if (!controller) controller = GetComponent<PlayerController2D>();
 
         // 🔹 Si hay GameManager, usamos SUS vidas para arrancar el nivel
         if (GameManager.instancia != null)
         {
             maxHealth = GameManager.instancia.vidasMax;
-            hp        = Mathf.Clamp(GameManager.instancia.vidas, 0, maxHealth);
+            hp = Mathf.Clamp(GameManager.instancia.vidas, 0, maxHealth);
 
             // Si por alguna razón estaba en 0 (venimos de algo raro), lo rellenamos
             if (hp <= 0) hp = maxHealth;
@@ -129,7 +129,7 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
             }
 
             if (controller) controller.enabled = false;
-            if (shooter)    shooter.enabled    = false;
+            if (shooter) shooter.enabled = false;
             if (rb) rb.linearVelocity = Vector2.zero;
 
             StartCoroutine(GameOverCo());
@@ -184,5 +184,42 @@ public class PlayerHealth2D : MonoBehaviour, IDamageable
             Destroy(gameObject);
 
         SceneManager.LoadScene(gameOverSceneName);
+    }
+
+    // =========================================================
+    //  ZONA DE MUERTE INSTANTÁNEA (ACIDO) - CODIGO NUEVO
+    // =========================================================
+
+    // Detecta si tocamos un objeto con Collider sólido
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Acido"))
+        {
+            MuerteInstantanea();
+        }
+    }
+
+    // Detecta si tocamos un objeto con Collider tipo Trigger (zona)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Acido"))
+        {
+            MuerteInstantanea();
+        }
+    }
+
+    // Función que elimina toda la vida y fuerza la muerte
+    public void MuerteInstantanea()
+    {
+        // Cancelamos invulnerabilidad para asegurar que el daño entre
+        invuln = false;
+
+        // Si tenemos vida, aplicamos daño igual a la vida actual para llegar a 0
+        if (hp > 0)
+        {
+            Damage(hp);
+            // Al llamar a Damage(), automáticamente se ejecuta la lógica de
+            // animaciones, Game Over y desactivación de controles que ya tenías.
+        }
     }
 }
