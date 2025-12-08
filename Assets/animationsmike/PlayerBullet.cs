@@ -14,7 +14,20 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Si toca a un enemigo
+        // 1) JEFE FINAL
+        JefeFinal jefe = other.GetComponent<JefeFinal>();
+        if (jefe != null)
+        {
+            // punto y dirección del impacto
+            Vector2 hitPoint = transform.position;
+            Vector2 hitDir   = ((Vector2)other.transform.position - (Vector2)transform.position).normalized;
+
+            jefe.TakeDamage(damage, hitPoint, hitDir);
+            Destroy(gameObject);
+            return;
+        }
+
+        // 2) ENEMIGOS NORMALES (tag "Enemy" + EnemyHealth)
         if (other.CompareTag("Enemy"))
         {
             EnemyHealth hp = other.GetComponent<EnemyHealth>();
@@ -24,10 +37,12 @@ public class PlayerBullet : MonoBehaviour
             }
 
             Destroy(gameObject); // destruir la bala al impactar
+            return;
         }
-        else if (!other.isTrigger && !other.CompareTag("Player"))
+
+        // 3) Si pega con pared/suelo/otra cosa sólida, también se destruye
+        if (!other.isTrigger && !other.CompareTag("Player"))
         {
-            // Si pega con pared/suelo/otra cosa sólida, también se destruye
             Destroy(gameObject);
         }
     }

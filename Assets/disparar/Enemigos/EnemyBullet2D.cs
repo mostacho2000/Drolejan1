@@ -1,85 +1,71 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Collider2D))]
 public class EnemyBullet2D : MonoBehaviour
 {
-    [Header("Ajustes")]
-    [SerializeField] int damage = 1;
-    [SerializeField] float lifeTime = 4f;      // segundos antes de autodestruirse
-    [SerializeField] LayerMask hitMask = ~0;   // por si quieres filtrar capas (opcional)
+    [Header("Daño")]
+    public int damage = 1;
+    public float lifeTime = 5f;
 
-    Rigidbody2D rb;
-    Vector2 dir = Vector2.right;
-    float speed = 10f;
-    float life;
+    private Vector2 direction = Vector2.right;
+    private float speed = 5f;
 
-    void Awake()
+    private Rigidbody2D rb;
+
+    // Lo llama el jefe cuando instancia la bala
+    public void Setup(Vector2 dir, float bulletSpeed)
+    {
+        direction = dir.normalized;
+        speed = bulletSpeed;
+    }
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
-#if UNITY_6000_0_OR_NEWER
-        rb.bodyType = RigidbodyType2D.Kinematic;
-#else
-        rb.isKinematic = true;
-#endif
-        rb.freezeRotation = true;
-
-        // El collider de la bala debe ser "Is Trigger"
-        var col = GetComponent<Collider2D>();
-        col.isTrigger = true;
     }
 
-    /// <summary>
-    /// Llamado por el jefe al crear la bala.
-    /// </summary>
-    public void Setup(Vector2 direction, float bulletSpeed)
+    private void Start()
     {
-        dir = direction.sqrMagnitude > 0.0001f ? direction.normalized : Vector2.right;
-        speed = Mathf.Max(0f, bulletSpeed);
+        Destroy(gameObject, lifeTime); // Destruye la bala si no pega
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-#if UNITY_6000_0_OR_NEWER
-        rb.linearVelocity = dir * speed;
-#else
-        rb.velocity = dir * speed;
-#endif
-    }
-
-    void Update()
-    {
-        life += Time.deltaTime;
-        if (life >= lifeTime) Destroy(gameObject);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // Si definiste hitMask, respeta el filtro
-        if (((1 << other.gameObject.layer) & hitMask) == 0)
-            return;
-
-        // Evita dañar a otros enemigos (opcional)
-        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
-            return;
-
-        // Busca a alguien dañable en el objeto o su padre
-        var dmg = other.GetComponentInParent<IDamageable>();
-        if (dmg != null)
+        if (rb != null)
         {
-            Vector2 hitPoint = transform.position;
-            Vector2 hitDir   = dir;
-            dmg.TakeDamage(damage, hitPoint, hitDir);
+#if UNITY_6000_0_OR_NEWER
+            rb.linearVelocity = direction * speed;
+#else
+            rb.velocity = direction * speed;
+#endif
+        }
+        else
+        {
+            transform.position += (Vector3)(direction * speed * Time.fixedDeltaTime);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Solo dañamos al player
+        if (other.CompareTag("Player") || other.CompareTag("Player1"))
+        {
+            var dmg = other.GetComponent<IDamageable>();
+            if (dmg != null)
+            {
+                Vector2 hitPoint = transform.position;
+                Vector2 hitDir = direction;
+
+                dmg.TakeDamage(damage, hitPoint, hitDir);
+            }
+
+            Destroy(gameObject);
+            return;
         }
 
-        // Destruye siempre al impactar algo relevante
-        Destroy(gameObject);
-    }
-
-    void OnBecameInvisible()
-    {
-        // Seguridad extra por si no colisiona
-        Destroy(gameObject);
+        // Si pega con piso, pared, etc. (collider sólido)
+        if (!other.isTrigger)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -42,7 +42,7 @@ public class PlayerController2D : MonoBehaviour
     // ---------- Granada (opcional) ----------
     [Header("Granada (opcional)")]
     [SerializeField] private Transform throwPoint;
-    [SerializeField] private GameObject grenadePrefab;
+    [SerializeField] private Grenade2D grenadePrefab;
     [SerializeField] private float throwForce = 10f;
     [SerializeField] private float upwardForce = 6f;
     [SerializeField] private float grenadeCooldown = .6f;
@@ -146,13 +146,21 @@ public class PlayerController2D : MonoBehaviour
     }
 
     // ============================= MOVIMIENTO =============================
-    private float ReadMoveX()
+    // ============================= MOVIMIENTO =============================
+private float ReadMoveX()
+{
+    if (moveA == null) return 0f;
+
+    // Si la acción es un Vector2 (por ejemplo stick del gamepad)
+    if (moveA.expectedControlType == "Vector2")
     {
-        if (moveA == null) return 0f;
-        return moveA.expectedControlType == "Vector2"
-            ? moveA.ReadValue<Vector2>().x
-            : moveA.ReadValue<float>();
+        return moveA.ReadValue<Vector2>().x;
     }
+
+    // Si es un eje 1D (Axis, como A/D, flechas, etc.)
+    return moveA.ReadValue<float>();
+}
+
 
     private void SetFacing(bool toRight)
     {
@@ -218,17 +226,25 @@ public class PlayerController2D : MonoBehaviour
 
     // ============================= GRANADA (opcional) =============================
     private void ThrowGrenade()
-    {
-        if (grenadeTimer > 0f || !grenadePrefab || !throwPoint) return;
+{
+    if (grenadeTimer > 0f || !grenadePrefab || !throwPoint) return;
 
-        float x = facingRight ? 1f : -1f;
+    // Dirección según hacia dónde está mirando el player
+    float xDir = facingRight ? 1f : -1f;
 
-        var go  = Instantiate(grenadePrefab, throwPoint.position, Quaternion.identity);
-        var grb = go.GetComponent<Rigidbody2D>();
-        if (grb) grb.AddForce(new Vector2(x * throwForce, upwardForce), ForceMode2D.Impulse);
+    // Velocidad inicial de la granada
+    Vector2 initialVelocity = new Vector2(xDir * throwForce, upwardForce);
 
-        grenadeTimer = grenadeCooldown;
-    }
+    // Instanciar la granada usando el prefab Grenade2D
+    Grenade2D grenade = Instantiate(grenadePrefab, throwPoint.position, Quaternion.identity);
+
+    // Inicializar la granada: le pasamos la velocidad y el dueño (el player)
+    grenade.Init(initialVelocity, gameObject);
+
+    // Cooldown
+    grenadeTimer = grenadeCooldown;
+}
+
 
     // ============================= API para cambiar arma =============================
     // Llamado por PlayerSkinSwitcher
@@ -275,4 +291,9 @@ public class PlayerController2D : MonoBehaviour
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
     }
+
+    // ============================= Getter público de dirección =============================
+    // Para que otros scripts (como PlayerGrenade2D) sepan hacia dónde mira el player
+    public bool IsFacingRight => facingRight;
 }
+

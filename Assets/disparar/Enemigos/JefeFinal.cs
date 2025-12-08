@@ -12,17 +12,17 @@ public class JefeFinal : MonoBehaviour, IDamageable
     bool dead;
 
     [Header("Movimiento / IA simple")]
-    [SerializeField] float speed = 2.2f;
-    [SerializeField] float aggroDistance = 12f;
-    [SerializeField] float stopDistance = 4.5f;
+    [SerializeField] float speed = 5f;
+    [SerializeField] float aggroDistance = 15f;
+    [SerializeField] float stopDistance = 1f;
     [SerializeField] bool shootWhileRunning = false;
 
     [Header("Disparo")]
     [SerializeField] Transform shootOrigin;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] float bulletSpeed = 12f;
+    [SerializeField] float bulletSpeed = 10f;
     [SerializeField] float fireRate = 1.0f;
-    [SerializeField] float fireRange = 9f;
+    [SerializeField] float fireRange = 10f;
 
     [Header("Referencias")]
     [SerializeField] Animator anim;
@@ -39,9 +39,9 @@ public class JefeFinal : MonoBehaviour, IDamageable
 
     void Reset()
     {
-        rb  = GetComponent<Rigidbody2D>();
+        rb   = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        sr  = GetComponent<SpriteRenderer>();
+        sr   = GetComponent<SpriteRenderer>();
 
 #if UNITY_6000_0_OR_NEWER
         rb.bodyType = RigidbodyType2D.Kinematic;
@@ -80,12 +80,28 @@ public class JefeFinal : MonoBehaviour, IDamageable
             float dist = toPlayer.magnitude;
             int dir = toPlayer.x >= 0 ? 1 : -1;
 
+            // Voltear sprite del jefe
             if (sr) sr.flipX = (dir < 0);
-            else transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * dir, transform.localScale.y, transform.localScale.z);
+            else
+            {
+                var sc = transform.localScale;
+                sc.x = Mathf.Abs(sc.x) * dir;
+                transform.localScale = sc;
+            }
 
+            // ***** IMPORTANTE: mover el punto de disparo al lado correcto *****
+            if (shootOrigin)
+            {
+                Vector3 local = shootOrigin.localPosition;
+                float absX = Mathf.Abs(local.x);
+                local.x = absX * (dir >= 0 ? 1f : -1f);   // derecha +, izquierda -
+                shootOrigin.localPosition = local;
+            }
+
+            // Lógica de rango / movimiento / disparo
             fireTimer += Time.deltaTime;
             bool inFireRange = dist <= fireRange;
-            bool canShoot = inFireRange && fireTimer >= fireRate;
+            bool canShoot    = inFireRange && fireTimer >= fireRate;
 
             bool shouldMove = dist > stopDistance || (shootWhileRunning && !inFireRange);
             if (shouldMove && dist <= aggroDistance)
@@ -98,7 +114,7 @@ public class JefeFinal : MonoBehaviour, IDamageable
             if (canShoot && wantShoot)
             {
                 fireTimer = 0f;
-                anim.SetBool(HASH_SHOOT, true);   // la bala se crea con el Animation Event
+                anim.SetBool(HASH_SHOOT, true); // la bala se instancia por Animation Event
             }
         }
 
@@ -114,50 +130,45 @@ public class JefeFinal : MonoBehaviour, IDamageable
             rb.velocity = new Vector2(vel.x, rb.velocity.y);
 #endif
 
-        anim.SetFloat(HASH_SPEED, Mathf.Abs(vel.x));
-
-        if (!wantShoot)
-            anim.SetBool(HASH_SHOOT, false);
+        if (anim)
+        {
+            anim.SetFloat(HASH_SPEED, Mathf.Abs(vel.x));
+            if (!wantShoot)
+                anim.SetBool(HASH_SHOOT, false);
+        }
     }
 
     // Llamado desde el frame del destello en la animación de disparo
     public void AnimEvent_Fire()
     {
-    if (dead) return;
-    if (!bulletPrefab || !shootOrigin) return;
+        if (dead) return;
+        if (!bulletPrefab || !shootOrigin) return;
 
-    int dirX = (sr && sr.flipX) ? -1 : 1;
+        int dirX = (sr && sr.flipX) ? -1 : 1;
 
-    var go = Instantiate(bulletPrefab, shootOrigin.position, Quaternion.identity);
-    var bullet = go.GetComponent<EnemyBullet2D>();
-    if (bullet != null) bullet.Setup(new Vector2(dirX, 0f), bulletSpeed);
-}
+        GameObject go = Instantiate(bulletPrefab, shootOrigin.position, Quaternion.identity);
+        EnemyBullet2D bullet = go.GetComponent<EnemyBullet2D>();
+        if (bullet != null)
+        {
+            bullet.Setup(new Vector2(dirX, 0f), bulletSpeed);
+        }
+    }
 
-    // Sistema nuevo (IDamageable)
+    // ================== DAÑO (llamado por PlayerBullet) ==================
     public void TakeDamage(int amount, Vector2 hitPoint, Vector2 hitDir)
     {
         if (dead) return;
+
         hp -= Mathf.Max(1, amount);
-        if (hp <= 0) Die();
+
+        if (hp <= 0)
+            Die();
     }
 
-    // Compatibilidad con tags antiguos y colliders Trigger
-    void OnTriggerEnter2D(Collider2D other)
+    // Overload por si en algún lugar solo llaman (int)
+    public void TakeDamage(int amount)
     {
-        if (dead) return;
-
-        if (other.CompareTag("balaBuena"))
-        {
-            hp -= 1;
-            Destroy(other.gameObject);
-            if (hp <= 0) Die();
-            return;
-        }
-        if (other.CompareTag("granada"))
-        {
-            hp -= 3;
-            if (hp <= 0) Die();
-        }
+        TakeDamage(amount, transform.position, Vector2.zero);
     }
 
     void Die()
@@ -172,16 +183,22 @@ public class JefeFinal : MonoBehaviour, IDamageable
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
 #endif
-        var col = GetComponent<Collider2D>();
+
+        Collider2D col = GetComponent<Collider2D>();
         if (col) col.enabled = false;
 
         GameManager.instancia?.CambiarPuntos(puntosAlMorir);
 
-        anim.SetTrigger(HASH_DIE);
+        if (anim)
+            anim.SetTrigger(HASH_DIE);
+
         Invoke(nameof(FinishDeath), 1.2f);
     }
 
-    public void AnimEvent_DeathEnd() => FinishDeath();
+    public void AnimEvent_DeathEnd()
+    {
+        FinishDeath();
+    }
 
     void FinishDeath()
     {
