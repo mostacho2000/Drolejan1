@@ -893,6 +893,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoBackToPauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 4916756292862191575, guid: 7b9ea619d184b474fbbd27e746927982, type: 3}
+      propertyPath: volumeOptionsPanel
+      value: 
+      objectReference: {fileID: 1688856842}
     - target: {fileID: 5127418909637100305, guid: 7b9ea619d184b474fbbd27e746927982, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2056,7 +2060,7 @@ PrefabInstance:
     - target: {fileID: 866128367169364874, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
       propertyPath: m_UIInputModule
       value: 
-      objectReference: {fileID: 1923435294}
+      objectReference: {fileID: 0}
     - target: {fileID: 3885541111877812212, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.65
@@ -6158,6 +6162,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1688856842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3336985202089949920, guid: 7b9ea619d184b474fbbd27e746927982, type: 3}
+  m_PrefabInstance: {fileID: 144451335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1689142654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6892,7 +6901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923435290}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6915,12 +6924,12 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
-  m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: 1549109245299231487, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 91da1b891f6499044bfb2329f1b600e0, type: 3}
+  m_PointAction: {fileID: -3309258169680586991, guid: 91da1b891f6499044bfb2329f1b600e0, type: 3}
+  m_MoveAction: {fileID: 0}
   m_SubmitAction: {fileID: 0}
   m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 3076008087187207794, guid: 91da1b891f6499044bfb2329f1b600e0, type: 3}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}
@@ -8366,7 +8375,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 616718091}
+  - {fileID: 144451335}
   - {fileID: 1468498938}
+  - {fileID: 1923435293}
   - {fileID: 1674835626}
   - {fileID: 2133420335}
   - {fileID: 616187857}
@@ -8375,7 +8386,6 @@ SceneRoots:
   - {fileID: 87249374}
   - {fileID: 163100067}
   - {fileID: 655104848}
-  - {fileID: 1923435293}
   - {fileID: 46751723}
   - {fileID: 39680867}
   - {fileID: 1701308465}
@@ -8391,7 +8401,6 @@ SceneRoots:
   - {fileID: 2136279015}
   - {fileID: 1950903221}
   - {fileID: 1029511978}
-  - {fileID: 144451335}
   - {fileID: 529988389}
   - {fileID: 1579838096}
   - {fileID: 1295855518}

@@ -4768,6 +4768,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8681375525880717451, guid: 3a94eaf2278522346a0bb2375540d84d, type: 3}
   m_PrefabInstance: {fileID: 958356385}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1018965366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2562367393667175224, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
+  m_PrefabInstance: {fileID: 2137564506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c703459e0cf71cf408773949d783db25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth2D
 --- !u!1 &1022739585
 GameObject:
   m_ObjectHideFlags: 0
@@ -8520,12 +8531,12 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: 0f5df47e62317344a8e4eba507331102, type: 3}
-  m_PointAction: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 91da1b891f6499044bfb2329f1b600e0, type: 3}
+  m_PointAction: {fileID: -3309258169680586991, guid: 91da1b891f6499044bfb2329f1b600e0, type: 3}
   m_MoveAction: {fileID: 0}
   m_SubmitAction: {fileID: 0}
   m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 3076008087187207794, guid: 91da1b891f6499044bfb2329f1b600e0, type: 3}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}
@@ -9799,10 +9810,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 616718090}
-    - target: {fileID: 866128367169364874, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
-      propertyPath: m_UIInputModule
-      value: 
-      objectReference: {fileID: 1923435294}
     - target: {fileID: 3885541111877812212, guid: ac18c23a63a36fa46b7feb8b1a7e3cc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -58.6
@@ -10229,25 +10236,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186623951403239819}
   m_CullTransparentMesh: 1
---- !u!114 &2255650930439577722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4321406422138982248}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62e196a286400a24d8a46d65f77f60ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ControladorTienda
-  precioWhisky: 1
-  precioGranada: 1
-  controlador: {fileID: 0}
-  btnWhisky: {fileID: 0}
-  btnGranada: {fileID: 0}
-  txtPrecioWhisky: {fileID: 0}
-  txtPrecioGranada: {fileID: 0}
 --- !u!114 &2815168373431842384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10612,7 +10600,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4321406422138982261}
         m_TargetAssemblyTypeName: PausaMenu2, Assembly-CSharp
         m_MethodName: GoBackToPauseMenu
         m_Mode: 1
@@ -11055,7 +11043,9 @@ GameObject:
   - component: {fileID: 4321406422138982260}
   - component: {fileID: 4321406422138982251}
   - component: {fileID: 4321406422138982250}
-  - component: {fileID: 2255650930439577722}
+  - component: {fileID: 4321406422138982263}
+  - component: {fileID: 4321406422138982262}
+  - component: {fileID: 4321406422138982261}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -11151,6 +11141,47 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &4321406422138982261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321406422138982248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1c1bc45b958fb4290e53c1285f0001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PausaMenu2
+  pauseMenuPanel: {fileID: 5953476530008250298}
+  volumeOptionsPanel: {fileID: 4830513864943457917}
+--- !u!114 &4321406422138982262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321406422138982248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e3de9970741cf4db0b396a6a238b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthUI
+  playerHealth: {fileID: 1018965366}
+  lifeIcons: []
+--- !u!114 &4321406422138982263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321406422138982248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802b20592f36ab644bb27ab673609981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeManager
+  volumeSlider: {fileID: 6803837543237193832}
 --- !u!114 &4321406422146119336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11458,7 +11489,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4321406422138982261}
         m_TargetAssemblyTypeName: PausaMenu2, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
@@ -11522,7 +11553,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4321406422138982261}
         m_TargetAssemblyTypeName: PausaMenu2, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -11949,7 +11980,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4321406422138982261}
         m_TargetAssemblyTypeName: PausaMenu2, Assembly-CSharp
         m_MethodName: ShowVolumeOptions
         m_Mode: 1
@@ -12852,12 +12883,14 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 616718091}
+  - {fileID: 4321406422138982249}
   - {fileID: 1418667381}
+  - {fileID: 2137564506}
+  - {fileID: 1923435293}
   - {fileID: 1468498938}
   - {fileID: 1674835626}
   - {fileID: 2133420335}
   - {fileID: 655104848}
-  - {fileID: 1923435293}
   - {fileID: 636695668}
   - {fileID: 46751723}
   - {fileID: 385389129}
@@ -12883,9 +12916,7 @@ SceneRoots:
   - {fileID: 201344086}
   - {fileID: 370595544}
   - {fileID: 504158526}
-  - {fileID: 4321406422138982249}
   - {fileID: 722545813}
-  - {fileID: 2137564506}
   - {fileID: 817916148}
   - {fileID: 717965330}
   - {fileID: 1022739588}

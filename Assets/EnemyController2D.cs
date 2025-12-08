@@ -14,11 +14,9 @@ public class EnemyController2D : MonoBehaviour
     public bool patrol = true;
     public bool shootWhileRunning = false;
 
-    [Header("Patrulla: detección de bordes/pared")]
-    public Transform groundCheck;
-    public Transform wallCheck;
-    public float checkDistance = 0.2f;
-    public LayerMask groundMask;
+    [Header("Patrulla SIMPLE (izquierda - derecha)")]
+    [Tooltip("Distancia total que recorre desde el centro hacia cada lado")]
+    public float patrolDistance = 3f;
 
     [Header("Detección de jugador")]
     public float aggroDistance = 6f;   // Distancia para empezar a perseguir
@@ -26,6 +24,11 @@ public class EnemyController2D : MonoBehaviour
 
     bool facingRight = true;
     bool dead = false;
+
+    // límites de la patrulla
+    float startX;
+    float leftLimitX;
+    float rightLimitX;
 
     void Reset()
     {
@@ -47,6 +50,11 @@ public class EnemyController2D : MonoBehaviour
         if (!anim)    anim    = GetComponent<Animator>();
         if (!sr)      sr      = GetComponent<SpriteRenderer>();
         if (!shooter) shooter = GetComponent<Enemi_shot>();
+
+        // ---- Configurar limites de patrulla simple ----
+        startX     = transform.position.x;
+        leftLimitX = startX - patrolDistance;
+        rightLimitX = startX + patrolDistance;
     }
 
     void Update()
@@ -55,6 +63,7 @@ public class EnemyController2D : MonoBehaviour
 
         if (anim) anim.SetBool("Shoot", false);
 
+        // Si no hay player, solo patrulla
         if (!player)
         {
             MovePatrol();
@@ -75,7 +84,7 @@ public class EnemyController2D : MonoBehaviour
 
             if (!withinStop)
             {
-                // 🔹 PERSEGUIR AL PLAYER
+                // PERSEGUIR AL PLAYER
                 MoveTowards(player.position);
 
                 if (shootWhileRunning && withinFire)
@@ -83,7 +92,7 @@ public class EnemyController2D : MonoBehaviour
             }
             else
             {
-                // 🔹 YA ESTÁ CERCA → SE DETIENE Y DISPARA
+                // YA ESTÁ CERCA → SE DETIENE Y DISPARA
                 StopX();
 
                 if (withinFire)
@@ -92,55 +101,50 @@ public class EnemyController2D : MonoBehaviour
         }
         else
         {
-            // 🔹 Fuera de rango → patrulla
+            // Fuera de rango → patrulla simple
             MovePatrol();
         }
 
         if (anim)
-            anim.SetFloat("Speed", Mathf.Abs(rb ? rb.linearVelocity.x : 0f));  // 👉 linearVelocity
+            anim.SetFloat("Speed", Mathf.Abs(rb ? rb.linearVelocity.x : 0f));
     }
 
-    //================== Movimiento ==================
+    // ================== Movimiento ==================
 
     void MoveTowards(Vector3 target)
     {
         if (!rb) return;
 
         float dir = Mathf.Sign(target.x - transform.position.x);
-        rb.linearVelocity = new Vector2(dir * speed, rb.linearVelocity.y);      // 👉 linearVelocity
+        rb.linearVelocity = new Vector2(dir * speed, rb.linearVelocity.y);
     }
 
     void StopX()
     {
         if (rb)
-            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);           // 👉 linearVelocity
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
     }
 
+    // PATRULLA SIMPLE: va de leftLimitX a rightLimitX
     void MovePatrol()
     {
-        if (!patrol)
-        {
-            StopX();
-            return;
-        }
-
-        if (!rb)
-            return;
+        if (!patrol || !rb) return;
 
         float dir = facingRight ? 1f : -1f;
-        rb.linearVelocity = new Vector2(dir * speed, rb.linearVelocity.y);      // 👉 linearVelocity
+        rb.linearVelocity = new Vector2(dir * speed, rb.linearVelocity.y);
 
-        bool noGround = groundCheck &&
-                        !Physics2D.Raycast(groundCheck.position, Vector2.down, checkDistance, groundMask);
+        float x = transform.position.x;
 
-        bool hitWall = wallCheck &&
-                       Physics2D.Raycast(wallCheck.position,
-                                         facingRight ? Vector2.right : Vector2.left,
-                                         checkDistance,
-                                         groundMask);
-
-        if (noGround || hitWall)
+        // Si va a la derecha y ya pasó el límite derecho → voltear
+        if (facingRight && x >= rightLimitX)
+        {
             Flip();
+        }
+        // Si va a la izquierda y ya pasó el límite izquierdo → voltear
+        else if (!facingRight && x <= leftLimitX)
+        {
+            Flip();
+        }
     }
 
     void LookAt(Vector3 target)
@@ -162,7 +166,7 @@ public class EnemyController2D : MonoBehaviour
     {
         dead = true;
         StopX();
-        if (rb) rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);       // 👉 linearVelocity
+        if (rb) rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
     }
 
     void OnDrawGizmosSelected()
@@ -178,13 +182,11 @@ public class EnemyController2D : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, shooter.fireRange);
         }
 
-        // Chequeos de suelo / pared
+        // Límites de patrulla (solo en editor)
         Gizmos.color = Color.cyan;
-        if (groundCheck)
-            Gizmos.DrawLine(groundCheck.position,
-                            groundCheck.position + Vector3.down * checkDistance);
-        if (wallCheck)
-            Gizmos.DrawLine(wallCheck.position,
-                            wallCheck.position + (facingRight ? Vector3.right : Vector3.left) * checkDistance);
+        Gizmos.DrawLine(new Vector3(leftLimitX, transform.position.y - 0.5f, 0),
+                        new Vector3(leftLimitX, transform.position.y + 0.5f, 0));
+        Gizmos.DrawLine(new Vector3(rightLimitX, transform.position.y - 0.5f, 0),
+                        new Vector3(rightLimitX, transform.position.y + 0.5f, 0));
     }
 }

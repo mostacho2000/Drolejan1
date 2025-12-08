@@ -169,10 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grenade2D
   fuseTime: 2
-  maxBounces: 3
-  explodeOnEnemyHit: 0
-  explosionRadius: 1.13
-  explosionForce: 14.8
+  maxBounces: 2
+  explodeOnEnemyHit: 1
+  explosionRadius: 2
+  explosionForce: 13
   damage: 2
   damageMask:
     serializedVersion: 2

@@ -317,10 +317,6 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 69c20194-8aa6-45ba-9ac8-763b0ca2074e
-    m_ActionName: Gameplay/New action
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 964f5e9c-c23e-43c3-a1b8-33bee2adc113
     m_ActionName: 'Gameplay/Move[/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:

@@ -7,15 +7,6 @@
             "id": "79482afb-d52d-4873-8931-e1a2f9630a81",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "69c20194-8aa6-45ba-9ac8-763b0ca2074e",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "964f5e9c-c23e-43c3-a1b8-33bee2adc113",
@@ -53,17 +44,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "3f3c51ad-614f-465b-9a99-d99ad4c518c4",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "ee5c04b1-6764-4f71-89b6-25ce1cc44cb3",
