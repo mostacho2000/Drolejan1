@@ -19,7 +19,7 @@ public class PlataformaImpulso : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         // 1. Comprueba si es el jugador por su tag
-        if (collision.gameObject.CompareTag("Player1"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             // 2. MÉTODO ROBUSTO: Compara las posiciones de los bordes
             Collider2D playerCollider = collision.collider;
