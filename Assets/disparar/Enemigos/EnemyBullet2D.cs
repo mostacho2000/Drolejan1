@@ -16,6 +16,21 @@ public class EnemyBullet2D : MonoBehaviour
     {
         direction = dir.normalized;
         speed = bulletSpeed;
+
+        // --- NUEVO: Voltear visualmente la bala según la dirección ---
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            // Si va a la izquierda, se voltea en X
+            sr.flipX = (direction.x < 0f);
+        }
+        else
+        {
+            // Alternativa por si usas escala en lugar de flipX
+            Vector3 ls = transform.localScale;
+            ls.x = Mathf.Abs(ls.x) * (direction.x < 0f ? -1f : 1f);
+            transform.localScale = ls;
+        }
     }
 
     private void Awake()
